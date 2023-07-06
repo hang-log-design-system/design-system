@@ -17,7 +17,7 @@ const color = {
   blue400: '#80d9ff',
   blue300: '#80d9ff',
   blue200: '#bfecff',
-  blue100: '#40c5ff',
+  blue100: '#EAF9FF',
 
   red300: '#c50000', // dark red
   red200: '#ea0000', // red
