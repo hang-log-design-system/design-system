@@ -32,7 +32,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const createTextStory = (size: HeadingProps['size']) => ({
+const createHeadingStory = (size: HeadingProps['size']) => ({
   args: {
     size,
   },
@@ -83,14 +83,14 @@ export const Sizes: Story = {
   },
 };
 
-export const XSmall: Story = createTextStory('xSmall');
+export const XSmall: Story = createHeadingStory('xSmall');
 
-export const Small: Story = createTextStory('small');
+export const Small: Story = createHeadingStory('small');
 
-export const Medium: Story = createTextStory('medium');
+export const Medium: Story = createHeadingStory('medium');
 
-export const Large: Story = createTextStory('large');
+export const Large: Story = createHeadingStory('large');
 
-export const xLarge: Story = createTextStory('xLarge');
+export const xLarge: Story = createHeadingStory('xLarge');
 
-export const xxLarge: Story = createTextStory('xxLarge');
+export const xxLarge: Story = createHeadingStory('xxLarge');
