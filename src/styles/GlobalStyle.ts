@@ -15,6 +15,6 @@ export const GlobalStyle = css({
   'html, body': {
     fontFamily: `system-ui, -apple-system, BlinkMacSystemFont, 'Open Sans', 'Helvetica Neue'`,
     fontSize: '16px',
-    color: `${Theme.color.gray800}`,
+    color: Theme.color.gray800,
   },
 });
