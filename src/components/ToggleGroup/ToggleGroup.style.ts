@@ -4,10 +4,12 @@ import { css } from '@emotion/react';
 export const ToggleGroupContainerStyling = () => {
   return css({
     display: 'flex',
-    overflow: 'hidden',
+
     width: 'fit-content',
     border: `1px solid ${Theme.color.gray200}`,
     borderRadius: '4px',
+
+    overflow: 'hidden',
     '& :first-child': {
       borderTopLeftRadius: '4px',
       borderBottomLeftRadius: '4px',

@@ -4,9 +4,11 @@ import { css } from '@emotion/react';
 export const TabsContainerStyling = () => {
   return css({
     display: 'flex',
-    overflowX: 'scroll',
+
     width: '100%',
     borderBottom: `1px solid ${Theme.color.gray200}`,
+
+    overflowX: 'scroll',
     msOverflowStyle: 'none',
     scrollbarWidth: 'none',
     '&::-webkit-scrollbar': {
