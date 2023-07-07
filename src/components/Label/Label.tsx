@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 
-import { labelStyle, requiredStyle } from '@components/Label/Label.style';
+import { labelStyling, requiredStyling } from '@components/Label/Label.style';
 
 interface LabelProps extends ComponentPropsWithoutRef<'label'> {
   required?: boolean;
@@ -8,8 +8,8 @@ interface LabelProps extends ComponentPropsWithoutRef<'label'> {
 
 const Label = ({ required = false, children, ...attributes }: LabelProps) => {
   return (
-    <label css={labelStyle} {...attributes}>
-      {children} {required && <span css={requiredStyle}>*</span>}
+    <label css={labelStyling} {...attributes}>
+      {children} {required && <span css={requiredStyling}>*</span>}
     </label>
   );
 };
