@@ -2,7 +2,8 @@ import AddIcon from '@assets/svg/add-icon.svg';
 import type { Size } from '@type/index';
 import type { ComponentPropsWithoutRef } from 'react';
 
-import { getVariantStyling } from '../Button/Button.style';
+import { getVariantStyling } from '@components/Button/Button.style';
+
 import {
   FloatingButtonStyling,
   getIconSizeStyling,

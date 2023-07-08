@@ -1,7 +1,7 @@
 import { Theme } from '@/styles/Theme';
 import { css } from '@emotion/react';
 
-import type { FloatingButtonProps } from './FloatingButton';
+import type { FloatingButtonProps } from '@components/FloatingButton/FloatingButton';
 
 export const getSizeStyling = (size: Required<FloatingButtonProps>['size']) => {
   const style = {
