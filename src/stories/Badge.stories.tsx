@@ -10,9 +10,11 @@ const meta = {
     variant: {
       control: { type: 'radio' },
       options: ['default', 'primary', 'outline'],
+      description: 'Badge의 비주얼 스타일',
     },
     children: {
       control: { type: 'text' },
+      description: 'Badge에 표시할 내용',
     },
   },
   args: {

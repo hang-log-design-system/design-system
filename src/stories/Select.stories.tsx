@@ -9,19 +9,27 @@ const meta = {
   argTypes: {
     label: {
       control: { type: 'text' },
+      description: 'Select의 시이즈',
     },
     size: {
       control: { type: 'radio' },
       options: ['small', 'medium', 'large'],
+      description: 'Select의 시이즈',
     },
     isError: {
       control: { type: 'boolean' },
+      description: 'Select 인풋의 에러 여부',
     },
     supportingText: {
       control: { type: 'text' },
+      description: 'Select의 부가 정보 텍스트',
     },
     required: {
       control: { type: 'boolean' },
+      description: 'Select의 필수 입력 여부',
+    },
+    children: {
+      description: 'Select에서 선택할 수 있는 JSX option 요소들',
     },
   },
   args: {
