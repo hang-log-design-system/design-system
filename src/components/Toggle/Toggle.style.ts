@@ -1,53 +1,48 @@
-import { Theme } from '@/styles/Theme';
 import { css } from '@emotion/react';
 
-export type ToggleSelectedStylingProps = 'outline' | 'block';
+import { Theme } from '@styles/Theme';
 
-export const getSelectedToggleStyling = () => {
-  return css({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+export const getSelectedToggleStyling = css({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
-    border: `1px solid ${Theme.color.blue700}`,
+  border: `1px solid ${Theme.color.blue700}`,
 
-    padding: '8px 12px',
+  padding: '8px 12px',
 
-    backgroundColor: Theme.color.blue100,
+  backgroundColor: Theme.color.blue100,
 
-    fontSize: '16px',
+  fontSize: '16px',
+  color: Theme.color.blue700,
+
+  transition: `all .2s ease-in`,
+
+  cursor: 'pointer',
+  '&:hover': {
     color: Theme.color.blue700,
+    backgroundColor: Theme.color.blue200,
+  },
+});
 
-    transition: `all .2s ease-in`,
+export const getUnSelectedToggleStyling = css({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
-    cursor: 'pointer',
-    '&:hover': {
-      color: Theme.color.blue700,
-      backgroundColor: Theme.color.blue200,
-    },
-  });
-};
+  padding: '8px 12px',
+  border: `0.5px solid ${Theme.color.gray200}`,
 
-export const getUnSelectedToggleStyling = () => {
-  return css({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+  backgroundColor: Theme.color.white,
 
-    padding: '8px 12px',
-    border: `0.5px solid ${Theme.color.gray200}`,
+  fontSize: '16px',
+  color: Theme.color.gray600,
 
-    backgroundColor: Theme.color.white,
+  transition: `all .2s ease-in`,
 
-    fontSize: '16px',
-    color: Theme.color.gray600,
-
-    transition: `all .2s ease-in`,
-
-    cursor: 'pointer',
-    '&:hover': {
-      color: Theme.color.gray700,
-      backgroundColor: Theme.color.gray100,
-    },
-  });
-};
+  cursor: 'pointer',
+  '&:hover': {
+    color: Theme.color.gray700,
+    backgroundColor: Theme.color.gray100,
+  },
+});

@@ -1,33 +1,31 @@
 import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
 
 import { getSelectedTabStyling, getUnSelectedTabStyling } from './Tab.style';
+import type { TabSelectedStylingProps } from './Tab.style';
 
-export interface TabsProps extends ComponentPropsWithRef<'div'> {
-  type?: 'outline' | 'block';
+export interface TabProps extends ComponentPropsWithRef<'div'> {
+  variant?: TabSelectedStylingProps;
   selected?: boolean;
   text: string;
 }
 
-const Tabs = (
-  { type = 'outline', selected = false, text, ...attributes }: TabsProps,
-  ref?: ForwardedRef<HTMLInputElement>
+const Tab = (
+  { variant = 'outline', selected = false, text, ...attributes }: TabProps,
+  ref?: ForwardedRef<HTMLDivElement>
 ) => {
-  if (selected) {
-    return (
-      <>
-        <div css={getSelectedTabStyling(type)} {...attributes}>
-          {text}
-        </div>
-      </>
-    );
-  }
-  return (
+  return selected ? (
     <>
-      <div css={getUnSelectedTabStyling(type)} {...attributes}>
+      <div css={getSelectedTabStyling[variant]} {...attributes} ref={ref}>
+        {text}
+      </div>
+    </>
+  ) : (
+    <>
+      <div css={getUnSelectedTabStyling[variant]} {...attributes} ref={ref}>
         {text}
       </div>
     </>
   );
 };
 
-export default forwardRef(Tabs);
+export default forwardRef(Tab);

@@ -1,7 +1,8 @@
 import CheckedIcon from '@assets/svg/checked-icon.svg';
 import UncheckedIcon from '@assets/svg/unchecked-icon.svg';
-import { ComponentPropsWithRef, ForwardedRef, useCallback } from 'react';
+import { useCallback } from 'react';
 import { forwardRef, useState } from 'react';
+import type { ComponentPropsWithRef, ForwardedRef } from 'react';
 
 import { checkboxStyle, inputStyle } from '@components/Checkbox/Checkbox.style';
 
@@ -15,9 +16,10 @@ const Checkbox = (
   ref: ForwardedRef<HTMLInputElement>
 ) => {
   const [checked, setChecked] = useState(isChecked);
+
   const handleChecked = useCallback(() => {
     setChecked(!checked);
-  }, [checked, setChecked]);
+  }, [checked]);
 
   return (
     <label css={checkboxStyle} htmlFor={id}>

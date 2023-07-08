@@ -14,7 +14,7 @@ const Toggle = (
   if (selected) {
     return (
       <>
-        <div css={getSelectedToggleStyling()} {...attributes}>
+        <div css={getSelectedToggleStyling} {...attributes}>
           {text}
         </div>
       </>
@@ -22,7 +22,7 @@ const Toggle = (
   }
   return (
     <>
-      <div css={getUnSelectedToggleStyling()} {...attributes}>
+      <div css={getUnSelectedToggleStyling} {...attributes}>
         {text}
       </div>
     </>

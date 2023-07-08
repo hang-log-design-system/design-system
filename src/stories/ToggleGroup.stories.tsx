@@ -21,20 +21,18 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
-
 export const Variants: Story = {
   render: ({}) => {
     return (
       <>
         <li css={informationStyle}>
-          <h6>ToggleGroup and Toggle</h6>
+          <h6>Toggle Group and Toggle</h6>
           <ToggleGroup>
             <Toggle text="haha" selected />
             <Toggle text="ganada" />
-            <Toggle text="hahaha" selected />
+            <Toggle text="hahaha" />
             <Toggle text="ho" />
-            <Toggle text="aha" selected />
+            <Toggle text="aha" />
           </ToggleGroup>
         </li>
       </>

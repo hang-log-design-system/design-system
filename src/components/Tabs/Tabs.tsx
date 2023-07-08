@@ -6,7 +6,7 @@ export interface TabsProps extends ComponentPropsWithRef<'div'> {}
 
 const Tabs = ({ children }: TabsProps, ref: ForwardedRef<HTMLDivElement>) => {
   return (
-    <div css={TabsContainerStyling()} ref={ref}>
+    <div css={TabsContainerStyling} ref={ref}>
       {children}
     </div>
   );

@@ -7,16 +7,16 @@ export const ToggleGroupContainerStyling = () => {
 
     width: 'fit-content',
     border: `1px solid ${Theme.color.gray200}`,
-    borderRadius: '4px',
+    borderRadius: Theme.borderRadius.small,
 
     overflow: 'hidden',
     '& :first-child': {
-      borderTopLeftRadius: '4px',
-      borderBottomLeftRadius: '4px',
+      borderTopLeftRadius: Theme.borderRadius.small,
+      borderBottomLeftRadius: Theme.borderRadius.small,
     },
     '& :last-child': {
-      borderTopRightRadius: '4px',
-      borderBottomRightRadius: '4px',
+      borderTopRightRadius: Theme.borderRadius.small,
+      borderBottomRightRadius: Theme.borderRadius.small,
     },
   });
 };
