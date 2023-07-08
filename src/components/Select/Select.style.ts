@@ -4,6 +4,12 @@ import { SelectProps } from '@components/Select/Select';
 
 import { Theme } from '@styles/Theme';
 
+export const selectContainerStyling = css({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: Theme.spacer.spacing2,
+});
+
 export const getSelectWrapperStyling = (isError: Required<SelectProps>['isError']) => {
   return css({
     position: 'relative',

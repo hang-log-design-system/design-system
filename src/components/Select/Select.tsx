@@ -3,7 +3,11 @@ import type { ComponentPropsWithRef, ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
 import Label from '@components/Label/Label';
-import { getSelectStyling, getSelectWrapperStyling } from '@components/Select/Select.style';
+import {
+  getSelectStyling,
+  getSelectWrapperStyling,
+  selectContainerStyling,
+} from '@components/Select/Select.style';
 import { getSizeStyling } from '@components/Select/Select.style';
 import SupportingText from '@components/SupportingText/SupportingText';
 
@@ -33,7 +37,7 @@ const Select = (
   ref: ForwardedRef<HTMLSelectElement>
 ) => {
   return (
-    <div>
+    <div css={selectContainerStyling}>
       {label && (
         <Label id={attributes.id} required={attributes.required}>
           {label}
