@@ -1,12 +1,12 @@
 import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
 
-import { TabsContainerStyling } from './Tabs.style';
+import { getTabsContainerStyling } from './Tabs.style';
 
-export interface TabsProps extends ComponentPropsWithRef<'div'> {}
+export type TabsProps = ComponentPropsWithRef<'div'>;
 
 const Tabs = ({ children }: TabsProps, ref: ForwardedRef<HTMLDivElement>) => {
   return (
-    <div css={TabsContainerStyling} ref={ref}>
+    <div css={getTabsContainerStyling} ref={ref}>
       {children}
     </div>
   );

@@ -1,7 +1,7 @@
 import { Theme } from '@/styles/Theme';
 import { css } from '@emotion/react';
 
-export const TabsContainerStyling = css({
+export const getTabsContainerStyling = css({
   display: 'flex',
 
   width: '100%',

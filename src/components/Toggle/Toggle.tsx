@@ -1,6 +1,9 @@
 import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
 
-import { getSelectedToggleStyling, getUnSelectedToggleStyling } from './Toggle.style';
+import {
+  getSelectedToggleStyling,
+  getUnSelectedToggleStyling,
+} from '@components/Toggle/Toggle.style';
 
 export interface ToggleProps extends ComponentPropsWithRef<'div'> {
   selected?: boolean;
@@ -11,18 +14,15 @@ const Toggle = (
   { selected = false, text, ...attributes }: ToggleProps,
   ref?: ForwardedRef<HTMLInputElement>
 ) => {
-  if (selected) {
-    return (
-      <>
-        <div css={getSelectedToggleStyling} {...attributes}>
-          {text}
-        </div>
-      </>
-    );
-  }
-  return (
+  return selected ? (
     <>
-      <div css={getUnSelectedToggleStyling} {...attributes}>
+      <div css={getSelectedToggleStyling} {...attributes} ref={ref}>
+        {text}
+      </div>
+    </>
+  ) : (
+    <>
+      <div css={getUnSelectedToggleStyling} {...attributes} ref={ref}>
         {text}
       </div>
     </>

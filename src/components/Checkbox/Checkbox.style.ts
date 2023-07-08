@@ -12,6 +12,6 @@ export const checkboxStyle = css({
 });
 
 export const inputStyle = css({
-  padding: 0,
   display: 'none',
+  padding: 0,
 });

@@ -1,9 +1,8 @@
-import Toggle from '@/components/Toggle/Toggle';
 import SearchIcon from '@assets/svg/search-icon.svg';
 import { containerStyle, informationStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Tab from '@components/Tab/Tab';
+import Toggle from '@components/Toggle/Toggle';
 import ToggleGroup from '@components/ToggleGroup/ToggleGroup';
 
 const meta = {

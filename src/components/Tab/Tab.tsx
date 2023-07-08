@@ -1,7 +1,7 @@
 import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
 
-import { getSelectedTabStyling, getUnSelectedTabStyling } from './Tab.style';
-import type { TabSelectedStylingProps } from './Tab.style';
+import type { TabSelectedStylingProps } from '@components/Tab/Tab.style';
+import { getSelectedTabStyling, getUnSelectedTabStyling } from '@components/Tab/Tab.style';
 
 export interface TabProps extends ComponentPropsWithRef<'div'> {
   variant?: TabSelectedStylingProps;

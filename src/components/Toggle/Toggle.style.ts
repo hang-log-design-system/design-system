@@ -8,7 +8,6 @@ export const getSelectedToggleStyling = css({
   justifyContent: 'center',
 
   border: `1px solid ${Theme.color.blue700}`,
-
   padding: '8px 12px',
 
   backgroundColor: Theme.color.blue100,

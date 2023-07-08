@@ -39,13 +39,40 @@ export const Variants: Story = {
           </Tabs>
         </li>
         <li css={informationStyle}>
-          <h6>overflow</h6>
+          <h6>overflow-outline</h6>
           <Tabs>
+            <Tab text="Tab3" variant="outline" />
             <Tab text="Tab3" variant="outline" selected={true} />
             <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+            <Tab text="Tab3" variant="outline" />
+          </Tabs>
+        </li>
+        <li css={informationStyle}>
+          <h6>overflow-block</h6>
+          <Tabs>
+            <Tab text="Tab3" variant="block" />
+            <Tab text="Tab3" variant="block" />
             <Tab text="Tab3" variant="block" selected={true} />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
             <Tab text="Tab3" variant="block" />
             <Tab text="Tab3" variant="block" />
             <Tab text="Tab3" variant="block" />

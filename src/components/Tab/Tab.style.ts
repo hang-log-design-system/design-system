@@ -9,6 +9,7 @@ export const getSelectedTabStyling = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+
     borderBottom: `1px solid ${Theme.color.blue600}`,
     padding: '12px 16px',
 
