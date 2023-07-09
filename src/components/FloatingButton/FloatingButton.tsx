@@ -3,13 +3,12 @@ import type { Size } from '@type/index';
 import type { ComponentPropsWithoutRef } from 'react';
 
 import { getVariantStyling } from '@components/Button/Button.style';
-
 import {
-  FloatingButtonStyling,
+  floatingButtonStyling,
   getIconSizeStyling,
   getIconVariantStyling,
   getSizeStyling,
-} from './FloatingButton.style';
+} from '@components/FloatingButton/FloatingButton.style';
 
 export interface FloatingButtonProps extends ComponentPropsWithoutRef<'button'> {
   size?: Extract<Size, 'medium' | 'small'>;
@@ -23,7 +22,7 @@ const FloatingButton = ({
 }: FloatingButtonProps) => {
   return (
     <button
-      css={[FloatingButtonStyling, getSizeStyling(size), getVariantStyling(variant)]}
+      css={[floatingButtonStyling, getSizeStyling(size), getVariantStyling(variant)]}
       {...attributes}
     >
       <AddIcon css={[getIconSizeStyling(size), getIconVariantStyling(variant)]} />

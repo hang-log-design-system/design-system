@@ -1,7 +1,8 @@
-import { Theme } from '@/styles/Theme';
 import { css } from '@emotion/react';
 
 import type { FloatingButtonProps } from '@components/FloatingButton/FloatingButton';
+
+import { Theme } from '@styles/Theme';
 
 export const getSizeStyling = (size: Required<FloatingButtonProps>['size']) => {
   const style = {
@@ -42,12 +43,12 @@ export const getIconVariantStyling = (variant: Required<FloatingButtonProps>['va
   const style = {
     primary: css({
       path: {
-        stroke: 'white',
+        stroke: Theme.color.white,
       },
     }),
     default: css({
       path: {
-        stroke: 'black',
+        stroke: Theme.color.black,
       },
     }),
   };
@@ -55,7 +56,7 @@ export const getIconVariantStyling = (variant: Required<FloatingButtonProps>['va
   return style[variant];
 };
 
-export const FloatingButtonStyling = css({
+export const floatingButtonStyling = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -63,6 +64,8 @@ export const FloatingButtonStyling = css({
   border: 'none',
   borderRadius: '50%',
   outline: `0 solid ${Theme.color.white}`,
+
+  transition: 'all .2s ease-in',
 
   cursor: 'pointer',
 
