@@ -1,4 +1,4 @@
-import { getSpinnerStyle } from './Spinner.style';
+import { getSpinnerStyle } from '@components/Spinner/Spinner.style';
 
 export interface SpinnerProps {
   timing?: number;

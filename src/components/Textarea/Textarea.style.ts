@@ -1,7 +1,8 @@
-import { Theme } from '@/styles/Theme';
 import { css } from '@emotion/react';
 
 import type { TextareaProps } from '@components/Textarea/Textarea';
+
+import { Theme } from '@styles/Theme';
 
 export const textareaContainerStyling = css({
   display: 'flex',
