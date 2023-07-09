@@ -57,7 +57,7 @@ export const Circle: Story = {
 };
 
 export const Combination: Story = {
-  render: ({}) => {
+  render: () => {
     return (
       <>
         <Skeleton variant="circle" width="100px" />
@@ -66,5 +66,10 @@ export const Combination: Story = {
         <Skeleton />
       </>
     );
+  },
+  argTypes: {
+    variant: { control: false },
+    width: { control: false },
+    height: { control: false },
   },
 };
