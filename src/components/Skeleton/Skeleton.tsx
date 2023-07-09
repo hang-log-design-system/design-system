@@ -3,6 +3,11 @@ import { getSkeletonStyling } from '@components/Skeleton/Skeleton.style';
 export interface SkeletonProps {
   width?: string;
   height?: string;
+  /**
+   * Skeleton 모양
+   *
+   * @default 'square'
+   */
   variant?: 'square' | 'circle';
 }
 

@@ -11,7 +11,17 @@ import {
 } from '@components/FloatingButton/FloatingButton.style';
 
 export interface FloatingButtonProps extends ComponentPropsWithoutRef<'button'> {
+  /**
+   * FloatingButton의 시이즈
+   *
+   * @default 'medium'
+   */
   size?: Extract<Size, 'medium' | 'small'>;
+  /**
+   * FloatingButton의 색상
+   *
+   * @default 'primary'
+   */
   variant?: 'primary' | 'default';
 }
 

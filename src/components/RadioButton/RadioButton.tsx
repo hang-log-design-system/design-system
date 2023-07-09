@@ -11,8 +11,11 @@ import {
 import SupportingText from '@components/SupportingText/SupportingText';
 
 interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
+  /** Radio에서 선택할 수 있는 문자열 option*/
   options: string[];
+  /** RadioButton의 라벨 텍스트 */
+  label?: string;
+  /** RadioButton의 부가 정보 텍스트 */
   supportingText?: string;
 }
 
