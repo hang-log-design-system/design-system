@@ -3,10 +3,12 @@ import { css } from '@emotion/react';
 import { Theme } from '../styles/Theme';
 
 const containerStyle = css({
-  width: '300px',
   display: 'flex',
   flexDirection: 'column',
   gap: '24px',
+  alignItems: 'flex-start',
+
+  width: '300px',
 });
 
 const informationStyle = css({
@@ -26,12 +28,13 @@ const containerWrapperStyle = css({
   position: 'absolute',
   top: '0',
   left: '0',
-  padding: '20px',
-  width: '100%',
-  height: '100%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+
+  width: '100%',
+  height: '100%',
+  padding: '20px',
 });
 
 export { containerStyle, informationStyle, containerWrapperStyle };

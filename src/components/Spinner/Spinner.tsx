@@ -1,4 +1,4 @@
-import { getSpinnerStyle } from './Spinner.style';
+import { getSpinnerStyling } from './Spinner.style';
 
 export interface SpinnerProps {
   timing?: number;
@@ -8,7 +8,7 @@ export interface SpinnerProps {
 }
 
 const Spinner = ({ timing = 1, size = 50, width = 5, disabled = false }: SpinnerProps) => {
-  return <div css={getSpinnerStyle({ timing, size, width, disabled })} />;
+  return <div css={getSpinnerStyling({ timing, size, width, disabled })} />;
 };
 
 export default Spinner;
