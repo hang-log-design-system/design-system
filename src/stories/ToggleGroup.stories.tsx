@@ -27,11 +27,11 @@ export const Variants: Story = {
         <li css={informationStyle}>
           <h6>Toggle Group and Toggle</h6>
           <ToggleGroup>
-            <Toggle text="haha" selected />
-            <Toggle text="ganada" />
-            <Toggle text="hahaha" />
-            <Toggle text="ho" />
-            <Toggle text="aha" />
+            <Toggle text="toggle1" selected />
+            <Toggle text="toggle2" />
+            <Toggle text="toggle3" />
+            <Toggle text="toggle4" />
+            <Toggle text="toggle5" />
           </ToggleGroup>
         </li>
       </>
