@@ -1,3 +1,4 @@
+import { containerStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Skeleton from '@components/Skeleton/Skeleton';
@@ -9,6 +10,13 @@ const meta = {
     width: '500px',
     height: '24px',
   },
+  decorators: [
+    (Story) => (
+      <ul css={containerStyle}>
+        <Story />
+      </ul>
+    ),
+  ],
 } satisfies Meta<typeof Skeleton>;
 
 export default meta;
@@ -29,20 +37,12 @@ export const Image: Story = {
     width: '450px',
     height: '300px',
   },
-  argTypes: {
-    width: { control: false },
-    height: { control: false },
-  },
 };
 
 export const Paragraph: Story = {
   args: {
     width: '400px',
     height: '100px',
-  },
-  argTypes: {
-    width: { control: false },
-    height: { control: false },
   },
 };
 
@@ -53,8 +53,18 @@ export const Circle: Story = {
     variant: 'circle',
   },
   argTypes: {
-    width: { control: false },
-    height: { control: false },
     variant: { control: false },
+  },
+};
+
+export const Combination: Story = {
+  render: ({}) => {
+    return (
+      <>
+        <Skeleton variant="circle" width="100px" height="100px" />
+        <Skeleton width="300px" height="100px" />
+        <Skeleton />
+      </>
+    );
   },
 };
