@@ -2,11 +2,10 @@ import { InputHTMLAttributes } from 'react';
 
 import Label from '@components/Label/Label';
 import {
+  buttonStyling,
   labelStyling,
   radioContainerStyling,
-  radioStyling,
   radioWrapperStyling,
-  textStyling,
 } from '@components/RadioButton/RadioButton.style';
 import SupportingText from '@components/SupportingText/SupportingText';
 
@@ -29,11 +28,13 @@ const RadioButton = ({ options, label, supportingText, ...attributes }: RadioBut
       )}
       <div css={radioWrapperStyling}>
         {options.map((option) => (
-          <div css={radioStyling}>
-            <input type="radio" hidden id={option} name={attributes.name} {...attributes} />
-            <label htmlFor={option} css={labelStyling}></label>
-            <p css={textStyling}>{option}</p>
-          </div>
+          <>
+            <label htmlFor={option} css={labelStyling}>
+              <input type="radio" hidden id={option} name={attributes.name} {...attributes} />
+              <div css={buttonStyling} />
+              {option}
+            </label>
+          </>
         ))}
       </div>
       {supportingText && <SupportingText>{supportingText}</SupportingText>}
