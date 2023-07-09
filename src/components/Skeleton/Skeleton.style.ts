@@ -19,7 +19,7 @@ const skeletonAnimation = keyframes`
 export const getSkeletonStyling = ({ width, height, variant }: Required<SkeletonProps>) => {
   return css({
     width,
-    height,
+    height: variant === 'square' ? height : width,
     borderRadius: variant === 'square' ? Theme.spacer.spacing2 : '50%',
 
     background: `linear-gradient(-90deg,${Theme.color.gray100}, ${Theme.color.gray200}, ${Theme.color.gray100}, ${Theme.color.gray200})`,
