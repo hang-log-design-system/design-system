@@ -1,9 +1,9 @@
 import { Size } from '@type/index';
-import type { ComponentPropsWithRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import * as S from '@components/Text/Text.style';
 
-export interface TextProps extends ComponentPropsWithRef<'p'> {
+export interface TextProps extends ComponentPropsWithoutRef<'p'> {
   size?: Extract<Size, 'xSmall' | 'small' | 'medium' | 'large'>;
 }
 
