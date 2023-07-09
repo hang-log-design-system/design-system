@@ -1,15 +1,14 @@
 import { InputHTMLAttributes } from 'react';
 
 import Label from '@components/Label/Label';
-import SupportingText from '@components/SupportingText/SupportingText';
-
 import {
   labelStyle,
   radioContainerStyle,
   radioStyle,
   radioWrapperStyle,
   textStyle,
-} from './RadioButton.style';
+} from '@components/RadioButton/RadioButton.style';
+import SupportingText from '@components/SupportingText/SupportingText';
 
 interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;

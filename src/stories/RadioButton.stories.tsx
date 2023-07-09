@@ -1,13 +1,12 @@
-import RadioButton from '@/components/RadioButton/RadioButton';
 import type { Meta, StoryObj } from '@storybook/react';
+
+import RadioButton from '@components/RadioButton/RadioButton';
 
 const meta = {
   title: 'RadioButton',
   component: RadioButton,
   args: {
-    label: 'Radio',
     options: ['option1', 'option2'],
-    supportingText: 'supporting Text',
     name: 'sample',
   },
 } satisfies Meta<typeof RadioButton>;
@@ -15,4 +14,34 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
+export const Playground: Story = {
+  args: {
+    label: 'Label',
+    supportingText: 'Supporting text',
+  },
+};
+
+export const Default: Story = {};
+
+export const withLabel: Story = {
+  args: {
+    label: 'Label',
+  },
+  name: 'Input with Label',
+};
+
+export const withSupportingText: Story = {
+  args: {
+    supportingText: 'Supporting Text',
+  },
+  name: 'Input with Supporting Text',
+};
+
+export const withLabelAndSupportingText: Story = {
+  args: {
+    label: 'Label',
+    supportingText: 'Supporting Text',
+    required: true,
+  },
+  name: 'Input with Label and Supporting Text',
+};

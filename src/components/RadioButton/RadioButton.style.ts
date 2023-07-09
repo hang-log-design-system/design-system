@@ -45,9 +45,5 @@ export const labelStyle = css({
 });
 
 export const textStyle = css({
-  color: Theme.color.gray600,
-
-  'input[type="radio"]:checked + label + &': {
-    color: Theme.color.gray800,
-  },
+  color: Theme.color.gray800,
 });
