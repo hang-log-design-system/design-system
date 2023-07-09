@@ -5,7 +5,7 @@ import type { SpinnerProps } from '@components/Spinner/Spinner';
 import { Theme } from '@styles/Theme';
 import { spinnerRotation } from '@styles/animation';
 
-export const getSpinnerStyle = ({ timing, size, width, disabled }: Required<SpinnerProps>) => {
+export const getSpinnerStyling = ({ timing, size, width, disabled }: Required<SpinnerProps>) => {
   return css({
     display: 'inline-block',
 

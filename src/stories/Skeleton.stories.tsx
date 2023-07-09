@@ -49,7 +49,6 @@ export const Paragraph: Story = {
 export const Circle: Story = {
   args: {
     width: '200px',
-    height: '200px',
     variant: 'circle',
   },
   argTypes: {
@@ -61,8 +60,9 @@ export const Combination: Story = {
   render: ({}) => {
     return (
       <>
-        <Skeleton variant="circle" width="100px" height="100px" />
+        <Skeleton variant="circle" width="100px" />
         <Skeleton width="300px" height="100px" />
+        <Skeleton />
         <Skeleton />
       </>
     );
