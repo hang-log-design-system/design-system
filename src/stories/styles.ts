@@ -3,10 +3,12 @@ import { css } from '@emotion/react';
 import { Theme } from '../styles/Theme';
 
 const containerStyle = css({
-  width: '300px',
   display: 'flex',
   flexDirection: 'column',
   gap: '24px',
+  alignItems: 'flex-start',
+
+  width: '300px',
 });
 
 const informationStyle = css({

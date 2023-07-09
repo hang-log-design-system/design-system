@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-import { getTextStyle } from '@components/SupportingText/SupportingText.style';
+import { getTextStyling } from '@components/SupportingText/SupportingText.style';
 
 export interface SupportingTextProps extends ComponentPropsWithoutRef<'span'> {
   isError?: boolean;
@@ -8,7 +8,7 @@ export interface SupportingTextProps extends ComponentPropsWithoutRef<'span'> {
 
 const SupportingText = ({ isError = false, children, ...attributes }: SupportingTextProps) => {
   return (
-    <span css={getTextStyle(isError)} {...attributes}>
+    <span css={getTextStyling(isError)} {...attributes}>
       {children}
     </span>
   );
