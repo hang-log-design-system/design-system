@@ -2,17 +2,17 @@ import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
 
-export const radioContainerStyle = css({
+export const radioContainerStyling = css({
   display: 'flex',
   flexDirection: 'column',
   gap: Theme.spacer.spacing2,
 });
 
-export const radioWrapperStyle = css({
+export const radioWrapperStyling = css({
   display: 'flex',
 });
 
-export const radioStyle = css({
+export const radioStyling = css({
   display: 'flex',
   alignItems: 'center',
   marginRight: Theme.spacer.spacing2,
@@ -22,7 +22,7 @@ export const radioStyle = css({
   },
 });
 
-export const labelStyle = css({
+export const labelStyling = css({
   position: 'relative',
   display: 'inline',
   alignItems: 'center',
@@ -44,6 +44,6 @@ export const labelStyle = css({
   },
 });
 
-export const textStyle = css({
+export const textStyling = css({
   color: Theme.color.gray800,
 });

@@ -2,11 +2,11 @@ import { InputHTMLAttributes } from 'react';
 
 import Label from '@components/Label/Label';
 import {
-  labelStyle,
-  radioContainerStyle,
-  radioStyle,
-  radioWrapperStyle,
-  textStyle,
+  labelStyling,
+  radioContainerStyling,
+  radioStyling,
+  radioWrapperStyling,
+  textStyling,
 } from '@components/RadioButton/RadioButton.style';
 import SupportingText from '@components/SupportingText/SupportingText';
 
@@ -18,18 +18,18 @@ interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const RadioButton = ({ options, label, supportingText, ...attributes }: RadioButtonProps) => {
   return (
-    <div css={radioContainerStyle}>
+    <div css={radioContainerStyling}>
       {label && (
         <Label id={attributes.id} required={attributes.required}>
           {label}
         </Label>
       )}
-      <div css={radioWrapperStyle}>
+      <div css={radioWrapperStyling}>
         {options.map((option) => (
-          <div css={radioStyle}>
-            <input type="radio" hidden id={option} name={attributes.name} />
-            <label htmlFor={option} css={labelStyle}></label>
-            <p css={textStyle}>{option}</p>
+          <div css={radioStyling}>
+            <input type="radio" hidden id={option} name={attributes.name} {...attributes} />
+            <label htmlFor={option} css={labelStyling}></label>
+            <p css={textStyling}>{option}</p>
           </div>
         ))}
       </div>
