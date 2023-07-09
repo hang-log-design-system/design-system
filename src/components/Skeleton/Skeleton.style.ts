@@ -1,7 +1,8 @@
-import { Theme } from '@/styles/Theme';
 import { css, keyframes } from '@emotion/react';
 
 import { SkeletonProps } from '@components/Skeleton/Skeleton';
+
+import { Theme } from '@styles/Theme';
 
 const skeletonAnimation = keyframes`
  0% {
@@ -15,13 +16,15 @@ const skeletonAnimation = keyframes`
   }
 `;
 
-export const getSkeletonStyling = ({ width, height }: Required<SkeletonProps>) => {
+export const getSkeletonStyling = ({ width, height, variant }: Required<SkeletonProps>) => {
   return css({
     width,
     height,
-    background: 'linear-gradient(-90deg, #aaa, #f0f0f0, #aaa, #f0f0f0)',
+    borderRadius: variant === 'square' ? Theme.spacer.spacing2 : '50%',
+
+    background: `linear-gradient(-90deg,${Theme.color.gray100}, ${Theme.color.gray200}, ${Theme.color.gray100}, ${Theme.color.gray200})`,
     backgroundSize: ' 400%',
+
     animation: `${skeletonAnimation} 5s infinite ease-out`,
-    borderRadius: Theme.spacer.spacing2,
   });
 };
