@@ -17,7 +17,7 @@ const informationStyle = css({
   gap: '12px',
 
   '& > h6': {
-    color: `${Theme.color.gray500}`,
+    color: Theme.color.gray500,
     fontSize: '12px',
     fontWeight: 400,
     textTransform: 'uppercase',

@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 
 import { labelStyling, requiredStyling } from '@components/Label/Label.style';
 
-interface LabelProps extends ComponentPropsWithoutRef<'label'> {
+export interface LabelProps extends ComponentPropsWithoutRef<'label'> {
   required?: boolean;
 }
 
