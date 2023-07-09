@@ -62,19 +62,17 @@ export const Sizes: Story = {
       <>
         <li css={informationStyle}>
           <h6>Small</h6>
-          <Select size="small" isError={isError} placeholder={placeholder}>
+          <Select size="small" isError={isError}>
             {children}
           </Select>
         </li>
         <li css={informationStyle}>
           <h6>Medium</h6>
-          <Select isError={isError} placeholder={placeholder}>
-            {children}
-          </Select>
+          <Select isError={isError}>{children}</Select>
         </li>
         <li css={informationStyle}>
           <h6>Large</h6>
-          <Select size="large" isError={isError} placeholder={placeholder}>
+          <Select size="large" isError={isError}>
             {children}
           </Select>
         </li>
