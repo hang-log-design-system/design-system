@@ -34,7 +34,6 @@ const meta = {
   },
   args: {
     size: 'medium',
-    placeholder: 'placeholder',
     isError: false,
     required: false,
     children: [
