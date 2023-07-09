@@ -1,6 +1,5 @@
 import { Size } from '@type/index';
-import type { ComponentPropsWithRef, ForwardedRef } from 'react';
-import { forwardRef } from 'react';
+import type { ComponentPropsWithRef } from 'react';
 
 import { getSizeStyling } from '@components/Heading/Heading.style';
 
@@ -17,10 +16,7 @@ const TAG_BY_SIZE = {
   xSmall: 'h6',
 } as const;
 
-const Heading = (
-  { size = 'medium', children, ...attributes }: HeadingProps,
-  ref: ForwardedRef<HTMLHeadingElement>
-) => {
+const Heading = ({ size = 'medium', children, ...attributes }: HeadingProps) => {
   const HeadingTag = TAG_BY_SIZE[size];
 
   return (
@@ -30,4 +26,4 @@ const Heading = (
   );
 };
 
-export default forwardRef(Heading);
+export default Heading;
