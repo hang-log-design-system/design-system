@@ -42,7 +42,7 @@ const Input = (
       )}
       <div css={[getSizeStyling(size), inputWrapperStyling(isError), getVariantStyling(variant)]}>
         {icon}
-        <input ref={ref} css={[getSizeStyling(size), getInputStyling(isError)]} {...attributes} />
+        <input ref={ref} css={[getSizeStyling(size), getInputStyling]} {...attributes} />
       </div>
       {supportingText && <SupportingText isError={isError}>{supportingText}</SupportingText>}
     </div>
