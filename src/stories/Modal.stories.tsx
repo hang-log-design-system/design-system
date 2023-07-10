@@ -1,5 +1,6 @@
 import SampleImage from '@assets/svg/modal-sample.svg';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 
 import Button from '@components/Button/Button';
 import Heading from '@components/Heading/Heading';
@@ -11,11 +12,10 @@ const meta = {
   component: Modal,
   argTypes: {
     children: {
-      control: { type: 'text' },
+      control: false,
     },
   },
   args: {
-    children: 'Modal',
     isOpen: false,
     hasCloseButton: true,
   },
@@ -24,60 +24,22 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const TextModal: Story = {
-  args: {
-    children: (
-      <>
-        <Heading>Title</Heading>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua.
-        </Text>
-      </>
-    ),
-  },
-  argTypes: {
-    children: {
-      control: false,
-    },
-  },
-};
+export const Default: Story = {
+  render: ({ ...args }) => {
+    const [showModal, setShowModal] = useState(false);
 
-export const ImageModal: Story = {
-  args: {
-    children: (
+    return (
       <>
-        <Heading>Title</Heading>
-        <SampleImage />
+        <Button onClick={() => setShowModal(true)}>Show Modal</Button>
+        <Modal {...args} isOpen={showModal} onClose={() => setShowModal(false)}>
+          <Heading>Title</Heading>
+          <SampleImage />
+          <Text>Sample Text</Text>
+          <Button variant="primary" onClick={() => setShowModal(false)}>
+            확인
+          </Button>
+        </Modal>
       </>
-    ),
-  },
-  argTypes: {
-    children: {
-      control: false,
-    },
-  },
-};
-
-export const TextWithButton: Story = {
-  args: {
-    children: (
-      <>
-        <Heading>Text with Button</Heading>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua.
-        </Text>
-        <div css={{ display: 'flex', width: '50%', justifyContent: 'space-between' }}>
-          <Button>취소</Button>
-          <Button variant="primary">확인</Button>
-        </div>
-      </>
-    ),
-  },
-  argTypes: {
-    children: {
-      control: false,
-    },
+    );
   },
 };
