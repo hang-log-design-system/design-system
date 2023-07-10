@@ -15,9 +15,9 @@ const color = {
   blue600: '#009ee2',
   blue500: '#00b2ff', // primary
   blue400: '#80d9ff',
-  blue300: '#80d9ff',
-  blue200: '#bfecff',
-  blue100: '#EAF9FF',
+  blue300: '#bbebff',
+  blue200: '#d8f3ff',
+  blue100: '#eaf9ff',
 
   red300: '#c50000', // dark red
   red200: '#ea0000', // red
