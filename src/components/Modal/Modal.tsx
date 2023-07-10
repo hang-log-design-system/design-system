@@ -1,6 +1,7 @@
 import CloseIcon from '@assets/svg/close-icon.svg';
 import type { PropsWithChildren } from 'react';
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 import { backdropStyling, closeIconStyling, dialogStyling } from '@components/Modal/Modal.style';
 
@@ -29,7 +30,7 @@ const Modal = ({ isOpen = false, onClose, hasCloseButton = true, children }: Mod
     };
   }, [isOpen]);
 
-  return (
+  return createPortal(
     <>
       {isOpen && (
         <>
@@ -44,7 +45,8 @@ const Modal = ({ isOpen = false, onClose, hasCloseButton = true, children }: Mod
           </dialog>
         </>
       )}
-    </>
+    </>,
+    document.body
   );
 };
 
