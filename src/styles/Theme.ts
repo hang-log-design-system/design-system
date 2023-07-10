@@ -22,6 +22,8 @@ const color = {
   red300: '#c50000', // dark red
   red200: '#ea0000', // red
   red100: '#fff2f2', // light red
+
+  green: '#2fc56e',
 };
 
 const text = {
