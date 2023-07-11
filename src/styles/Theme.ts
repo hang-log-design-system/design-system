@@ -1,34 +1,45 @@
 const color = {
-  black: 'black', // heading text
-  gray800: '#282828', // default text
+  /** heading text */
+  black: 'black',
+  /** default text */
+  gray800: '#282828',
   gray700: '#5e5e5e',
-  gray600: '#727272', // light text
+  /** light text */
+  gray600: '#727272',
   gray500: '#a6a6a6',
   gray400: '#bbbbbb',
   gray300: '#dddddd',
-  gray200: '#e8e8e8', // border
-  gray100: '#f3f3f3', // background
-  white: 'white', // background
+  /** border */
+  gray200: '#e8e8e8',
+  /** background */
+  gray100: '#f3f3f3',
+  /** background */
+  white: 'white',
 
   blue800: '#004765',
   blue700: '#006f9f',
   blue600: '#009ee2',
-  blue500: '#00b2ff', // primary
+  /** primary color */
+  blue500: '#00b2ff',
   blue400: '#80d9ff',
   blue300: '#80d9ff',
   blue200: '#bfecff',
   blue100: '#EAF9FF',
 
-  red300: '#c50000', // dark red
-  red200: '#ea0000', // red
-  red100: '#fff2f2', // light red
-};
+  /** dark red */
+  red300: '#c50000',
+  /** red */
+  red200: '#ea0000',
+  /** light red */
+  red100: '#fff2f2',
+} as const;
 
 const text = {
   large: {
     fontSize: '18px',
     lineHeight: '28px',
   },
+  /** default text font setting */
   medium: {
     fontSize: '16px',
     lineHeight: '24px',
@@ -41,7 +52,7 @@ const text = {
     fontSize: '12px',
     lineHeight: '20px',
   },
-};
+} as const;
 
 const heading = {
   xxLarge: {
@@ -56,6 +67,7 @@ const heading = {
     fontSize: '32px',
     lineHeight: '40px',
   },
+  /** default heading font setting */
   medium: {
     fontSize: '28px',
     lineHeight: '36px',
@@ -68,7 +80,7 @@ const heading = {
     fontSize: '20px',
     lineHeight: '28px',
   },
-};
+} as const;
 
 const spacer = {
   spacing0: '0',
@@ -81,13 +93,14 @@ const spacer = {
   spacing7: '64px',
   spacing8: '96px',
   spacing9: '128px',
-};
+} as const;
 
 const borderRadius = {
   small: '4px',
+  /** default border radius */
   medium: '8px',
   large: '16px',
-};
+} as const;
 
 const boxShadow = {
   shadow1: '0px 0px 0px 1px rgba(0, 0, 0, 0.05)',
@@ -100,7 +113,7 @@ const boxShadow = {
   shadow8: '0px 0px 5px 0px rgba(0, 0, 0, 0.15)',
   shadow9: '0px 0px 10px 0px rgba(0, 0, 0, 0.20)',
   shadow10: '0px 2px 4px 0px rgba(0, 0, 0, 0.06) inset',
-};
+} as const;
 
 export const Theme = {
   color,
