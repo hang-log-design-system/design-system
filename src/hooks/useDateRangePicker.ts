@@ -50,7 +50,6 @@ export const useDateRangePicker = () => {
   };
 
   const handleDateSelect = (dateString: string, onDaySelect?: CallableFunction) => {
-    console.log(dateString);
     setSelectedDateRange((prevSelectedDateRange) => {
       const startDate = prevSelectedDateRange.start ? new Date(prevSelectedDateRange.start) : null;
       const selectedDate = new Date(dateString);

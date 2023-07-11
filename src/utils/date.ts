@@ -82,10 +82,6 @@ const isDayOutOfRange = (
   const diffMilliseconds = currentDate.getTime() - startDate.getTime();
   const diffDays = diffMilliseconds / (1000 * 60 * 60 * 24);
 
-  // console.log(maxDateRange, '1111');
-
-  console.log(diffDays < -maxDateRange || diffDays > maxDateRange);
-
   return diffDays < -maxDateRange || diffDays > maxDateRange;
 };
 
