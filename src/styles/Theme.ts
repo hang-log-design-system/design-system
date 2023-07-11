@@ -119,7 +119,7 @@ const zIndex = {
   overlayTop: 3,
   overlayMiddle: 2,
   overlayBottom: 1,
-};
+} as const;
 
 export const Theme = {
   color,
