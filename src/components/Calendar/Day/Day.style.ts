@@ -28,59 +28,63 @@ export const dayStyling = css({
 });
 
 export const getTodayStyling = (isToday: boolean) => {
-  return isToday
-    ? css({
+  return (
+    isToday &&
+    css({
+      backgroundColor: Theme.color.blue300,
+
+      color: Theme.color.blue800,
+
+      '&:hover': {
         backgroundColor: Theme.color.blue300,
-
-        color: Theme.color.blue800,
-
-        '&:hover': {
-          backgroundColor: Theme.color.blue300,
-        },
-      })
-    : undefined;
+      },
+    })
+  );
 };
 
 export const getDayInRangeStyling = (isInRange: boolean) => {
-  return isInRange
-    ? css({
+  return (
+    isInRange &&
+    css({
+      backgroundColor: Theme.color.blue100,
+
+      color: Theme.color.blue600,
+
+      '&:hover': {
         backgroundColor: Theme.color.blue100,
-
-        color: Theme.color.blue600,
-
-        '&:hover': {
-          backgroundColor: Theme.color.blue100,
-        },
-      })
-    : undefined;
+      },
+    })
+  );
 };
 
 export const getSelectedDayStyling = (isSelected: boolean) => {
-  return isSelected
-    ? css({
+  return (
+    isSelected &&
+    css({
+      backgroundColor: Theme.color.blue500,
+
+      color: Theme.color.white,
+
+      '&:hover': {
         backgroundColor: Theme.color.blue500,
-
-        color: Theme.color.white,
-
-        '&:hover': {
-          backgroundColor: Theme.color.blue500,
-        },
-      })
-    : undefined;
+      },
+    })
+  );
 };
 
 export const getDisabledDayStyling = (isDisabled: boolean) => {
-  return isDisabled
-    ? css({
+  return (
+    isDisabled &&
+    css({
+      backgroundColor: Theme.color.white,
+
+      color: Theme.color.gray500,
+
+      pointerEvents: 'none',
+
+      '&:hover': {
         backgroundColor: Theme.color.white,
-
-        color: Theme.color.gray500,
-
-        pointerEvents: 'none',
-
-        '&:hover': {
-          backgroundColor: Theme.color.white,
-        },
-      })
-    : undefined;
+      },
+    })
+  );
 };
