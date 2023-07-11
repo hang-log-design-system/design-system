@@ -105,7 +105,7 @@ export const getDayInfo = ({
     currentDate.getDate()
   );
 
-  const isNotDay = index < yearMonthData.firstDay || yearMonthData.lastDate < date;
+  const isDate = index >= yearMonthData.firstDay && yearMonthData.lastDate >= date;
   const isToday = todayDateString === dateString;
   const isSelected =
     selectedDate === date || dateRange?.start === dateString || dateRange?.end === dateString;
@@ -117,5 +117,5 @@ export const getDayInfo = ({
     (isFutureDaysRestricted && isDayInFuture(dateString, todayDateString)) ||
     (hasRangeRestriction && isDayOutOfRange(dateRange, dateString, maxDateRange));
 
-  return { date, isNotDay, dateString, isToday, isSelected, isInRange, isRestricted };
+  return { date, isDate, dateString, isToday, isSelected, isInRange, isRestricted };
 };

@@ -58,7 +58,7 @@ const Calendar = ({
       </section>
       <section css={dayContainerStyling}>
         {Array.from({ length: dayBoxSize }, (_, index) => {
-          const { date, isNotDay, dateString, isToday, isSelected, isInRange, isRestricted } =
+          const { date, isDate, dateString, isToday, isSelected, isInRange, isRestricted } =
             getDayInfo({
               index,
               yearMonthData,
@@ -70,9 +70,7 @@ const Calendar = ({
               selectedDate,
             });
 
-          return isNotDay ? (
-            <Day key={index} />
-          ) : (
+          return isDate ? (
             <Day
               key={dateString}
               day={date}
@@ -82,6 +80,8 @@ const Calendar = ({
               isDisabled={isRestricted}
               onClick={onDateClick?.(date, yearMonthData)}
             />
+          ) : (
+            <Day key={index} />
           );
         })}
       </section>
