@@ -5,10 +5,10 @@ import { useMemo } from 'react';
 import { getDayBoxSize, getDayInfo } from '@utils/date';
 
 import {
-  containerStyle,
-  dayContainerStyle,
-  dayOfWeekContainerStyle,
-  headerStyle,
+  containerStyling,
+  dayContainerStyling,
+  dayOfWeekContainerStyling,
+  headerStyling,
 } from '@components/Calendar/Calendar.style';
 import Day from '@components/Calendar/Day/Day';
 import Heading from '@components/Heading/Heading';
@@ -45,18 +45,18 @@ const Calendar = ({
   const dayBoxSize = useMemo(() => getDayBoxSize(yearMonthData), []);
 
   return (
-    <div css={containerStyle}>
-      <header css={headerStyle}>
+    <div css={containerStyling}>
+      <header css={headerStyling}>
         <Heading size="xSmall">
           {yearMonthData.year}.{yearMonthData.month}
         </Heading>
       </header>
-      <section css={[dayContainerStyle, dayOfWeekContainerStyle]}>
+      <section css={[dayContainerStyling, dayOfWeekContainerStyling]}>
         {DAYS_OF_WEEK.map((day) => (
           <Day key={day} day={day} />
         ))}
       </section>
-      <section css={dayContainerStyle}>
+      <section css={dayContainerStyling}>
         {Array.from({ length: dayBoxSize }, (_, index) => {
           const { date, isNotDay, dateString, isToday, isSelected, isInRange, isRestricted } =
             getDayInfo({

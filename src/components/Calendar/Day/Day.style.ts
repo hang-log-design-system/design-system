@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
 
-export const dayContainerStyle = css({
+export const dayContainerStyling = css({
   minWidth: '40px',
   width: '40px',
   height: '40px',
@@ -27,7 +27,7 @@ export const dayStyling = css({
   },
 });
 
-export const getTodayStyle = (isToday: boolean) => {
+export const getTodayStyling = (isToday: boolean) => {
   return isToday
     ? css({
         backgroundColor: Theme.color.blue300,

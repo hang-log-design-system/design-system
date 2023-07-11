@@ -8,7 +8,10 @@ import { formatDate } from '@utils/date';
 import { useDateRangePicker } from '@hooks/useDateRangePicker';
 
 import Calendar from '@components/Calendar/Calendar';
-import { containerStyle, nextButtonStyle } from '@components/DateRangePicker/DateRangePicker.style';
+import {
+  containerStyling,
+  nextButtonStyling,
+} from '@components/DateRangePicker/DateRangePicker.style';
 
 export interface DateRangePickerProps {
   /** 오늘 이후 날짜를 막을 것인지에 대한 여부 */
@@ -36,7 +39,7 @@ const DateRangePicker = ({
   };
 
   return (
-    <div css={containerStyle}>
+    <div css={containerStyling}>
       <button
         type="button"
         aria-label="show previous month"
@@ -63,7 +66,7 @@ const DateRangePicker = ({
         onDateClick={handleDateClick}
       />
       <button
-        css={nextButtonStyle}
+        css={nextButtonStyling}
         type="button"
         aria-label="show next month"
         onClick={handleCalendarChange(CALENDAR_MONTH_CHANGE.NEXT_MONTH)}

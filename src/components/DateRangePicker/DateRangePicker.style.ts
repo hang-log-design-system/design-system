@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
 
-export const containerStyle = css({
+export const containerStyling = css({
   position: 'relative',
   display: 'inline-flex',
   gap: Theme.spacer.spacing3,
@@ -35,6 +35,6 @@ export const containerStyle = css({
   },
 });
 
-export const nextButtonStyle = css({
+export const nextButtonStyling = css({
   right: Theme.spacer.spacing3,
 });

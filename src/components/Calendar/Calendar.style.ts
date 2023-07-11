@@ -2,11 +2,11 @@ import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
 
-export const containerStyle = css({
+export const containerStyling = css({
   display: 'inline-block',
 });
 
-export const headerStyle = css({
+export const headerStyling = css({
   marginBottom: Theme.spacer.spacing3,
 
   textAlign: 'center',
@@ -16,7 +16,7 @@ export const headerStyle = css({
   },
 });
 
-export const dayContainerStyle = css({
+export const dayContainerStyling = css({
   display: 'grid',
   gridTemplateColumns: 'repeat(7, 40px)',
   gridAutoRows: '40px',
@@ -24,7 +24,7 @@ export const dayContainerStyle = css({
   rowGap: '2px',
 });
 
-export const dayOfWeekContainerStyle = css({
+export const dayOfWeekContainerStyling = css({
   marginBottom: Theme.spacer.spacing2,
 
   '& div': {

@@ -1,10 +1,10 @@
 import {
-  dayContainerStyle,
+  dayContainerStyling,
   dayStyling,
   getDayInRangeStyling,
   getDisabledDayStyling,
   getSelectedDayStyling,
-  getTodayStyle,
+  getTodayStyling,
 } from '@components/Calendar/Day/Day.style';
 
 interface DayProps {
@@ -31,12 +31,12 @@ const Day = ({
   onClick,
 }: DayProps) => {
   return (
-    <div css={dayContainerStyle}>
+    <div css={dayContainerStyling}>
       {day && (
         <span
           css={[
             dayStyling,
-            getTodayStyle(isToday),
+            getTodayStyling(isToday),
             getDayInRangeStyling(isInRange),
             getSelectedDayStyling(isSelected),
             getDisabledDayStyling(isDisabled),
