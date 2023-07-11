@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { ToastProps } from '@components/Toast/Toast';
+import type { ToastProps } from '@components/Toast/Toast';
 
 import { Theme } from '@styles/Theme';
 import { fadeIn, fadeOut, moveUp } from '@styles/animation';
