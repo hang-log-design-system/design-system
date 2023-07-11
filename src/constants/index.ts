@@ -11,3 +11,6 @@ export const CALENDAR_MONTH_CHANGE = {
 } as const;
 
 export const DEFAULT_MAX_DATE_RANGE = 60;
+
+export const TOAST_SHOW_DURATION = 3000;
+export const TOAST_CLOSE_ANIMATION_DURATION = 600;

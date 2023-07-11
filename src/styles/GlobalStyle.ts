@@ -18,4 +18,9 @@ export const GlobalStyle = css({
     fontSize: '16px',
     color: Theme.color.gray800,
   },
+
+  a: {
+    textDecoration: 'none',
+    color: Theme.color.blue700,
+  },
 });

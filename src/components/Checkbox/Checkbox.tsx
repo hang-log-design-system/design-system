@@ -6,7 +6,7 @@ import type { ComponentPropsWithRef, ForwardedRef } from 'react';
 
 import { checkboxStyling, inputStyling } from '@components/Checkbox/Checkbox.style';
 
-interface CheckboxProps extends ComponentPropsWithRef<'input'> {
+export interface CheckboxProps extends ComponentPropsWithRef<'input'> {
   label?: string;
   isChecked?: boolean;
 }
