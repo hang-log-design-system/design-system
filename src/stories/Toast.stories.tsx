@@ -14,11 +14,9 @@ const meta = {
     variant: {
       control: { type: 'radio' },
       options: ['default', 'success', 'error'],
-      description: 'Toast의 상태 - 디폴트, 성공, 에러',
     },
-    isClosable: {
+    hasCloseButton: {
       control: { type: 'boolean' },
-      description: 'Toast를 닫을 수 있는지에 대한 여부',
     },
     showDuration: {
       control: { type: 'number' },
@@ -26,7 +24,7 @@ const meta = {
   },
   args: {
     variant: 'default',
-    isClosable: false,
+    hasCloseButton: false,
     showDuration: 5000,
     children: 'Some message',
   },
@@ -152,7 +150,7 @@ export const ClosableToast: Story = {
     );
   },
   args: {
-    isClosable: true,
+    hasCloseButton: true,
   },
 };
 
@@ -173,7 +171,7 @@ export const withIcon: Story = {
     );
   },
   args: {
-    isClosable: true,
+    hasCloseButton: true,
     showDuration: 1000000,
   },
   name: 'Toast with Icon',
@@ -202,6 +200,6 @@ export const PilingToast: Story = {
     );
   },
   args: {
-    isClosable: true,
+    hasCloseButton: true,
   },
 };

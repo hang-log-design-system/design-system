@@ -23,7 +23,7 @@ export interface ToastProps extends ComponentPropsWithoutRef<'div'> {
    *
    * @default false
    */
-  isClosable?: boolean;
+  hasCloseButton?: boolean;
   /**
    * Toast를 보여주는 시간
    *
@@ -36,7 +36,7 @@ export interface ToastProps extends ComponentPropsWithoutRef<'div'> {
 
 const Toast = ({
   variant = 'default',
-  isClosable = false,
+  hasCloseButton = false,
   showDuration = TOAST_SHOW_DURATION,
   closeToast,
   children,
@@ -66,7 +66,7 @@ const Toast = ({
       {...attributes}
     >
       <span css={contentStyling}>{children}</span>
-      {isClosable && <CloseIcon css={closeIconStyling} onClick={handleClose} />}
+      {hasCloseButton && <CloseIcon css={closeIconStyling} onClick={handleClose} />}
     </div>,
     document.getElementById('toast-container') as Element
   );
