@@ -1,3 +1,4 @@
+import { fadeIn, fadeOut, moveUp } from '@/styles/animation';
 import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
@@ -35,6 +36,8 @@ export const dialogStyling = css({
 
   backgroundColor: Theme.color.white,
   boxShadow: Theme.boxShadow.shadow8,
+
+  animation: `${fadeIn} 0.2s ease-in`,
 });
 
 export const closeIconStyling = css({
