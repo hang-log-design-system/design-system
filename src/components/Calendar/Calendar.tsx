@@ -13,7 +13,7 @@ import {
 import Day from '@components/Calendar/Day/Day';
 import Heading from '@components/Heading/Heading';
 
-interface CalendarProps {
+export interface CalendarProps {
   /** 현재 Date */
   currentDate: Date;
   /** 현재 년월 정보 */
@@ -22,10 +22,14 @@ interface CalendarProps {
   dateRange?: SelectedDateRange;
   /** 오늘 이후 날짜를 막을 것인지에 대한 여부 */
   isFutureDaysRestricted?: boolean;
+  /** 특정 범위를 벗어나는 날짜에 대해서 선택 불가능할지에 대한 여부 */
+  hasRangeRestriction?: boolean;
+  /** 최대로 선택할 수 있는 날짜 범위 */
+  maxDateRange?: number;
   /** 현재 선택된 날짜 */
-  selectedDay?: number;
+  selectedDate?: number;
   /** 특정 날짜를 선택했을 때 실행할 함수 */
-  onDayClick?: CallableFunction;
+  onDateClick?: CallableFunction;
 }
 
 const Calendar = ({
@@ -33,8 +37,10 @@ const Calendar = ({
   yearMonthData,
   dateRange,
   isFutureDaysRestricted,
-  selectedDay,
-  onDayClick,
+  hasRangeRestriction,
+  maxDateRange,
+  selectedDate,
+  onDateClick,
 }: CalendarProps) => {
   const dayBoxSize = useMemo(() => getDayBoxSize(yearMonthData), []);
 
@@ -52,25 +58,29 @@ const Calendar = ({
       </section>
       <section css={dayContainerStyle}>
         {Array.from({ length: dayBoxSize }, (_, index) => {
-          const { day, isNotDay, isToday, isSelected, isInRange, isRestricted } = getDayInfo({
-            index,
-            yearMonthData,
-            currentDate,
-            dateRange,
-            isFutureDaysRestricted,
-            selectedDay,
-          });
+          const { date, isNotDay, dateString, isToday, isSelected, isInRange, isRestricted } =
+            getDayInfo({
+              index,
+              yearMonthData,
+              currentDate,
+              dateRange,
+              maxDateRange,
+              isFutureDaysRestricted,
+              hasRangeRestriction,
+              selectedDate,
+            });
 
           return isNotDay ? (
             <Day key={index} />
           ) : (
             <Day
-              day={day}
+              key={dateString}
+              day={date}
               isToday={isToday}
               isSelected={isSelected}
               isInRange={isInRange}
               isDisabled={isRestricted}
-              onClick={onDayClick?.(day, yearMonthData)}
+              onClick={onDateClick?.(date, yearMonthData)}
             />
           );
         })}

@@ -9,3 +9,5 @@ export const CALENDAR_MONTH_CHANGE = {
   NEXT_MONTH: 1,
   PREVIOUS_MONTH: -1,
 } as const;
+
+export const DEFAULT_MAX_DATE_RANGE = 60;

@@ -3,29 +3,27 @@ import { useState } from 'react';
 
 import { getNewYearMonthInfo, getYearMonthInfo } from '@utils/date';
 
-const useCalendar = () => {
+export const useCalendar = () => {
   const currentDate = new Date();
   const currentYearMonth = getYearMonthInfo(currentDate);
 
-  const [selectedDay, setSelectedDay] = useState<number>(currentDate.getDate());
+  const [selectedDate, setSelectedDate] = useState<number>(currentDate.getDate());
   const [yearMonth, setYearMonth] = useState<YearMonth>(currentYearMonth);
 
-  const handleDayClick = (day: number) => () => {
-    setSelectedDay(day);
+  const handleDateClick = (date: number) => () => {
+    setSelectedDate(date);
   };
 
   const handleYearMonthUpdate = (change: number) => () => {
-    setSelectedDay(0);
+    setSelectedDate(0);
     setYearMonth((prev) => getNewYearMonthInfo(prev, change));
   };
 
   return {
     currentDate,
     yearMonth,
-    selectedDay,
-    handleDayClick,
+    selectedDate,
+    handleDateClick,
     handleYearMonthUpdate,
   };
 };
-
-export default useCalendar;

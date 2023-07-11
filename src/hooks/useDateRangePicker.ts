@@ -49,10 +49,11 @@ export const useDateRangePicker = () => {
     setSelectedDateRange({ start: null, end: null });
   };
 
-  const handleDaySelect = (date: string, onDaySelect?: CallableFunction) => {
+  const handleDateSelect = (dateString: string, onDaySelect?: CallableFunction) => {
+    console.log(dateString);
     setSelectedDateRange((prevSelectedDateRange) => {
       const startDate = prevSelectedDateRange.start ? new Date(prevSelectedDateRange.start) : null;
-      const selectedDate = new Date(date);
+      const selectedDate = new Date(dateString);
 
       const nextSelectedDates: SelectedDateRange = {
         start: null,
@@ -60,13 +61,13 @@ export const useDateRangePicker = () => {
       };
 
       if (startDate && !prevSelectedDateRange.end && selectedDate < startDate) {
-        nextSelectedDates.start = date;
+        nextSelectedDates.start = dateString;
         nextSelectedDates.end = prevSelectedDateRange.start;
       } else if (startDate && !prevSelectedDateRange.end) {
         nextSelectedDates.start = prevSelectedDateRange.start;
-        nextSelectedDates.end = date;
+        nextSelectedDates.end = dateString;
       } else {
-        nextSelectedDates.start = date;
+        nextSelectedDates.start = dateString;
       }
 
       onDaySelect?.(nextSelectedDates);
@@ -81,6 +82,6 @@ export const useDateRangePicker = () => {
     handleCalendarChange,
     selectedDateRange,
     resetSelectedDateRange,
-    handleDaySelect,
+    handleDateSelect,
   };
 };

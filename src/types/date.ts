@@ -5,10 +5,10 @@ export interface YearMonth {
   month: string;
   /** 월의 시작일 Date */
   startDate: Date;
-  /** 월의 첫 번째 날 */
+  /** 월의 첫 번째 요일 */
   firstDay: number;
   /** 월의 마지막 번째 날 */
-  lastDay: number;
+  lastDate: number;
 }
 
 export interface DayInfo {
@@ -20,10 +20,14 @@ export interface DayInfo {
   currentDate: Date;
   /** 현재 선택된 날짜 범위 */
   dateRange?: SelectedDateRange;
-  /** 현재 선택된 날짜 */
-  selectedDay?: number;
-  /** 현재 날짜가 선택된 날짜 범위 안에 있는지에 대한 여부 */
+  /** 최대로 선택할 수 있는 날짜 범위 */
+  maxDateRange?: number;
+  /** 오늘 이후 날짜를 막을 것인지에 대한 여부 */
   isFutureDaysRestricted?: boolean;
+  /** 특정 범위를 벗어나는 날짜에 대해서 선택 불가능할지에 대한 여부 */
+  hasRangeRestriction?: boolean;
+  /** 현재 선택된 날짜 */
+  selectedDate?: number;
 }
 
 export interface DateRangePickerCalendar {

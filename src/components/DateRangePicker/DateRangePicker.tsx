@@ -1,6 +1,6 @@
 import LeftIcon from '@assets/svg/left-icon.svg';
 import RightIcon from '@assets/svg/right-icon.svg';
-import { CALENDAR_MONTH_CHANGE } from '@constants/index';
+import { CALENDAR_MONTH_CHANGE, DEFAULT_MAX_DATE_RANGE } from '@constants/index';
 import type { YearMonth } from '@type/date';
 
 import { formatDate } from '@utils/date';
@@ -10,20 +10,29 @@ import { useDateRangePicker } from '@hooks/useDateRangePicker';
 import Calendar from '@components/Calendar/Calendar';
 import { containerStyle, nextButtonStyle } from '@components/DateRangePicker/DateRangePicker.style';
 
-interface DateRangePickerProps {
+export interface DateRangePickerProps {
   /** 오늘 이후 날짜를 막을 것인지에 대한 여부 */
   isFutureDaysRestricted?: boolean;
+  /** 특정 범위를 벗어나는 날짜에 대해서 선택 불가능할지에 대한 여부 */
+  hasRangeRestriction?: boolean;
+  /** 최대로 선택할 수 있는 날짜 범위 */
+  maxDateRange?: number;
   /** 날짜를 선택했을 때 실행할 함수 */
-  onDaySelect?: CallableFunction;
+  onDateSelect?: CallableFunction;
 }
 
-const DateRangePicker = ({ isFutureDaysRestricted = false, onDaySelect }: DateRangePickerProps) => {
-  const { currentDate, calendarData, handleCalendarChange, selectedDateRange, handleDaySelect } =
+const DateRangePicker = ({
+  isFutureDaysRestricted = false,
+  hasRangeRestriction = false,
+  maxDateRange = DEFAULT_MAX_DATE_RANGE,
+  onDateSelect,
+}: DateRangePickerProps) => {
+  const { currentDate, calendarData, handleCalendarChange, selectedDateRange, handleDateSelect } =
     useDateRangePicker();
 
-  const handleDayClick = (day: number, yearMonth: YearMonth) => () => {
-    const date = formatDate(yearMonth.year, yearMonth.month, day);
-    handleDaySelect(date, onDaySelect);
+  const handleDateClick = (date: number, yearMonth: YearMonth) => () => {
+    const clickedDate = formatDate(yearMonth.year, yearMonth.month, date);
+    handleDateSelect(clickedDate, onDateSelect);
   };
 
   return (
@@ -40,14 +49,18 @@ const DateRangePicker = ({ isFutureDaysRestricted = false, onDaySelect }: DateRa
         yearMonthData={calendarData.prevYearMonth}
         dateRange={selectedDateRange}
         isFutureDaysRestricted={isFutureDaysRestricted}
-        onDayClick={handleDayClick}
+        hasRangeRestriction={hasRangeRestriction}
+        maxDateRange={maxDateRange}
+        onDateClick={handleDateClick}
       />
       <Calendar
         currentDate={currentDate}
         yearMonthData={calendarData.currentYearMonth}
         dateRange={selectedDateRange}
         isFutureDaysRestricted={isFutureDaysRestricted}
-        onDayClick={handleDayClick}
+        hasRangeRestriction={hasRangeRestriction}
+        maxDateRange={maxDateRange}
+        onDateClick={handleDateClick}
       />
       <button
         css={nextButtonStyle}
