@@ -9,7 +9,7 @@ import {
 } from '@components/RadioButton/RadioButton.style';
 import SupportingText from '@components/SupportingText/SupportingText';
 
-interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
   /** Radio에서 선택할 수 있는 문자열 option*/
   options: string[];
   /** RadioButton의 라벨 텍스트 */
