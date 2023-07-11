@@ -1,7 +1,7 @@
-import { fadeIn, fadeOut, moveUp } from '@/styles/animation';
 import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
+import { fadeIn } from '@styles/animation';
 
 export const backdropStyling = css({
   position: 'fixed',
@@ -12,7 +12,7 @@ export const backdropStyling = css({
   width: '100%',
   height: '100%',
 
-  backgroundColor: 'rgba(128, 128, 128, 0.5)',
+  backgroundColor: 'rgba(0, 0, 0, .15)',
 });
 
 export const dialogStyling = css({
@@ -20,7 +20,6 @@ export const dialogStyling = css({
   top: '50%',
   transform: 'translateY(-50%)',
   zIndex: Theme.zIndex.overlayTop,
-
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

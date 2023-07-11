@@ -31,11 +31,11 @@ export const Default: Story = {
     return (
       <>
         <Button onClick={() => setShowModal(true)}>Show Modal</Button>
-        <Modal {...args} isOpen={showModal} onClose={() => setShowModal(false)}>
+        <Modal {...args} isOpen={showModal} closeModal={() => setShowModal(false)}>
           <Heading>Title</Heading>
           <SampleImage />
           <Text>Sample Text</Text>
-          <Button variant="primary" onClick={() => setShowModal(false)}>
+          <Button variant="primary" onClick={() => setShowModal(false)} css={{ width: '100%' }}>
             확인
           </Button>
         </Modal>

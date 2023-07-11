@@ -7,26 +7,26 @@ import { backdropStyling, closeIconStyling, dialogStyling } from '@components/Mo
 
 export interface ModalProps extends PropsWithChildren {
   isOpen: boolean;
-  onClose: () => void;
+  closeModal: () => void;
   hasCloseButton?: boolean;
 }
 
-const Modal = ({ isOpen = false, onClose, hasCloseButton = true, children }: ModalProps) => {
-  useEffect(() => {
-    const onESC = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
-    };
+const Modal = ({ isOpen = false, closeModal, hasCloseButton = true, children }: ModalProps) => {
+  const onEscClicked = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  };
 
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', onESC);
+      window.addEventListener('keydown', onEscClicked);
     }
 
     return () => {
       document.body.style.overflow = 'auto';
-      window.removeEventListener('keydown', onESC);
+      window.removeEventListener('keydown', onEscClicked);
     };
   }, [isOpen]);
 
@@ -34,10 +34,15 @@ const Modal = ({ isOpen = false, onClose, hasCloseButton = true, children }: Mod
     <>
       {isOpen && (
         <>
-          <div css={backdropStyling} onClick={onClose} />
+          <div css={backdropStyling} onClick={closeModal} />
           <dialog css={dialogStyling}>
             {hasCloseButton && (
-              <button type="button" onClick={onClose} css={closeIconStyling}>
+              <button
+                type="button"
+                aria-label="close-button"
+                onClick={closeModal}
+                css={closeIconStyling}
+              >
                 <CloseIcon />
               </button>
             )}
