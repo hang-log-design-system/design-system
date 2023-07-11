@@ -1,7 +1,8 @@
-import { Theme } from '@/styles/Theme';
 import { css } from '@emotion/react';
 
 import type { InputProps } from '@components/Input/Input';
+
+import { Theme } from '@styles/Theme';
 
 export const inputContainerStyling = css({
   display: 'flex',
@@ -76,15 +77,13 @@ export const getSizeStyling = (size: Required<InputProps>['size']) => {
   return style[size];
 };
 
-export const getInputStyling = (isError: Required<InputProps>['isError']) => {
-  return css({
-    width: '100%',
-    paddingLeft: 0,
-    paddingRight: 0,
-    border: 'none',
-    borderRadius: Theme.borderRadius.small,
-    outline: 0,
+export const getInputStyling = css({
+  width: '100%',
+  paddingLeft: 0,
+  paddingRight: 0,
+  border: 'none',
+  borderRadius: Theme.borderRadius.small,
+  outline: 0,
 
-    backgroundColor: 'transparent',
-  });
-};
+  backgroundColor: 'transparent',
+});

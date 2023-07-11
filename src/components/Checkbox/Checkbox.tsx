@@ -4,9 +4,9 @@ import { useCallback } from 'react';
 import { forwardRef, useState } from 'react';
 import type { ComponentPropsWithRef, ForwardedRef } from 'react';
 
-import { checkboxStyle, inputStyle } from '@components/Checkbox/Checkbox.style';
+import { checkboxStyling, inputStyling } from '@components/Checkbox/Checkbox.style';
 
-interface CheckboxProps extends ComponentPropsWithRef<'input'> {
+export interface CheckboxProps extends ComponentPropsWithRef<'input'> {
   label?: string;
   isChecked?: boolean;
 }
@@ -22,8 +22,15 @@ const Checkbox = (
   }, [checked]);
 
   return (
-    <label css={checkboxStyle} htmlFor={id}>
-      <input css={inputStyle} id={id} checked={checked} type="checkbox" {...attributes} ref={ref} />
+    <label css={checkboxStyling} htmlFor={id}>
+      <input
+        css={inputStyling}
+        id={id}
+        checked={checked}
+        type="checkbox"
+        {...attributes}
+        ref={ref}
+      />
       {checked ? (
         <CheckedIcon onClick={handleChecked} />
       ) : (

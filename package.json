@@ -2,6 +2,7 @@
   "name": "hang-log-design-system",
   "version": "0.0.1",
   "description": "행록 디자인 시스템",
+  "homepage": "https://github.com/hang-log-design-system/design-system",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,11 +12,30 @@
     "dev": "webpack serve --mode development --open --hot",
     "build": "webpack --mode production",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "publish:npm": "rm -rf dist && mkdir dist && tsc && rm -rf ./dist/stories && cp -r ./src/assets ./dist && tsc-alias"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "react",
+    "ui",
+    "design-system",
+    "react-components",
+    "uikit",
+    "components",
+    "emotion",
+    "typescript",
+    "library"
+  ],
+  "author": "Ashley Heo <ashleysyheo@gmail.com> (https://github.com/ashleysyheo)",
+  "contributors": [
+    "Woochan Lim <dlaxodud1217@gmail.com> (https://github.com/dladncks1217)",
+    "Dahye Yun <06robin11@gmail.com> (https://github.com/Dahyeeee)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hang-log-design-system/design-system.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -53,9 +73,13 @@
     "prettier": "^2.8.8",
     "storybook": "^7.0.25",
     "ts-loader": "^9.4.4",
+    "tsc-alias": "^1.8.7",
     "typescript": "^5.1.6",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "bugs": {
+    "url": "https://github.com/hang-log-design-system/design-system/issues"
   }
 }

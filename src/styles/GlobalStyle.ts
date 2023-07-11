@@ -1,5 +1,6 @@
-import { Theme } from '@/styles/Theme';
 import { css } from '@emotion/react';
+
+import { Theme } from '@styles/Theme';
 
 export const GlobalStyle = css({
   '*': {
@@ -16,5 +17,10 @@ export const GlobalStyle = css({
     fontFamily: `system-ui, -apple-system, BlinkMacSystemFont, 'Open Sans', 'Helvetica Neue'`,
     fontSize: '16px',
     color: Theme.color.gray800,
+  },
+
+  a: {
+    textDecoration: 'none',
+    color: Theme.color.blue700,
   },
 });

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-export const checkboxStyle = css({
+export const checkboxStyling = css({
   display: 'flex',
   gap: '12px',
   alignItems: 'center',
@@ -11,7 +11,7 @@ export const checkboxStyle = css({
   },
 });
 
-export const inputStyle = css({
+export const inputStyling = css({
   display: 'none',
   padding: 0,
 });
