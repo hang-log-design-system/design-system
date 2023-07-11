@@ -47,6 +47,7 @@ module.exports = {
       '@constants': path.resolve(__dirname, './src/constants'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@stories': path.resolve(__dirname, './src/stories'),
+      '@utils': path.resolve(__dirname, './src/utils'),
     },
   },
 
