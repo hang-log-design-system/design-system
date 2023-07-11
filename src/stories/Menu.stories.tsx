@@ -8,8 +8,8 @@ const meta = {
   args: {
     title: 'Menu',
     menus: [
-      { name: '로그인', onClick: () => console.log('login') },
-      { name: '로그아웃', onClick: () => console.log('logout') },
+      { name: '로그인', onClick: () => {} },
+      { name: '로그아웃', onClick: () => {} },
     ],
   },
 } satisfies Meta<typeof Menu>;

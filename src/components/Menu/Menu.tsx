@@ -5,7 +5,9 @@ import type { ButtonProps } from '@components/Button/Button';
 import { menuContainerStyling, menuStyling } from '@components/Menu/Menu.style';
 
 interface Menu {
+  /** 메뉴 이름   */
   name: string;
+  /** 메뉴를 클릭했을 때 실행시킬 함수  */
   onClick: () => void;
 }
 
