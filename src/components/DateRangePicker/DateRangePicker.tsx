@@ -30,7 +30,7 @@ const DateRangePicker = ({
   maxDateRange = DEFAULT_MAX_DATE_RANGE,
   onDateSelect,
 }: DateRangePickerProps) => {
-  const { currentDate, calendarData, handleCalendarChange, selectedDateRange, handleDateSelect } =
+  const { currentDate, calendarData, handleMonthChange, selectedDateRange, handleDateSelect } =
     useDateRangePicker();
 
   const handleDateClick = (date: number, yearMonth: YearMonth) => () => {
@@ -43,7 +43,7 @@ const DateRangePicker = ({
       <button
         type="button"
         aria-label="show previous month"
-        onClick={handleCalendarChange(CALENDAR_MONTH_CHANGE.PREVIOUS_MONTH)}
+        onClick={handleMonthChange(CALENDAR_MONTH_CHANGE.PREVIOUS_MONTH)}
       >
         <LeftIcon />
       </button>
@@ -69,7 +69,7 @@ const DateRangePicker = ({
         css={nextButtonStyling}
         type="button"
         aria-label="show next month"
-        onClick={handleCalendarChange(CALENDAR_MONTH_CHANGE.NEXT_MONTH)}
+        onClick={handleMonthChange(CALENDAR_MONTH_CHANGE.NEXT_MONTH)}
       >
         <RightIcon />
       </button>

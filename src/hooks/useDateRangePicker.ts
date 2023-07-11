@@ -21,7 +21,7 @@ export const useDateRangePicker = () => {
     end: null,
   });
 
-  const handleCalendarChange = (change: number) => () => {
+  const handleMonthChange = (change: number) => () => {
     setCalendarData((prevCalendarData) => {
       const newCalendarData = { ...prevCalendarData };
 
@@ -78,7 +78,7 @@ export const useDateRangePicker = () => {
   return {
     currentDate,
     calendarData,
-    handleCalendarChange,
+    handleMonthChange,
     selectedDateRange,
     resetSelectedDateRange,
     handleDateSelect,
