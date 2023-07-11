@@ -29,8 +29,8 @@ const Menu = ({ title, menus, titleVariant = 'text' }: MenuProps) => {
     }
   };
 
-  const handleMenuClick = (menu: Menu) => {
-    menu.onClick();
+  const handleMenuClick = (onClick: Menu['onClick']) => () => {
+    onClick();
     setShowMenu(false);
   };
 
@@ -47,9 +47,9 @@ const Menu = ({ title, menus, titleVariant = 'text' }: MenuProps) => {
       </Button>
       {showMenu && (
         <section css={menuContainerStyling}>
-          {menus.map((menu) => (
-            <div onClick={() => handleMenuClick(menu)} css={menuStyling}>
-              {menu.name}
+          {menus.map(({ name, onClick }) => (
+            <div onClick={handleMenuClick(onClick)} css={menuStyling}>
+              {name}
             </div>
           ))}
         </section>
