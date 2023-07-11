@@ -22,9 +22,9 @@ const color = {
   /** primary color */
   blue500: '#00b2ff',
   blue400: '#80d9ff',
-  blue300: '#80d9ff',
-  blue200: '#bfecff',
-  blue100: '#EAF9FF',
+  blue300: '#bbebff',
+  blue200: '#d8f3ff',
+  blue100: '#eaf9ff',
 
   /** dark red */
   red300: '#c50000',
