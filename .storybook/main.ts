@@ -42,7 +42,13 @@ const config: StorybookConfig = {
 
     config.module?.rules?.push({
       test: /\.svg$/,
+      issuer: /\.(jsx|tsx)$/,
       use: ['@svgr/webpack'],
+    });
+    config.module?.rules?.push({
+      test: /\.svg$/,
+      issuer: /\.(js|ts)$/,
+      use: ['url-loader'],
     });
 
     return config;
