@@ -40,6 +40,9 @@ export const dialogStyling = css({
 });
 
 export const closeIconStyling = css({
+  position: 'absolute',
+  right: '24px',
+  top: '24px',
   alignSelf: 'flex-end',
 
   marginBottom: Theme.spacer.spacing1,

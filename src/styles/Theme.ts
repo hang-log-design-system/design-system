@@ -103,9 +103,9 @@ const boxShadow = {
 };
 
 const zIndex = {
-  overlayTop: 999,
-  overlayMiddle: 500,
-  overlayBottom: 100,
+  overlayTop: 3,
+  overlayMiddle: 2,
+  overlayBottom: 1,
 };
 
 export const Theme = {
