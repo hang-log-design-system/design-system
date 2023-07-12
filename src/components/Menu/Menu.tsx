@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 import type { ComponentPropsWithoutRef } from 'react';
 
-import { MenuStyling } from '@components/Menu/Menu.style';
+import { menuStyling } from '@components/Menu/Menu.style';
 
 interface MenuProps extends ComponentPropsWithoutRef<'div'> {
   closeMenu: () => void;
 }
 
-const Menu = ({ children, closeMenu }: MenuProps) => {
+const Menu = ({ children, closeMenu, ...attributes }: MenuProps) => {
   const menuRef = useRef<HTMLDivElement>(null);
 
   const handleBackdropClick = (e: globalThis.MouseEvent) => {
@@ -23,7 +23,7 @@ const Menu = ({ children, closeMenu }: MenuProps) => {
   }, []);
 
   return (
-    <div ref={menuRef} css={MenuStyling}>
+    <div ref={menuRef} css={menuStyling} {...attributes}>
       {children}
     </div>
   );
