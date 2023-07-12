@@ -32,7 +32,7 @@ export const dayOfWeekContainerStyling = css({
 
     cursor: 'default',
 
-    '&:hover': {
+    '& span:hover': {
       backgroundColor: Theme.color.white,
     },
   },
