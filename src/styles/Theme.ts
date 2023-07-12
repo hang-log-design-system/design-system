@@ -115,6 +115,12 @@ const boxShadow = {
   shadow10: '0px 2px 4px 0px rgba(0, 0, 0, 0.06) inset',
 } as const;
 
+const zIndex = {
+  overlayTop: 3,
+  overlayMiddle: 2,
+  overlayBottom: 1,
+};
+
 export const Theme = {
   color,
   text,
@@ -122,4 +128,5 @@ export const Theme = {
   spacer,
   borderRadius,
   boxShadow,
+  zIndex,
 };
