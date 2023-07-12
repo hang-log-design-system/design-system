@@ -1,20 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 
+import Button from '@components/Button/Button';
 import Menu from '@components/Menu/Menu';
+import MenuItem from '@components/MenuItem/MenuItem';
+import MenuList from '@components/MenuList/MenuList';
 
 const meta = {
   title: 'Menu',
   component: Menu,
-  args: {
-    title: 'Menu',
-    menus: [
-      { name: '로그인', onClick: () => {} },
-      { name: '로그아웃', onClick: () => {} },
-    ],
-  },
+  args: {},
 } satisfies Meta<typeof Menu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  render: () => {
+    const [showMenu, setShowMenu] = useState(false);
+
+    return (
+      <Menu closeMenu={() => setShowMenu(false)}>
+        <Button onClick={() => setShowMenu(!showMenu)}>Menu</Button>
+        {showMenu && (
+          <MenuList>
+            <MenuItem name="abc" onClick={() => {}} closeMenu={() => setShowMenu(false)} />
+            <MenuItem name="abc" onClick={() => {}} closeMenu={() => setShowMenu(false)} />
+          </MenuList>
+        )}
+      </Menu>
+    );
+  },
+};
