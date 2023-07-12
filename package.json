@@ -13,7 +13,8 @@
     "build": "webpack --mode production",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "publish:npm": "rm -rf dist && mkdir dist && tsc && rm -rf ./dist/stories && cp -r ./src/assets ./dist && tsc-alias"
+    "publish:npm": "rm -rf dist && mkdir dist && tsc && rm -rf ./dist/stories && cp -r ./src/assets ./dist && tsc-alias",
+    "chromatic": "npx chromatic --project-token=chpt_9e90f3a3f28a532"
   },
   "keywords": [
     "react",
@@ -26,10 +27,22 @@
     "typescript",
     "library"
   ],
-  "author": "Ashley Heo <ashleysyheo@gmail.com> (https://github.com/ashleysyheo)",
+  "author": {
+    "name": "Ashley Heo",
+    "email": "ashleysyheo@gmail.com",
+    "url": "https://github.com/ashleysyheo"
+  },
   "contributors": [
-    "Woochan Lim <dlaxodud1217@gmail.com> (https://github.com/dladncks1217)",
-    "Dahye Yun <06robin11@gmail.com> (https://github.com/Dahyeeee)"
+    {
+      "name": "Woochan Lim",
+      "email": "dlaxodud1217@gmail.com",
+      "url": "https://github.com/dladncks1217"
+    },
+    {
+      "name": "Dahye Yun",
+      "email": "06robin11@gmail.com",
+      "url": "https://github.com/Dahyeeee"
+    }
   ],
   "repository": {
     "type": "git",
@@ -60,6 +73,7 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "babel-plugin-react-require": "^4.0.0",
+    "chromatic": "^6.19.9",
     "eslint": "^8.44.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
@@ -81,5 +95,7 @@
   },
   "bugs": {
     "url": "https://github.com/hang-log-design-system/design-system/issues"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "hang-log-design-system@0.0.1"
 }
