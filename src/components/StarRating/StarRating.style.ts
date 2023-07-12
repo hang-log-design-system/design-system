@@ -11,18 +11,22 @@ export const getStarRatingBoxStyling = (size: number, gap: number) => {
     'img:nth-of-type(odd)': {
       width: `${size / 2}px`,
       height: `${size}px`,
+
       backgroundImage: `url(${HalfEmptyLeftStar})`,
       backgroundSize: 'cover',
+
       contentVisibility: 'hidden',
     },
 
     'img:nth-of-type(even)': {
       width: `${size / 2}px`,
       height: `${size}px`,
+      marginRight: `${gap}px`,
+
       backgroundImage: `url(${HalfEmptyRightStar})`,
       backgroundSize: 'cover',
+
       contentVisibility: 'hidden',
-      marginRight: `${gap}px`,
     },
 
     'img:nth-of-type(odd):hover,img:nth-of-type(odd):has(~ img:hover)': {

@@ -1,4 +1,3 @@
-import useStarRating from '@/components/StarRating/useStarRating';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import StarRating from '@components/StarRating/StarRating';
