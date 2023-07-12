@@ -25,7 +25,7 @@ const Menu = ({ title, menus, titleVariant = 'text' }: MenuProps) => {
     setShowMenu(!showMenu);
   };
 
-  const closeMenu = (e: MouseEvent) => {
+  const closeMenu = (e: globalThis.MouseEvent) => {
     if (!menuRef.current?.contains(e.target as Node)) {
       setShowMenu(false);
     }
