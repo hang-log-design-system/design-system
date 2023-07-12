@@ -7,7 +7,7 @@ import {
   getTodayStyling,
 } from '@components/Calendar/Day/Day.style';
 
-interface DayProps {
+export interface DayProps {
   /** 날짜 */
   day?: number | string;
   /** 날짜가 오늘인지에 대한 여부 */

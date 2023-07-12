@@ -5,7 +5,7 @@ import { getStarRatingBoxStyling } from '@components/StarRating/StarRating.style
 
 const STAR_RATING_EMPTY_LENGTH = 10;
 
-interface StarRatingProps {
+export interface StarRatingProps {
   /** rate는 0~5까지 0.5단위로 입력할 수 있다. */
   rate: 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 4.5 | 5;
   size?: number;

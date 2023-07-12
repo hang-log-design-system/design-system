@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { menuStyling } from '@components/Menu/Menu.style';
 
-interface MenuProps extends ComponentPropsWithoutRef<'div'> {
+export interface MenuProps extends ComponentPropsWithoutRef<'div'> {
   closeMenu: () => void;
 }
 
