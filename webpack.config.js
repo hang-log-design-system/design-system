@@ -12,6 +12,7 @@ module.exports = {
 
   module: {
     rules: [
+      // { test: /\.(png|jpg|svg)$/i, issuer: /\.ts$/, use: 'url-loader' },
       {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
@@ -19,8 +20,13 @@ module.exports = {
       },
       {
         test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
+        issuer: /\.[jt]sx$/,
         use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.(js|ts)$/,
+        use: ['url-loader'],
       },
     ],
   },
