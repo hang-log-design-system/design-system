@@ -1,4 +1,5 @@
-import { InputHTMLAttributes } from 'react';
+import { useState } from 'react';
+import type { ChangeEvent, ComponentPropsWithoutRef } from 'react';
 
 import Label from '@components/Label/Label';
 import {
@@ -9,16 +10,33 @@ import {
 } from '@components/RadioButton/RadioButton.style';
 import SupportingText from '@components/SupportingText/SupportingText';
 
-export interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioButtonProps extends ComponentPropsWithoutRef<'input'> {
   /** Radio에서 선택할 수 있는 문자열 option*/
   options: string[];
   /** RadioButton의 라벨 텍스트 */
   label?: string;
   /** RadioButton의 부가 정보 텍스트 */
   supportingText?: string;
+  /** 라디오 버튼들을 하나로 묶어주는 이름 */
+  name?: string;
 }
 
-const RadioButton = ({ options, label, supportingText, ...attributes }: RadioButtonProps) => {
+const RadioButton = ({
+  options,
+  label,
+  supportingText,
+  name = 'sample',
+  onChange,
+  ...attributes
+}: RadioButtonProps) => {
+  const [checkedOption, setCheckedOption] = useState<string>(options[0]);
+
+  const handleOptionClick = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange?.(e);
+
+    setCheckedOption(e.target.id);
+  };
+
   return (
     <div css={radioContainerStyling}>
       {label && (
@@ -29,8 +47,16 @@ const RadioButton = ({ options, label, supportingText, ...attributes }: RadioBut
       <div css={radioWrapperStyling}>
         {options.map((option) => (
           <>
-            <label htmlFor={option} css={labelStyling}>
-              <input type="radio" hidden id={option} name={attributes.name} {...attributes} />
+            <label htmlFor={option} key={option} css={labelStyling}>
+              <input
+                type="radio"
+                hidden
+                id={option}
+                name={name}
+                checked={checkedOption === option}
+                onChange={handleOptionClick}
+                {...attributes}
+              />
               <div css={buttonStyling} />
               {option}
             </label>
