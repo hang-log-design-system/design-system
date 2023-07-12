@@ -22,7 +22,7 @@
       "@constants/*": ["src/constants/*"],
       "@assets/*": ["src/assets/*"],
       "@stories/*": ["src/stories/*"],
-      "@store/*": ["src/store/*"]
+      "@utils/*": ["src/utils/*"]
     },
     "jsxImportSource": "@emotion/react",
     "allowSyntheticDefaultImports": true
