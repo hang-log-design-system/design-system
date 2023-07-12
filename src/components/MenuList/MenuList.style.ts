@@ -4,6 +4,7 @@ import { Theme } from '@styles/Theme';
 
 export const menuListStyling = css({
   position: 'absolute',
+  transform: 'translateY(49px)',
   display: 'flex',
   flexDirection: 'column',
   zIndex: Theme.zIndex.overlayTop,
