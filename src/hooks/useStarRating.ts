@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import type { MouseEvent } from 'react';
 
-const useStarRating = (initialRate: number) => {
+export const useStarRating = (initialRate: number) => {
   const [starRate, setStarRate] = useState(initialRate);
 
   const handleStarClick = useCallback((e: MouseEvent<HTMLSpanElement>) => {
@@ -17,5 +17,3 @@ const useStarRating = (initialRate: number) => {
 
   return { starRate, handleStarClick };
 };
-
-export default useStarRating;
