@@ -7,6 +7,8 @@ import Button from '@components/Button/Button';
 import Toast from '@components/Toast/Toast';
 import ToastContainer from '@components/ToastContainer/ToastContainer';
 
+import { useOverlay } from '..';
+
 const meta = {
   title: 'Toast',
   component: Toast,
@@ -43,15 +45,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Variants: Story = {
   render: ({ children, variant, ...args }) => {
-    const [show, setShow] = useState(false);
+    const { isOpen, open } = useOverlay();
 
     setTimeout(() => {
-      setShow(true);
+      open();
     }, 300);
 
     return (
       <div id="toast-container">
-        {show && (
+        {isOpen && (
           <>
             <Toast variant="default" {...args}>
               {children}
@@ -79,13 +81,13 @@ export const Variants: Story = {
 
 export const Default: Story = {
   render: ({ children, ...args }) => {
-    const [showToast, setShowToast] = useState(false);
+    const { isOpen, open, close } = useOverlay();
 
     return (
       <>
-        <Button onClick={() => setShowToast(true)}>Show Toast</Button>
-        {showToast && (
-          <Toast {...args} closeToast={() => setShowToast(false)}>
+        <Button onClick={open}>Show Toast</Button>
+        {isOpen && (
+          <Toast {...args} closeToast={close}>
             {children}
           </Toast>
         )}
@@ -96,13 +98,13 @@ export const Default: Story = {
 
 export const Success: Story = {
   render: ({ children, ...args }) => {
-    const [showToast, setShowToast] = useState(false);
+    const { isOpen, open, close } = useOverlay();
 
     return (
       <>
-        <Button onClick={() => setShowToast(true)}>Show Toast</Button>
-        {showToast && (
-          <Toast {...args} closeToast={() => setShowToast(false)}>
+        <Button onClick={open}>Show Toast</Button>
+        {isOpen && (
+          <Toast {...args} closeToast={close}>
             {children}
           </Toast>
         )}
@@ -116,13 +118,13 @@ export const Success: Story = {
 
 export const Error: Story = {
   render: ({ children, ...args }) => {
-    const [showToast, setShowToast] = useState(false);
+    const { isOpen, open, close } = useOverlay();
 
     return (
       <>
-        <Button onClick={() => setShowToast(true)}>Show Toast</Button>
-        {showToast && (
-          <Toast {...args} closeToast={() => setShowToast(false)}>
+        <Button onClick={open}>Show Toast</Button>
+        {isOpen && (
+          <Toast {...args} closeToast={close}>
             {children}
           </Toast>
         )}
@@ -136,13 +138,13 @@ export const Error: Story = {
 
 export const ClosableToast: Story = {
   render: ({ children, ...args }) => {
-    const [showToast, setShowToast] = useState(false);
+    const { isOpen, open, close } = useOverlay();
 
     return (
       <>
-        <Button onClick={() => setShowToast(true)}>Show Toast</Button>
-        {showToast && (
-          <Toast {...args} closeToast={() => setShowToast(false)}>
+        <Button onClick={open}>Show Toast</Button>
+        {isOpen && (
+          <Toast {...args} closeToast={close}>
             {children}
           </Toast>
         )}
@@ -156,13 +158,13 @@ export const ClosableToast: Story = {
 
 export const withIcon: Story = {
   render: ({ children, ...args }) => {
-    const [showToast, setShowToast] = useState(false);
+    const { isOpen, open, close } = useOverlay();
 
     return (
       <>
-        <Button onClick={() => setShowToast(true)}>Show Toast</Button>
-        {showToast && (
-          <Toast {...args} closeToast={() => setShowToast(false)}>
+        <Button onClick={open}>Show Toast</Button>
+        {isOpen && (
+          <Toast {...args} closeToast={close}>
             <CheckCircleIcon />
             Message
           </Toast>
@@ -179,20 +181,20 @@ export const withIcon: Story = {
 
 export const PilingToast: Story = {
   render: ({ children, ...args }) => {
-    const [showToast1, setShowToast1] = useState(false);
-    const [showToast2, setShowToast2] = useState(false);
+    const { isOpen, open, close } = useOverlay();
+    const { isOpen: isOpen2, open: open2, close: close2 } = useOverlay();
 
     return (
       <>
-        <Button onClick={() => setShowToast1(true)}>Show Toast 1</Button>
-        {showToast1 && (
-          <Toast {...args} closeToast={() => setShowToast1(false)}>
+        <Button onClick={open}>Show Toast 1</Button>
+        {isOpen && (
+          <Toast {...args} closeToast={close}>
             {children}
           </Toast>
         )}
-        <Button onClick={() => setShowToast2(true)}>Show Toast 2</Button>
-        {showToast2 && (
-          <Toast {...args} closeToast={() => setShowToast2(false)}>
+        <Button onClick={open2}>Show Toast 2</Button>
+        {isOpen2 && (
+          <Toast {...args} closeToast={close2}>
             {children}
           </Toast>
         )}

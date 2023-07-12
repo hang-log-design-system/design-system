@@ -6,6 +6,8 @@ import Menu from '@components/Menu/Menu';
 import MenuItem from '@components/MenuItem/MenuItem';
 import MenuList from '@components/MenuList/MenuList';
 
+import { useOverlay } from '..';
+
 const meta = {
   title: 'Menu',
   component: Menu,
@@ -17,15 +19,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => {
-    const [showMenu, setShowMenu] = useState(false);
+    const { isOpen, toggle, close } = useOverlay();
 
     return (
-      <Menu closeMenu={() => setShowMenu(false)}>
-        <Button onClick={() => setShowMenu(!showMenu)}>Menu</Button>
-        {showMenu && (
+      <Menu closeMenu={close}>
+        <Button onClick={toggle}>Menu</Button>
+        {isOpen && (
           <MenuList>
-            <MenuItem name="menu1" onClick={() => {}} closeMenu={() => setShowMenu(false)} />
-            <MenuItem name="menu2" onClick={() => {}} closeMenu={() => setShowMenu(false)} />
+            <MenuItem name="menu1" onClick={() => {}} closeMenu={close} />
+            <MenuItem name="menu2" onClick={() => {}} closeMenu={close} />
           </MenuList>
         )}
       </Menu>

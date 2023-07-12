@@ -2,6 +2,7 @@ import HangLogProvider from '@/HangLogProvider';
 
 import { useCalendar } from '@hooks/useCalendar';
 import { useDateRangePicker } from '@hooks/useDateRangePicker';
+import { useOverlay } from '@hooks/useOverlay';
 import { useStarRating } from '@hooks/useStarRating';
 
 import Badge from '@components/Badge/Badge';
@@ -40,6 +41,7 @@ export {
   useCalendar,
   useDateRangePicker,
   useStarRating,
+  useOverlay,
   Badge,
   Box,
   Button,
