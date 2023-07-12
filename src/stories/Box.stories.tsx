@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Box from '@components/Box/Box';
 
+import { Theme } from '@styles/Theme';
+
 const meta = {
   title: 'Box',
   component: Box,
@@ -28,7 +30,7 @@ export const Playground: Story = {
   },
   args: {
     styles: {
-      backgroundColor: 'red',
+      backgroundColor: Theme.color.blue500,
       borderRadius: '5px',
     },
   },

@@ -1,7 +1,7 @@
-import Box from '@/components/Box/Box';
 import { containerStyle, informationStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import Box from '@components/Box/Box';
 import Center from '@components/Center/Center';
 
 const meta = {

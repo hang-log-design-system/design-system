@@ -4,6 +4,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Box from '@components/Box/Box';
 import Flex from '@components/Flex/Flex';
 
+import { Theme } from '@styles/Theme';
+
 const meta = {
   title: 'Flex',
   component: Flex,
@@ -24,12 +26,22 @@ export const Playground: Story = {
     return (
       <Flex styles={args.styles}>
         <Box
-          styles={{ width: '100px', height: '60px', backgroundColor: 'red', borderRadius: '5px' }}
+          styles={{
+            width: '100px',
+            height: '60px',
+            backgroundColor: Theme.color.red300,
+            borderRadius: '5px',
+          }}
         >
           <div>box1</div>
         </Box>
         <Box
-          styles={{ width: '100px', height: '60px', backgroundColor: 'blue', borderRadius: '5px' }}
+          styles={{
+            width: '100px',
+            height: '60px',
+            backgroundColor: Theme.color.gray300,
+            borderRadius: '5px',
+          }}
         >
           <div>box2</div>
         </Box>
@@ -37,7 +49,7 @@ export const Playground: Story = {
           styles={{
             width: '100px',
             height: '60px',
-            backgroundColor: 'green',
+            backgroundColor: Theme.color.blue500,
             borderRadius: '5px',
           }}
         >
