@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { useStarRating } from '@hooks/useStarRating';
+
 import StarRating from '@components/StarRating/StarRating';
 
 const meta = {
@@ -7,9 +9,7 @@ const meta = {
   component: StarRating,
   argTypes: {
     rate: {
-      control: { type: 'radio' },
-      options: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5],
-      description: '별점',
+      control: false,
     },
     size: {
       control: { type: 'number' },
@@ -21,14 +21,28 @@ const meta = {
     },
   },
   args: {
-    rate: 2.5,
+    rate: 1,
     size: 24,
     gap: 2,
-    onStarClick: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {},
   },
 } satisfies Meta<typeof StarRating>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
+export const Playground: Story = {
+  render: ({ size, gap }) => {
+    const { starRate, handleStarClick, handleStarHover, handleStarHoverOut } = useStarRating(0);
+
+    return (
+      <StarRating
+        rate={starRate}
+        onStarClick={handleStarClick}
+        onStarHover={handleStarHover}
+        onStarHoverOut={handleStarHoverOut}
+        size={size}
+        gap={gap}
+      />
+    );
+  },
+};
