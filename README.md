@@ -46,7 +46,7 @@ function App() {
 
 ## Links
 
-- [Storybook](https://64ae1170f3ddc89ef85a4950-nsaxknvvho.chromatic.com)
+- [Storybook](https://64ae1170f3ddc89ef85a4950-ccucstqsum.chromatic.com)
 - [Figma](https://www.figma.com/file/rJUqeL7LUnJjCPQNmQ3BZc/design-system?type=design&node-id=1%3A2854&mode=design&t=nVD5D8xFhO9Dkg6g-1)
 
 ## Contributors
