@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { useStarRating } from '@hooks/useStarRating';
 
-import StarRating from '@components/StarRating/StarRating';
+import StarRatingInput from '@components/StarRatingInput/StarRatingInput';
 
 const meta = {
-  title: 'StarRating',
-  component: StarRating,
+  title: 'StarRatingInput',
+  component: StarRatingInput,
   argTypes: {
     rate: {
       control: false,
@@ -25,7 +25,7 @@ const meta = {
     size: 24,
     gap: 2,
   },
-} satisfies Meta<typeof StarRating>;
+} satisfies Meta<typeof StarRatingInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -35,7 +35,7 @@ export const Playground: Story = {
     const { starRate, handleStarClick, handleStarHover, handleStarHoverOut } = useStarRating(0);
 
     return (
-      <StarRating
+      <StarRatingInput
         rate={starRate}
         onStarClick={handleStarClick}
         onStarHover={handleStarHover}

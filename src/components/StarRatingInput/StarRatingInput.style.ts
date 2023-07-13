@@ -4,7 +4,7 @@ import HalfFilledLeftStar from '@assets/svg/half-filled-left-star.svg';
 import HalfFilledRightStar from '@assets/svg/half-filled-right-star.svg';
 import { css } from '@emotion/react';
 
-export const getStarRatingBoxStyling = (size: number, gap: number) => {
+export const getStarRatingInputBoxStyling = (size: number, gap: number) => {
   return css({
     display: 'inline-flex',
 
