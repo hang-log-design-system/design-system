@@ -26,7 +26,7 @@ import RadioButton from '@components/RadioButton/RadioButton';
 import Select from '@components/Select/Select';
 import Skeleton from '@components/Skeleton/Skeleton';
 import Spinner from '@components/Spinner/Spinner';
-import StarRating from '@components/StarRating/StarRating';
+import StarRating from '@components/StarRatingInput/StarRatingInput';
 import SupportingText from '@components/SupportingText/SupportingText';
 import Tab from '@components/Tab/Tab';
 import Tabs from '@components/Tabs/Tabs';

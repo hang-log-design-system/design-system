@@ -24,6 +24,7 @@ export interface BoxStylingProps {
   borderLeft?: string;
   backgroundColor?: string;
   color?: string;
+  position?: 'static' | 'absolute' | 'relative' | 'fixed' | 'inherit';
 }
 
 export const getBoxStyling = ({
@@ -48,7 +49,8 @@ export const getBoxStyling = ({
   borderLeft = '',
   backgroundColor = '',
   color = '',
-}) => {
+  position = 'static',
+}: BoxStylingProps) => {
   return css({
     width,
     height,
@@ -71,5 +73,6 @@ export const getBoxStyling = ({
     borderLeft,
     backgroundColor,
     color,
+    position,
   });
 };

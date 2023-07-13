@@ -6,8 +6,12 @@ export interface BoxProps extends ComponentPropsWithoutRef<'div'> {
   styles?: BoxStylingProps;
 }
 
-const Box = ({ styles = {}, children }: BoxProps) => {
-  return <div css={getBoxStyling(styles)}>{children}</div>;
+const Box = ({ styles = {}, children, ...attributes }: BoxProps) => {
+  return (
+    <div css={getBoxStyling(styles)} {...attributes}>
+      {children}
+    </div>
+  );
 };
 
 export default Box;

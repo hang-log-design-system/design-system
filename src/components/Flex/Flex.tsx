@@ -6,8 +6,12 @@ export interface FlexPorps extends ComponentPropsWithoutRef<'div'> {
   styles?: FlexStylingProps;
 }
 
-const Flex = ({ styles = {}, children }: FlexPorps) => {
-  return <div css={getFlexStyling(styles)}>{children}</div>;
+const Flex = ({ styles = {}, children, ...attributes }: FlexPorps) => {
+  return (
+    <div css={getFlexStyling(styles)} {...attributes}>
+      {children}
+    </div>
+  );
 };
 
 export default Flex;
