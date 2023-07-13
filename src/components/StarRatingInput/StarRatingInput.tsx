@@ -1,11 +1,11 @@
 import { forwardRef, useRef } from 'react';
 import type { ForwardedRef, MouseEvent } from 'react';
 
-import { getStarRatingBoxStyling } from '@components/StarRating/StarRating.style';
+import { getStarRatingInputBoxStyling } from '@components/StarRatingInput/StarRatingInput.style';
 
 const STAR_RATING_EMPTY_LENGTH = 10;
 
-export interface StarRatingProps {
+export interface StarRatingInputProps {
   /** rate는 0~5까지 0.5단위로 입력할 수 있다. */
   rate: 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 4.5 | 5;
   size?: number;
@@ -15,8 +15,8 @@ export interface StarRatingProps {
   onStarHoverOut: (e: MouseEvent<HTMLSpanElement>) => void;
 }
 
-const StarRating = (
-  { rate = 0, size = 24, gap = 2, onStarClick, onStarHover, onStarHoverOut }: StarRatingProps,
+const StarRatingInput = (
+  { rate = 0, size = 24, gap = 2, onStarClick, onStarHover, onStarHoverOut }: StarRatingInputProps,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
   const rateContainers = Array(STAR_RATING_EMPTY_LENGTH)
@@ -38,7 +38,7 @@ const StarRating = (
       <div className="star" ref={ref}>
         <span
           className="star-box"
-          css={getStarRatingBoxStyling(size, gap)}
+          css={getStarRatingInputBoxStyling(size, gap)}
           onMouseOver={onStarHover}
           onMouseOut={onStarHoverOut}
         >
@@ -49,4 +49,4 @@ const StarRating = (
   );
 };
 
-export default forwardRef(StarRating);
+export default forwardRef(StarRatingInput);
