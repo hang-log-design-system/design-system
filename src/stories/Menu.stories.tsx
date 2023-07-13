@@ -24,8 +24,8 @@ export const Default: Story = {
         <Button onClick={() => setShowMenu(!showMenu)}>Menu</Button>
         {showMenu && (
           <MenuList>
-            <MenuItem name="menu1" onClick={() => {}} closeMenu={() => setShowMenu(false)} />
-            <MenuItem name="menu2" onClick={() => {}} closeMenu={() => setShowMenu(false)} />
+            <MenuItem name="menu1" onClick={() => setShowMenu(false)} />
+            <MenuItem name="menu2" onClick={() => setShowMenu(false)} />
           </MenuList>
         )}
       </Menu>
