@@ -4,8 +4,12 @@ import { getCenterStyling } from '@components/Center/Center.style';
 
 type CenterPorps = ComponentPropsWithoutRef<'div'>;
 
-const Center = ({ children }: CenterPorps) => {
-  return <div css={getCenterStyling}>{children}</div>;
+const Center = ({ children, ...attributes }: CenterPorps) => {
+  return (
+    <div css={getCenterStyling} {...attributes}>
+      {children}
+    </div>
+  );
 };
 
 export default Center;

@@ -38,8 +38,26 @@ export interface FlexStylingProps {
     | 'revert'
     | 'unset';
   gap?: string;
+  margin?: string;
+  marginRight?: string;
+  marginTop?: string;
+  marginLeft?: string;
+  marginBottom?: string;
+  padding?: string;
+  paddingTop?: string;
+  paddingRight?: string;
+  paddingBottom?: string;
+  paddingLeft?: string;
+  border?: string;
+  borderRadius?: string;
+  borderColor?: string;
+  borderTop?: string;
+  borderRight?: string;
+  borderBottom?: string;
+  borderLeft?: string;
   width?: string;
   height?: string;
+  position?: 'static' | 'absolute' | 'relative' | 'fixed' | 'inherit';
 }
 
 export const getFlexStyling = ({
@@ -51,8 +69,26 @@ export const getFlexStyling = ({
   align = 'flex-start',
   justify = 'flex-start',
   gap = '0px',
+  margin = '24px',
+  marginRight = '',
+  marginTop = '',
+  marginLeft = '',
+  marginBottom = '',
+  padding = '16px',
+  paddingTop = '',
+  paddingRight = '',
+  paddingBottom = '',
+  paddingLeft = '',
+  border = '',
+  borderRadius = '',
+  borderColor = '',
+  borderTop = '',
+  borderRight = '',
+  borderBottom = '',
+  borderLeft = '',
   width = '100%',
   height = '100%',
+  position = 'static',
 }: FlexStylingProps) => {
   return css({
     display: 'flex',
@@ -64,7 +100,25 @@ export const getFlexStyling = ({
     alignItems: align,
     justifyContent: justify,
     gap,
+    margin,
+    marginRight,
+    marginTop,
+    marginLeft,
+    marginBottom,
+    padding,
+    paddingTop,
+    paddingRight,
+    paddingBottom,
+    paddingLeft,
+    border,
+    borderRadius,
+    borderColor,
+    borderTop,
+    borderRight,
+    borderBottom,
+    borderLeft,
     width,
     height,
+    position,
   });
 };
