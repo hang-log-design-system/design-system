@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
 
 import Button from '@components/Button/Button';
 import Menu from '@components/Menu/Menu';
@@ -26,8 +25,8 @@ export const Default: Story = {
         <Button onClick={toggle}>Menu</Button>
         {isOpen && (
           <MenuList>
-            <MenuItem name="menu1" onClick={close} />
-            <MenuItem name="menu2" onClick={close} />
+            <MenuItem onClick={close}>로그인</MenuItem>
+            <MenuItem onClick={close}>로그아웃</MenuItem>
           </MenuList>
         )}
       </Menu>
