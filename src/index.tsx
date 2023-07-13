@@ -36,6 +36,8 @@ import Toast from '@components/Toast/Toast';
 import Toggle from '@components/Toggle/Toggle';
 import ToggleGroup from '@components/ToggleGroup/ToggleGroup';
 
+import { Theme } from '@styles/Theme';
+
 export {
   HangLogProvider,
   useCalendar,
@@ -72,4 +74,5 @@ export {
   Toast,
   Toggle,
   ToggleGroup,
+  Theme,
 };
