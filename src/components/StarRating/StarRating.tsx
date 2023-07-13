@@ -11,22 +11,37 @@ export interface StarRatingProps {
   size?: number;
   gap?: number;
   onStarClick: (e: MouseEvent<HTMLSpanElement>) => void;
+  onStarHover: (e: MouseEvent<HTMLSpanElement>) => void;
+  onStarHoverOut: (e: MouseEvent<HTMLSpanElement>) => void;
 }
 
 const StarRating = (
-  { rate = 0, size = 24, gap = 2, onStarClick }: StarRatingProps,
+  { rate = 0, size = 24, gap = 2, onStarClick, onStarHover, onStarHoverOut }: StarRatingProps,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
   const rateContainers = Array(STAR_RATING_EMPTY_LENGTH)
     .fill(useRef(null))
     .map((ref, index) => {
-      return index === rate * 2 - 1 ? <img className="active" ref={ref} /> : <img ref={ref} />;
+      const isActive = index === rate * 2 - 1;
+
+      const handleClick = (e: MouseEvent<HTMLImageElement>) => {
+        onStarClick(e);
+      };
+
+      return (
+        <img key={index} ref={ref} onClick={handleClick} className={isActive ? 'active' : ''} />
+      );
     });
 
   return (
     <>
       <div className="star" ref={ref}>
-        <span className="star-box" css={getStarRatingBoxStyling(size, gap)} onClick={onStarClick}>
+        <span
+          className="star-box"
+          css={getStarRatingBoxStyling(size, gap)}
+          onMouseOver={onStarHover}
+          onMouseOut={onStarHoverOut}
+        >
           {rateContainers}
         </span>
       </div>
