@@ -6,7 +6,9 @@ export const getContainerStyling = (width: number, height: number) => {
   return css({
     position: 'relative',
 
+    minWidth: width,
     width,
+    minHeight: height,
     height,
     borderRadius: Theme.borderRadius.medium,
 
