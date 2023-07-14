@@ -15,7 +15,8 @@ export const getSelectedTabStyling = {
 
     backgroundColor: Theme.color.white,
 
-    fontSize: '16px',
+    fontSize: Theme.text.small.fontSize,
+    lineHeight: Theme.text.small.lineHeight,
     color: Theme.color.blue600,
 
     cursor: 'pointer',
@@ -31,7 +32,8 @@ export const getSelectedTabStyling = {
 
     backgroundColor: Theme.color.blue600,
 
-    fontSize: '16px',
+    fontSize: Theme.text.small.fontSize,
+    lineHeight: Theme.text.small.lineHeight,
     color: Theme.color.white,
 
     cursor: 'pointer',
