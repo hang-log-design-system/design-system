@@ -16,6 +16,7 @@ import Divider from '@components/Divider/Divider';
 import Flex from '@components/Flex/Flex';
 import FloatingButton from '@components/FloatingButton/FloatingButton';
 import Heading from '@components/Heading/Heading';
+import ImageCarousel from '@components/ImageCarousel/ImageCarousel';
 import Input from '@components/Input/Input';
 import Label from '@components/Label/Label';
 import Menu from '@components/Menu/Menu';
@@ -55,6 +56,7 @@ export {
   Flex,
   FloatingButton,
   Heading,
+  ImageCarousel,
   Input,
   Label,
   Menu,
