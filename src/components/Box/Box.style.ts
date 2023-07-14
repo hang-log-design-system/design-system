@@ -28,14 +28,14 @@ export interface BoxStylingProps {
 }
 
 export const getBoxStyling = ({
-  width = '100%',
-  height = '100%',
-  margin = '24px',
+  width = '',
+  height = '',
+  margin = '',
   marginRight = '',
   marginTop = '',
   marginLeft = '',
   marginBottom = '',
-  padding = '16px',
+  padding = '',
   paddingTop = '',
   paddingRight = '',
   paddingBottom = '',
