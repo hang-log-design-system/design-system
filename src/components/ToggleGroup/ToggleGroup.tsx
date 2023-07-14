@@ -1,15 +1,18 @@
-import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
+import { ComponentPropsWithRef, ForwardedRef, forwardRef, useEffect } from 'react';
+
+import useSelect from '@hooks/useSelect';
 
 import { ToggleGroupContainerStyling } from '@components/ToggleGroup/ToggleGroup.style';
 
 export interface ToggleGroupProps extends ComponentPropsWithRef<'div'> {}
 
-const ToggleGroup = (
-  { children, ...attributes }: ToggleGroupProps,
-  ref: ForwardedRef<HTMLDivElement>
-) => {
+const ToggleGroup = ({ children }: ToggleGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
+  const { selected } = useSelect();
+
+  useEffect(() => {}, [selected]);
+
   return (
-    <div css={ToggleGroupContainerStyling} ref={ref} {...attributes}>
+    <div css={ToggleGroupContainerStyling} ref={ref}>
       {children}
     </div>
   );

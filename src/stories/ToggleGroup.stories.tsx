@@ -1,3 +1,4 @@
+import useSelect from '@/hooks/useSelect';
 import SearchIcon from '@assets/svg/search-icon.svg';
 import { containerStyle, informationStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -22,16 +23,42 @@ type Story = StoryObj<typeof meta>;
 
 export const Variants: Story = {
   render: ({}) => {
+    const { selected, handleSelectClick } = useSelect();
     return (
       <>
         <li css={informationStyle}>
           <h6>Toggle Group and Toggle</h6>
           <ToggleGroup>
-            <Toggle text="toggle1" selected />
-            <Toggle text="toggle2" />
-            <Toggle text="toggle3" />
-            <Toggle text="toggle4" />
-            <Toggle text="toggle5" />
+            <Toggle
+              text="toggle1"
+              toggleId="toggle1"
+              selectedId={selected}
+              changeSelect={handleSelectClick}
+            />
+            <Toggle
+              text="toggle2"
+              toggleId="toggle2"
+              selectedId={selected}
+              changeSelect={handleSelectClick}
+            />
+            <Toggle
+              text="toggle3"
+              toggleId="toggle3"
+              selectedId={selected}
+              changeSelect={handleSelectClick}
+            />
+            <Toggle
+              text="toggle4"
+              toggleId="toggle4"
+              selectedId={selected}
+              changeSelect={handleSelectClick}
+            />
+            <Toggle
+              text="toggle5"
+              toggleId="toggle5"
+              selectedId={selected}
+              changeSelect={handleSelectClick}
+            />
           </ToggleGroup>
         </li>
       </>
