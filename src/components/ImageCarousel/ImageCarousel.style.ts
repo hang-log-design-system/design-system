@@ -86,6 +86,8 @@ export const getButtonContainerStyling = (showOnHover: boolean) =>
 
       transform: 'translateY(-50%)',
 
+      cursor: 'pointer',
+
       '& svg': {
         width: '12px',
         height: '12px',
