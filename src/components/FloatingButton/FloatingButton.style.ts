@@ -65,6 +65,8 @@ export const floatingButtonStyling = css({
   borderRadius: '50%',
   outline: `0 solid ${Theme.color.white}`,
 
+  boxShadow: Theme.boxShadow.shadow5,
+
   transition: 'all .2s ease-in',
 
   cursor: 'pointer',
