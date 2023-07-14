@@ -4,17 +4,16 @@ import useSelect from '@hooks/useSelect';
 
 import { ToggleGroupContainerStyling } from '@components/ToggleGroup/ToggleGroup.style';
 
-export interface ToggleGroupProps extends ComponentPropsWithRef<'div'> {}
+export interface ToggleGroupProps extends ComponentPropsWithRef<'ul'> {}
 
-const ToggleGroup = ({ children }: ToggleGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
-  const { selected } = useSelect();
-
-  useEffect(() => {}, [selected]);
-
+const ToggleGroup = (
+  { children, ...attributes }: ToggleGroupProps,
+  ref: ForwardedRef<HTMLUListElement>
+) => {
   return (
-    <div css={ToggleGroupContainerStyling} ref={ref}>
+    <ul css={ToggleGroupContainerStyling} ref={ref} {...attributes}>
       {children}
-    </div>
+    </ul>
   );
 };
 
