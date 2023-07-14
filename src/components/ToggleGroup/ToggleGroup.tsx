@@ -4,9 +4,12 @@ import { ToggleGroupContainerStyling } from '@components/ToggleGroup/ToggleGroup
 
 export interface ToggleGroupProps extends ComponentPropsWithRef<'div'> {}
 
-const ToggleGroup = ({ children }: ToggleGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
+const ToggleGroup = (
+  { children, ...attributes }: ToggleGroupProps,
+  ref: ForwardedRef<HTMLDivElement>
+) => {
   return (
-    <div css={ToggleGroupContainerStyling} ref={ref}>
+    <div css={ToggleGroupContainerStyling} ref={ref} {...attributes}>
       {children}
     </div>
   );

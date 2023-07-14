@@ -4,9 +4,9 @@ import { getTabsContainerStyling } from '@components/Tabs/Tabs.style';
 
 export type TabsProps = ComponentPropsWithRef<'div'>;
 
-const Tabs = ({ children }: TabsProps, ref: ForwardedRef<HTMLDivElement>) => {
+const Tabs = ({ children, ...attributes }: TabsProps, ref: ForwardedRef<HTMLDivElement>) => {
   return (
-    <div css={getTabsContainerStyling} ref={ref}>
+    <div css={getTabsContainerStyling} ref={ref} {...attributes}>
       {children}
     </div>
   );
