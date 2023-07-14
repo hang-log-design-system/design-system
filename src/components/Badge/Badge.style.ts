@@ -28,7 +28,7 @@ export const getVariantStyling = (variant: Required<BadgeProps>['variant']) => {
 };
 
 export const badgeStyling = css({
-  padding: `6px 12px`,
+  padding: `4px 10px`,
   borderRadius: Theme.borderRadius.small,
 
   fontSize: Theme.text.xSmall.fontSize,
