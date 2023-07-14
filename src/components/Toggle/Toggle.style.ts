@@ -12,12 +12,14 @@ export const getSelectedToggleStyling = css({
 
   backgroundColor: Theme.color.blue100,
 
-  fontSize: '16px',
+  fontSize: Theme.text.small.fontSize,
+  lineHeight: Theme.text.small.lineHeight,
   color: Theme.color.blue700,
 
   transition: `all .2s ease-in`,
 
   cursor: 'pointer',
+
   '&:hover': {
     color: Theme.color.blue700,
     backgroundColor: Theme.color.blue200,
@@ -34,7 +36,8 @@ export const getUnSelectedToggleStyling = css({
 
   backgroundColor: Theme.color.white,
 
-  fontSize: '16px',
+  fontSize: Theme.text.small.fontSize,
+  lineHeight: Theme.text.small.lineHeight,
   color: Theme.color.gray600,
 
   transition: `all .2s ease-in`,
