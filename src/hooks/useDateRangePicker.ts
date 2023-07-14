@@ -2,11 +2,14 @@ import { CALENDAR_MONTH_CHANGE } from '@constants/index';
 import type { DateRangePickerCalendar, SelectedDateRange, YearMonth } from '@type/date';
 import { useState } from 'react';
 
-import { getNewYearMonthInfo, getYearMonthInfo } from '@utils/date';
+import { getNewYearMonthInfo, getYearMonthInfo, toDate } from '@utils/date';
 
-export const useDateRangePicker = () => {
+export const useDateRangePicker = (initialSelectedDateRange?: SelectedDateRange) => {
   const currentDate = new Date();
-  const currentMonthYearDetail = getYearMonthInfo(currentDate);
+  const initialDate = initialSelectedDateRange
+    ? toDate(initialSelectedDateRange.start!)
+    : currentDate;
+  const currentMonthYearDetail = getYearMonthInfo(initialDate);
 
   const [calendarData, setCalendarData] = useState<DateRangePickerCalendar>({
     prevYearMonth: getNewYearMonthInfo(
@@ -16,10 +19,12 @@ export const useDateRangePicker = () => {
     currentYearMonth: currentMonthYearDetail,
   });
 
-  const [selectedDateRange, setSelectedDateRange] = useState<SelectedDateRange>({
-    start: null,
-    end: null,
-  });
+  const [selectedDateRange, setSelectedDateRange] = useState<SelectedDateRange>(
+    initialSelectedDateRange ?? {
+      start: null,
+      end: null,
+    }
+  );
 
   const handleMonthChange = (change: number) => () => {
     setCalendarData((prevCalendarData) => {

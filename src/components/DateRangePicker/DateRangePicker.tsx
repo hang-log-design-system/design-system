@@ -1,7 +1,7 @@
 import LeftIcon from '@assets/svg/left-icon.svg';
 import RightIcon from '@assets/svg/right-icon.svg';
 import { CALENDAR_MONTH_CHANGE, DEFAULT_MAX_DATE_RANGE } from '@constants/index';
-import type { YearMonth } from '@type/date';
+import type { SelectedDateRange, YearMonth } from '@type/date';
 
 import { formatDate } from '@utils/date';
 
@@ -20,6 +20,8 @@ export interface DateRangePickerProps {
   hasRangeRestriction?: boolean;
   /** 최대로 선택할 수 있는 날짜 범위 */
   maxDateRange?: number;
+  /** 현재 선택된 날짜 범위 */
+  initialSelectedDateRange?: SelectedDateRange;
   /** 날짜를 선택했을 때 실행할 함수 */
   onDateSelect?: CallableFunction;
 }
@@ -28,10 +30,11 @@ const DateRangePicker = ({
   isFutureDaysRestricted = false,
   hasRangeRestriction = false,
   maxDateRange = DEFAULT_MAX_DATE_RANGE,
+  initialSelectedDateRange,
   onDateSelect,
 }: DateRangePickerProps) => {
   const { currentDate, calendarData, handleMonthChange, selectedDateRange, handleDateSelect } =
-    useDateRangePicker();
+    useDateRangePicker(initialSelectedDateRange);
 
   const handleDateClick = (date: number, yearMonth: YearMonth) => () => {
     const clickedDate = formatDate(yearMonth.year, yearMonth.month, date);
