@@ -8,6 +8,9 @@ export const getContainerStyling = (width: number, height: number) => {
 
     width,
     height,
+    borderRadius: Theme.borderRadius.medium,
+
+    overflow: 'hidden',
 
     '& *': {
       userSelect: 'none',
@@ -50,7 +53,8 @@ export const getImageWrapperStyling = (width: number, height: number) => {
     '& > img': {
       width,
       height,
-      borderRadius: Theme.borderRadius.medium,
+
+      backgroundColor: Theme.color.gray200,
 
       objectFit: 'cover',
     },
@@ -85,8 +89,6 @@ export const getButtonContainerStyling = (showOnHover: boolean) =>
       boxShadow: Theme.boxShadow.shadow8,
 
       transform: 'translateY(-50%)',
-
-      cursor: 'pointer',
 
       '& svg': {
         width: '12px',
