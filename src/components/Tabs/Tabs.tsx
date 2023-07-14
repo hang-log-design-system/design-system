@@ -1,7 +1,5 @@
 import { ComponentPropsWithRef, ForwardedRef, forwardRef, useEffect } from 'react';
 
-import useSelect from '@hooks/useSelect';
-
 import { getTabsContainerStyling } from '@components/Tabs/Tabs.style';
 
 export type TabsProps = ComponentPropsWithRef<'ul'>;

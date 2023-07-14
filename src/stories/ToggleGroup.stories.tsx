@@ -1,7 +1,7 @@
-import useSelect from '@/hooks/useSelect';
-import SearchIcon from '@assets/svg/search-icon.svg';
 import { containerStyle, informationStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { useSelect } from '@hooks/useSelect';
 
 import Toggle from '@components/Toggle/Toggle';
 import ToggleGroup from '@components/ToggleGroup/ToggleGroup';

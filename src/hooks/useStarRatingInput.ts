@@ -3,7 +3,7 @@ import type { MouseEvent } from 'react';
 
 type InitialRateType = 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 4.5 | 5;
 
-export const useStarRating = (initialRate: InitialRateType) => {
+export const useStarRatingInput = (initialRate: InitialRateType) => {
   const [starRate, setStarRate] = useState(initialRate);
   const [prevStarRate, setPrevStarRate] = useState(0);
   const [isClicked, setIsClicked] = useState(false);

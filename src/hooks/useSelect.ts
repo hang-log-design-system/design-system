@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-const useSelect = (initialSelectedId: number | string) => {
+export const useSelect = (initialSelectedId: number | string) => {
   const [selected, setSelected] = useState(initialSelectedId);
 
   const handleSelectClick = useCallback((selectedId: number | string) => {
@@ -9,5 +9,3 @@ const useSelect = (initialSelectedId: number | string) => {
 
   return { selected, handleSelectClick };
 };
-
-export default useSelect;
