@@ -4,17 +4,13 @@ import useSelect from '@hooks/useSelect';
 
 import { getTabsContainerStyling } from '@components/Tabs/Tabs.style';
 
-export type TabsProps = ComponentPropsWithRef<'div'>;
+export type TabsProps = ComponentPropsWithRef<'ul'>;
 
-const Tabs = ({ children }: TabsProps, ref: ForwardedRef<HTMLDivElement>) => {
-  const { selected } = useSelect();
-
-  useEffect(() => {}, [selected]);
-
+const Tabs = ({ children, ...attributes }: TabsProps, ref: ForwardedRef<HTMLUListElement>) => {
   return (
-    <div css={getTabsContainerStyling} ref={ref}>
+    <ul css={getTabsContainerStyling} ref={ref} {...attributes}>
       {children}
-    </div>
+    </ul>
   );
 };
 

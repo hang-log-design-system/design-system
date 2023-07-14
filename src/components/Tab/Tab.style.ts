@@ -15,8 +15,8 @@ export const getSelectedTabStyling = {
 
     backgroundColor: Theme.color.white,
 
-    fontSize: Theme.text.small.fontSize,
-    lineHeight: Theme.text.small.lineHeight,
+    fontSize: Theme.text.medium.fontSize,
+    lineHeight: Theme.text.medium.lineHeight,
     color: Theme.color.blue600,
 
     cursor: 'pointer',
@@ -32,8 +32,8 @@ export const getSelectedTabStyling = {
 
     backgroundColor: Theme.color.blue600,
 
-    fontSize: Theme.text.small.fontSize,
-    lineHeight: Theme.text.small.lineHeight,
+    fontSize: Theme.text.medium.fontSize,
+    lineHeight: Theme.text.medium.lineHeight,
     color: Theme.color.white,
 
     cursor: 'pointer',
@@ -47,16 +47,18 @@ export const getUnSelectedTabStyling = {
     justifyContent: 'center',
 
     padding: '12px 16px',
-    border: 'none',
+    borderBottom: '1px solid transparent',
 
     backgroundColor: Theme.color.white,
 
-    fontSize: '16px',
+    fontSize: Theme.text.medium.fontSize,
+    lineHeight: Theme.text.medium.lineHeight,
     color: Theme.color.gray500,
 
     transition: 'all .2s ease-in',
 
     cursor: 'pointer',
+
     '&:hover': {
       color: Theme.color.gray600,
     },
@@ -70,12 +72,15 @@ export const getUnSelectedTabStyling = {
     border: 'none',
 
     backgroundColor: Theme.color.gray100,
-    fontSize: '16px',
+
+    fontSize: Theme.text.medium.fontSize,
+    lineHeight: Theme.text.medium.lineHeight,
     color: Theme.color.gray500,
 
     transition: 'all .2s ease-in',
 
     cursor: 'pointer',
+
     '&:hover': {
       color: Theme.color.gray600,
     },
