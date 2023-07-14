@@ -6,23 +6,26 @@ import {
 } from '@components/Toggle/Toggle.style';
 
 export interface ToggleProps extends ComponentPropsWithRef<'div'> {
-  selected?: boolean;
+  toggleId: string;
+  selectedId: string;
   text: string;
+  changeSelect: (toggleId: string) => void;
 }
 
 const Toggle = (
-  { selected = false, text, ...attributes }: ToggleProps,
+  { toggleId, text, selectedId, changeSelect, ...attributes }: ToggleProps,
   ref?: ForwardedRef<HTMLInputElement>
 ) => {
-  return selected ? (
+  return (
     <>
-      <div css={getSelectedToggleStyling} {...attributes} ref={ref}>
-        {text}
-      </div>
-    </>
-  ) : (
-    <>
-      <div css={getUnSelectedToggleStyling} {...attributes} ref={ref}>
+      <div
+        css={selectedId === toggleId ? getSelectedToggleStyling : getUnSelectedToggleStyling}
+        onClick={() => {
+          changeSelect(toggleId);
+        }}
+        {...attributes}
+        ref={ref}
+      >
         {text}
       </div>
     </>

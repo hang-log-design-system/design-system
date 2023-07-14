@@ -1,3 +1,4 @@
+import useSelect from '@/hooks/useSelect';
 import SearchIcon from '@assets/svg/search-icon.svg';
 import { containerStyle, informationStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -22,77 +23,236 @@ type Story = StoryObj<typeof meta>;
 
 export const Variants: Story = {
   render: ({}) => {
+    const outlineSelector = useSelect();
+    const selectedOutline = outlineSelector.selected;
+    const handleSelectOutline = outlineSelector.handleSelectClick;
+
+    const blockSelector = useSelect();
+    const selectedblock = blockSelector.selected;
+    const handleSelectblock = blockSelector.handleSelectClick;
+
+    const outlineSelectorOverflow = useSelect();
+    const selectedoutlineoverflow = outlineSelectorOverflow.selected;
+    const handleSelectoutlineOverflow = outlineSelectorOverflow.handleSelectClick;
+
     return (
       <>
         <li css={informationStyle}>
           <h6>outline</h6>
           <Tabs>
-            <Tab text="Tab1" variant="outline" selected={true} />
-            <Tab text="Tab1" variant="outline" />
+            <Tab
+              text="Tab1"
+              variant="outline"
+              tabId="Tab1"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedOutline}
+            />
+            <Tab
+              text="Tab1"
+              variant="outline"
+              tabId="Tab2"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedOutline}
+            />
           </Tabs>
         </li>
         <li css={informationStyle}>
           <h6>block</h6>
           <Tabs>
-            <Tab text="Tab2" variant="block" selected={true} />
-            <Tab text="Tab2" variant="block" />
+            <Tab
+              text="Tab1"
+              variant="block"
+              tabId="Tab1"
+              changeSelect={handleSelectoutlineOverflow}
+              selectedId={selectedblock}
+            />
+            <Tab
+              text="Tab2"
+              variant="block"
+              tabId="Tab2"
+              changeSelect={handleSelectblock}
+              selectedId={selectedblock}
+            />
           </Tabs>
         </li>
         <li css={informationStyle}>
           <h6>overflow-outline</h6>
           <Tabs>
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" selected={true} />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-            <Tab text="Tab3" variant="outline" />
-          </Tabs>
-        </li>
-        <li css={informationStyle}>
-          <h6>overflow-block</h6>
-          <Tabs>
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" selected={true} />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
-            <Tab text="Tab3" variant="block" />
+            <Tab
+              text="Tab1"
+              variant="outline"
+              tabId="Tab1"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab2"
+              variant="outline"
+              tabId="Tab2"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab3"
+              variant="outline"
+              tabId="Tab3"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab4"
+              variant="outline"
+              tabId="Tab4"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab5"
+              variant="outline"
+              tabId="Tab5"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab6"
+              variant="outline"
+              tabId="Tab6"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab7"
+              variant="outline"
+              tabId="Tab7"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab8"
+              variant="outline"
+              tabId="Tab8"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab9"
+              variant="outline"
+              tabId="Tab9"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab10"
+              variant="outline"
+              tabId="Tab10"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab11"
+              variant="outline"
+              tabId="Tab11"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab12"
+              variant="outline"
+              tabId="Tab12"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab13"
+              variant="outline"
+              tabId="Tab13"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab14"
+              variant="outline"
+              tabId="Tab14"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab15"
+              variant="outline"
+              tabId="Tab15"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab16"
+              variant="outline"
+              tabId="Tab16"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab17"
+              variant="outline"
+              tabId="Tab17"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab18"
+              variant="outline"
+              tabId="Tab18"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab19"
+              variant="outline"
+              tabId="Tab19"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab20"
+              variant="outline"
+              tabId="Tab20"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab21"
+              variant="outline"
+              tabId="Tab21"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab22"
+              variant="outline"
+              tabId="Tab22"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab23"
+              variant="outline"
+              tabId="Tab23"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab24"
+              variant="outline"
+              tabId="Tab24"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
+            <Tab
+              text="Tab25"
+              variant="outline"
+              tabId="Tab25"
+              changeSelect={handleSelectOutline}
+              selectedId={selectedoutlineoverflow}
+            />
           </Tabs>
         </li>
       </>

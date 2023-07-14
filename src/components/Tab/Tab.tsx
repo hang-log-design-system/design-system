@@ -5,26 +5,27 @@ import { getSelectedTabStyling, getUnSelectedTabStyling } from '@components/Tab/
 
 export interface TabProps extends ComponentPropsWithRef<'div'> {
   variant?: TabSelectedStylingProps;
-  selected?: boolean;
+  tabId: string;
+  selectedId: string;
   text: string;
+  changeSelect: (tabId: string) => void;
 }
 
 const Tab = (
-  { variant = 'outline', selected = false, text, ...attributes }: TabProps,
+  { tabId, selectedId, variant = 'outline', text, changeSelect, ...attributes }: TabProps,
   ref?: ForwardedRef<HTMLDivElement>
 ) => {
-  return selected ? (
-    <>
-      <div css={getSelectedTabStyling[variant]} {...attributes} ref={ref}>
-        {text}
-      </div>
-    </>
-  ) : (
-    <>
-      <div css={getUnSelectedTabStyling[variant]} {...attributes} ref={ref}>
-        {text}
-      </div>
-    </>
+  return (
+    <div
+      css={selectedId === tabId ? getSelectedTabStyling[variant] : getUnSelectedTabStyling[variant]}
+      {...attributes}
+      ref={ref}
+      onClick={() => {
+        changeSelect(tabId);
+      }}
+    >
+      {text}
+    </div>
   );
 };
 
