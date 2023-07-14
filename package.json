@@ -1,6 +1,6 @@
 {
   "name": "hang-log-design-system",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "description": "행록 디자인 시스템",
   "homepage": "https://github.com/hang-log-design-system/design-system",
   "main": "dist/index.js",
@@ -27,12 +27,12 @@
     "typescript",
     "library"
   ],
-  "author": {
-    "name": "Ashley Heo",
-    "email": "ashleysyheo@gmail.com",
-    "url": "https://github.com/ashleysyheo"
-  },
   "contributors": [
+    {
+      "name": "Ashley Heo",
+      "email": "ashleysyheo@gmail.com",
+      "url": "https://github.com/ashleysyheo"
+    },
     {
       "name": "Woochan Lim",
       "email": "dlaxodud1217@gmail.com",
