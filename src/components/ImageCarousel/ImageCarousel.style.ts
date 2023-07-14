@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
-import { Theme } from 'hang-log-design-system';
+
+import { Theme } from '@styles/Theme';
 
 export const getContainerStyling = (width: number, height: number) => {
   return css({
