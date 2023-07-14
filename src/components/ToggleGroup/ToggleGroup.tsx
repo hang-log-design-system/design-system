@@ -1,7 +1,5 @@
 import { ComponentPropsWithRef, ForwardedRef, forwardRef, useEffect } from 'react';
 
-import useSelect from '@hooks/useSelect';
-
 import { ToggleGroupContainerStyling } from '@components/ToggleGroup/ToggleGroup.style';
 
 export interface ToggleGroupProps extends ComponentPropsWithRef<'ul'> {}
