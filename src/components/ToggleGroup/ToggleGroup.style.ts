@@ -6,7 +6,6 @@ export const ToggleGroupContainerStyling = css({
   display: 'flex',
 
   width: 'fit-content',
-  border: `1px solid ${Theme.color.gray200}`,
   borderRadius: Theme.borderRadius.small,
 
   overflow: 'hidden',

@@ -5,30 +5,28 @@ import {
   getUnSelectedToggleStyling,
 } from '@components/Toggle/Toggle.style';
 
-export interface ToggleProps extends ComponentPropsWithRef<'div'> {
-  toggleId: string;
-  selectedId: string;
+export interface ToggleProps extends ComponentPropsWithRef<'li'> {
+  toggleId: string | number;
+  selectedId: string | number;
   text: string;
-  changeSelect: (toggleId: string) => void;
+  changeSelect: (toggleId: string | number) => void;
 }
 
 const Toggle = (
   { toggleId, text, selectedId, changeSelect, ...attributes }: ToggleProps,
-  ref?: ForwardedRef<HTMLInputElement>
+  ref?: ForwardedRef<HTMLLIElement>
 ) => {
   return (
-    <>
-      <div
-        css={selectedId === toggleId ? getSelectedToggleStyling : getUnSelectedToggleStyling}
-        onClick={() => {
-          changeSelect(toggleId);
-        }}
-        {...attributes}
-        ref={ref}
-      >
-        {text}
-      </div>
-    </>
+    <li
+      ref={ref}
+      css={selectedId === toggleId ? getSelectedToggleStyling : getUnSelectedToggleStyling}
+      onClick={() => {
+        changeSelect(toggleId);
+      }}
+      {...attributes}
+    >
+      {text}
+    </li>
   );
 };
 

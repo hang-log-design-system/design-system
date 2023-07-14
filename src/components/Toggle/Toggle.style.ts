@@ -32,7 +32,7 @@ export const getUnSelectedToggleStyling = css({
   justifyContent: 'center',
 
   padding: '8px 12px',
-  border: `0.5px solid ${Theme.color.gray200}`,
+  border: `1px solid ${Theme.color.gray200}`,
 
   backgroundColor: Theme.color.white,
 
@@ -43,6 +43,7 @@ export const getUnSelectedToggleStyling = css({
   transition: `all .2s ease-in`,
 
   cursor: 'pointer',
+
   '&:hover': {
     color: Theme.color.gray700,
     backgroundColor: Theme.color.gray100,
