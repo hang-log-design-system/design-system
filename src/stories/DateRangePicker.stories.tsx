@@ -28,3 +28,12 @@ export const DaysDisabled: Story = {
     maxDateRange: DEFAULT_MAX_DATE_RANGE,
   },
 };
+
+export const InitialSelectedDateRange = {
+  args: {
+    initialSelectedDateRange: {
+      start: '2023-07-12',
+      end: '2023-07-30',
+    },
+  },
+};
