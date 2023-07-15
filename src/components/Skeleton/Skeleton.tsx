@@ -1,6 +1,8 @@
+import type { ComponentPropsWithoutRef } from 'react';
+
 import { getSkeletonStyling } from '@components/Skeleton/Skeleton.style';
 
-export interface SkeletonProps {
+export interface SkeletonProps extends ComponentPropsWithoutRef<'div'> {
   width?: string;
   height?: string;
   /**
@@ -11,8 +13,13 @@ export interface SkeletonProps {
   variant?: 'square' | 'circle';
 }
 
-const Skeleton = ({ width = '100%', height = '24px', variant = 'square' }: SkeletonProps) => {
-  return <div css={getSkeletonStyling({ width, height, variant })}></div>;
+const Skeleton = ({
+  width = '100%',
+  height = '24px',
+  variant = 'square',
+  ...attributes
+}: SkeletonProps) => {
+  return <div css={getSkeletonStyling(width, height, variant)} {...attributes} />;
 };
 
 export default Skeleton;
