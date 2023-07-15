@@ -1,7 +1,5 @@
 import { css, keyframes } from '@emotion/react';
 
-import { SkeletonProps } from '@components/Skeleton/Skeleton';
-
 import { Theme } from '@styles/Theme';
 
 const skeletonAnimation = keyframes`
@@ -16,7 +14,7 @@ const skeletonAnimation = keyframes`
   }
 `;
 
-export const getSkeletonStyling = ({ width, height, variant }: Required<SkeletonProps>) => {
+export const getSkeletonStyling = (width: string, height: string, variant: 'square' | 'circle') => {
   return css({
     width,
     height: variant === 'square' ? height : width,
