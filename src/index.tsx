@@ -1,10 +1,10 @@
 import HangLogProvider from '@/HangLogProvider';
-import { useStarRatingInput } from '@/hooks/useStarRatingInput';
 
 import { useCalendar } from '@hooks/useCalendar';
 import { useDateRangePicker } from '@hooks/useDateRangePicker';
 import { useOverlay } from '@hooks/useOverlay';
 import { useSelect } from '@hooks/useSelect';
+import { useStarRatingInput } from '@hooks/useStarRatingInput';
 
 import Badge from '@components/Badge/Badge';
 import Box from '@components/Box/Box';
@@ -25,6 +25,7 @@ import MenuItem from '@components/MenuItem/MenuItem';
 import MenuList from '@components/MenuList/MenuList';
 import Modal from '@components/Modal/Modal';
 import RadioButton from '@components/RadioButton/RadioButton';
+import SVGCarousel from '@components/SVGCarousel/SVGCarousel';
 import Select from '@components/Select/Select';
 import Skeleton from '@components/Skeleton/Skeleton';
 import Spinner from '@components/Spinner/Spinner';
@@ -78,5 +79,6 @@ export {
   Toast,
   Toggle,
   ToggleGroup,
+  SVGCarousel,
   Theme,
 };
