@@ -16,7 +16,7 @@ import {
   sliderWrapperStyling,
 } from '@components/SVGCarousel/SVGCarousel.style';
 
-export interface ImageCarouselProps {
+export interface SVGCarouselProps {
   width: number;
   height: number;
   images: React.FC<React.SVGProps<SVGSVGElement>>[];
@@ -32,7 +32,7 @@ const SVGCarousel = ({
   showArrows = false,
   showDots = false,
   showNavigationOnHover = false,
-}: ImageCarouselProps) => {
+}: SVGCarouselProps) => {
   const {
     sliderRef,
     animate,

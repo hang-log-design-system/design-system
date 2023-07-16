@@ -20,6 +20,7 @@ export interface ImageCarouselProps {
   width: number;
   height: number;
   images: string[];
+  isDraggable?: boolean;
   showArrows?: boolean;
   showDots?: boolean;
   showNavigationOnHover?: boolean;
@@ -29,6 +30,7 @@ const ImageCarousel = ({
   width,
   height,
   images,
+  isDraggable = false,
   showArrows = false,
   showDots = false,
   showNavigationOnHover = false,
@@ -45,14 +47,14 @@ const ImageCarousel = ({
   } = useImageCarousel(width, images.length);
 
   return (
-    <Box css={getContainerStyling(width, height)}>
+    <Box css={getContainerStyling(width, height)} className="image-carousel-container">
       <Box css={sliderWrapperStyling}>
         <div
           ref={sliderRef}
           css={getSliderContainerStyling(currentPosition, width, translateX, animate)}
-          onMouseDown={handlerSliderMoueDown}
-          onTouchStart={handleSliderTouchStart}
-          onTransitionEnd={handleSliderTransitionEnd}
+          onMouseDown={isDraggable ? handlerSliderMoueDown : undefined}
+          onTouchStart={isDraggable ? handleSliderTouchStart : undefined}
+          onTransitionEnd={isDraggable ? handleSliderTransitionEnd : undefined}
         >
           {images.map((imageUrl, index) => (
             <div key={index} css={getImageWrapperStyling(width, height)}>

@@ -69,8 +69,12 @@ export const getButtonContainerStyling = (showOnHover: boolean) =>
 
     opacity: showOnHover ? 0 : 1,
 
-    'div:hover &': {
-      opacity: 1,
+    '.image-carousel-container:hover &': {
+      opacity: 0.8,
+
+      '&:hover': {
+        opacity: 1,
+      },
     },
 
     '& > button': {
@@ -91,6 +95,10 @@ export const getButtonContainerStyling = (showOnHover: boolean) =>
       boxShadow: Theme.boxShadow.shadow8,
 
       transform: 'translateY(-50%)',
+
+      '&:hover': {
+        cursor: 'pointer',
+      },
 
       '& svg': {
         width: '12px',
@@ -125,7 +133,7 @@ export const getDotsWrapperStyling = (showOnHover: boolean) => {
     opacity: showOnHover ? 0 : 1,
     cursor: 'pointer',
 
-    'div:hover &': {
+    '.image-carousel-container:hover &': {
       opacity: 1,
     },
   });
