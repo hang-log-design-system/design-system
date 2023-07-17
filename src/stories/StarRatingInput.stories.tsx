@@ -21,6 +21,8 @@ const meta = {
     },
   },
   args: {
+    label: '별점',
+    supportingText: '별점을 입력해 주세요',
     rate: 1,
     size: 24,
     gap: 2,
@@ -31,12 +33,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  render: ({ size, gap }) => {
+  render: ({ size, gap, ...args }) => {
     const { starRate, handleStarClick, handleStarHover, handleStarHoverOut } =
       useStarRatingInput(0);
 
     return (
       <StarRatingInput
+        {...args}
         rate={starRate}
         onStarClick={handleStarClick}
         onStarHover={handleStarHover}
