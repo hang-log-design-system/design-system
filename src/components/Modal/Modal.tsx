@@ -3,7 +3,12 @@ import type { PropsWithChildren } from 'react';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import { backdropStyling, closeIconStyling, dialogStyling } from '@components/Modal/Modal.style';
+import {
+  backdropStyling,
+  closeButtonStyling,
+  closeIconStyling,
+  dialogStyling,
+} from '@components/Modal/Modal.style';
 
 export interface ModalProps extends PropsWithChildren {
   isOpen: boolean;
@@ -41,9 +46,9 @@ const Modal = ({ isOpen = false, closeModal, hasCloseButton = true, children }: 
                 type="button"
                 aria-label="close-button"
                 onClick={closeModal}
-                css={closeIconStyling}
+                css={closeButtonStyling}
               >
-                <CloseIcon />
+                <CloseIcon css={closeIconStyling} />
               </button>
             )}
             {children}
