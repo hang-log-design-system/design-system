@@ -4,9 +4,19 @@ import HalfFilledLeftStar from '@assets/svg/half-filled-left-star.svg';
 import HalfFilledRightStar from '@assets/svg/half-filled-right-star.svg';
 import { css } from '@emotion/react';
 
+import { Theme } from '@styles/Theme';
+
+export const inputContainerStyling = css({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: Theme.spacer.spacing2,
+});
+
 export const getStarRatingInputBoxStyling = (size: number, gap: number) => {
   return css({
     display: 'inline-flex',
+
+    cursor: 'pointer',
 
     'img:nth-of-type(odd)': {
       width: `${size / 2}px`,
