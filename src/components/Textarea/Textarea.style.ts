@@ -45,13 +45,13 @@ export const getTextareaStyling = (isError: Required<TextareaProps>['isError']) 
     borderRadius: Theme.borderRadius.small,
     outline: 0,
 
-    backgroundColor: isError ? `${Theme.color.red100} !important` : Theme.color.gray100,
-    boxShadow: isError ? `0 0 0 1px ${Theme.color.red200}` : 'none',
+    backgroundColor: isError ? `${Theme.color.red100}` : Theme.color.gray100,
+
+    transition: 'all .2s ease-in',
 
     '&:focus-within': {
-      boxShadow: isError
-        ? `0 0 0 1px ${Theme.color.red200}, 0 0 0 3px ${Theme.color.red100}`
-        : `0 0 0 1px ${Theme.color.gray300}, 0 0 0 3px ${Theme.color.gray100}`,
+      backgroundColor: isError ? Theme.color.red100 : Theme.color.white,
+      boxShadow: isError ? `0 0 0 1px ${Theme.color.red200}` : `0 0 0 1px ${Theme.color.gray300}`,
     },
   });
 };
