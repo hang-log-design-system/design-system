@@ -21,12 +21,14 @@ export const inputWrapperStyling = (isError: Required<InputProps>['isError']) =>
     borderRadius: Theme.borderRadius.small,
 
     backgroundColor: isError ? `${Theme.color.red100} !important` : 'transparent',
-    boxShadow: isError ? `0 0 0 1px ${Theme.color.red200}` : 'none',
+
+    transition: 'all .2s ease-in',
 
     '&:focus-within': {
+      backgroundColor: isError ? Theme.color.red100 : Theme.color.white,
       boxShadow: isError
-        ? `0 0 0 1px ${Theme.color.red200}, 0 0 0 3px ${Theme.color.red100}`
-        : `0 0 0 1px ${Theme.color.gray300}, 0 0 0 3px ${Theme.color.gray100}`,
+        ? `inset 0 0 0 1px ${Theme.color.red200}`
+        : `inset 0 0 0 1px ${Theme.color.gray300}`,
     },
 
     '& svg': {
