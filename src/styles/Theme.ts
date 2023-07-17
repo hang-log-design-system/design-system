@@ -118,6 +118,7 @@ const boxShadow = {
 } as const;
 
 const zIndex = {
+  overlayPeak: 4,
   overlayTop: 3,
   overlayMiddle: 2,
   overlayBottom: 1,
