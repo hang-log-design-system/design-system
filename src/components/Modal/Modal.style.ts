@@ -39,7 +39,7 @@ export const dialogStyling = css({
   animation: `${fadeIn} 0.2s ease-in`,
 });
 
-export const closeIconStyling = css({
+export const closeButtonStyling = css({
   position: 'absolute',
   right: '24px',
   top: '24px',
@@ -51,4 +51,9 @@ export const closeIconStyling = css({
   backgroundColor: 'transparent',
 
   cursor: 'pointer',
+});
+
+export const closeIconStyling = css({
+  width: '20px',
+  height: '20px',
 });
