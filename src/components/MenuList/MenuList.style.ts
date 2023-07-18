@@ -15,8 +15,9 @@ export const menuListStyling = css({
   marginTop: Theme.spacer.spacing2,
 
   backgroundColor: Theme.color.white,
-  border: `1px solid ${Theme.color.gray200}`,
   borderRadius: Theme.borderRadius.small,
+
+  boxShadow: Theme.boxShadow.shadow8,
 
   transition: 'all .2 ease-in',
 });
