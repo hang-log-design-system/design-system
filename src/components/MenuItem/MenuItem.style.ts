@@ -13,6 +13,6 @@ export const menuItemStyling = css({
   cursor: 'pointer',
 
   '&:hover': {
-    backgroundColor: Theme.color.gray200,
+    backgroundColor: Theme.color.gray100,
   },
 });
