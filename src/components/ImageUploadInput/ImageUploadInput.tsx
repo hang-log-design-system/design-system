@@ -51,12 +51,15 @@ const ImageUploadInput = ({
       {label && <Label id={id}>{label}</Label>}
       <Flex styles={{ align: 'flex-start', gap: Theme.spacer.spacing2 }}>
         <Button
-          css={getUploadButtonStyling(!!imageUrls, imageUrls?.length === maxUploadCount)}
+          css={getUploadButtonStyling(
+            imageUrls !== null && imageUrls!.length > 0,
+            imageUrls?.length === maxUploadCount
+          )}
           type="button"
           onClick={handleImageUploadButton}
         >
           <ImageIcon />
-          {!imageUrls && '이미지를 업로드해 주세요'}
+          {(imageUrls === null || imageUrls.length === 0) && '이미지를 업로드해 주세요'}
         </Button>
         <input
           css={inputStyling}
