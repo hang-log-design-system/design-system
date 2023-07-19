@@ -10,6 +10,7 @@ import {
   getUploadButtonStyling,
   imageStyling,
   imageWrapperStyling,
+  inputContainerStyling,
   inputStyling,
 } from '@components/ImageUploadInput/ImageUploadInput.style';
 import Label from '@components/Label/Label';
@@ -17,6 +18,7 @@ import Label from '@components/Label/Label';
 import { Theme } from '@styles/Theme';
 
 import Box from '../Box/Box';
+import SupportingText from '../SupportingText/SupportingText';
 
 export interface ImageUploadInputProps extends ComponentPropsWithoutRef<'input'> {
   label?: string;
@@ -45,16 +47,19 @@ const ImageUploadInput = ({
   };
 
   return (
-    <div>
+    <div css={inputContainerStyling}>
       {label && <Label id={id}>{label}</Label>}
       <Flex styles={{ align: 'flex-start', gap: Theme.spacer.spacing2 }}>
         <Button
-          css={getUploadButtonStyling(!!imageUrls, imageUrls?.length === maxUploadCount)}
+          css={getUploadButtonStyling(
+            imageUrls !== null && imageUrls!.length > 0,
+            imageUrls?.length === maxUploadCount
+          )}
           type="button"
           onClick={handleImageUploadButton}
         >
           <ImageIcon />
-          {!imageUrls && '이미지를 업로드해 주세요'}
+          {(imageUrls === null || imageUrls.length === 0) && '이미지를 업로드해 주세요'}
         </Button>
         <input
           css={inputStyling}
@@ -79,6 +84,7 @@ const ImageUploadInput = ({
             </Box>
           ))}
       </Flex>
+      {supportingText && <SupportingText>{supportingText}</SupportingText>}
     </div>
   );
 };
