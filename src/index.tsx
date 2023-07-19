@@ -18,6 +18,7 @@ import Flex from '@components/Flex/Flex';
 import FloatingButton from '@components/FloatingButton/FloatingButton';
 import Heading from '@components/Heading/Heading';
 import ImageCarousel from '@components/ImageCarousel/ImageCarousel';
+import ImageUploadInput from '@components/ImageUploadInput/ImageUploadInput';
 import Input from '@components/Input/Input';
 import Label from '@components/Label/Label';
 import Menu from '@components/Menu/Menu';
@@ -60,6 +61,7 @@ export {
   FloatingButton,
   Heading,
   ImageCarousel,
+  ImageUploadInput,
   Input,
   Label,
   Menu,
