@@ -2,6 +2,12 @@ import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
 
+export const inputContainerStyling = css({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: Theme.spacer.spacing2,
+});
+
 export const getUploadButtonStyling = (isUploaded: boolean, maxUploaded: boolean) => {
   return css({
     display: maxUploaded ? 'none' : 'flex',

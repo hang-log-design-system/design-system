@@ -10,6 +10,7 @@ import {
   getUploadButtonStyling,
   imageStyling,
   imageWrapperStyling,
+  inputContainerStyling,
   inputStyling,
 } from '@components/ImageUploadInput/ImageUploadInput.style';
 import Label from '@components/Label/Label';
@@ -17,6 +18,7 @@ import Label from '@components/Label/Label';
 import { Theme } from '@styles/Theme';
 
 import Box from '../Box/Box';
+import SupportingText from '../SupportingText/SupportingText';
 
 export interface ImageUploadInputProps extends ComponentPropsWithoutRef<'input'> {
   label?: string;
@@ -45,7 +47,7 @@ const ImageUploadInput = ({
   };
 
   return (
-    <div>
+    <div css={inputContainerStyling}>
       {label && <Label id={id}>{label}</Label>}
       <Flex styles={{ align: 'flex-start', gap: Theme.spacer.spacing2 }}>
         <Button
@@ -79,6 +81,7 @@ const ImageUploadInput = ({
             </Box>
           ))}
       </Flex>
+      {supportingText && <SupportingText>{supportingText}</SupportingText>}
     </div>
   );
 };
