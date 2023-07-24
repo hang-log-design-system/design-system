@@ -7,7 +7,7 @@ export const menuListStyling = css({
   transform: 'translateY(49px)',
   display: 'flex',
   flexDirection: 'column',
-  zIndex: Theme.zIndex.overlayTop,
+  zIndex: Theme.zIndex.overlayMiddle,
 
   minWidth: '150px',
 
