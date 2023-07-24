@@ -10,8 +10,9 @@ export const getSelectedTabStyling = {
     alignItems: 'center',
     justifyContent: 'center',
 
-    borderBottom: `1px solid ${Theme.color.blue600}`,
+    minWidth: 'max-content',
     padding: '12px 16px',
+    borderBottom: `1px solid ${Theme.color.blue600}`,
 
     backgroundColor: Theme.color.white,
 
@@ -27,6 +28,7 @@ export const getSelectedTabStyling = {
     alignItems: 'center',
     justifyContent: 'center',
 
+    minWidth: 'max-content',
     padding: '12px 16px',
     border: 'none',
 
@@ -46,6 +48,7 @@ export const getUnSelectedTabStyling = {
     alignItems: 'center',
     justifyContent: 'center',
 
+    minWidth: 'max-content',
     padding: '12px 16px',
     borderBottom: '1px solid transparent',
 
@@ -68,6 +71,7 @@ export const getUnSelectedTabStyling = {
     alignItems: 'center',
     justifyContent: 'center',
 
+    minWidth: 'max-content',
     padding: '12px 16px',
     border: 'none',
 
