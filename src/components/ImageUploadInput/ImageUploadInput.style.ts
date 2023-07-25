@@ -8,6 +8,11 @@ export const inputContainerStyling = css({
   gap: Theme.spacer.spacing2,
 });
 
+export const inputWrapperStyling = css({
+  overflowX: 'scroll',
+  overflowY: 'hidden',
+});
+
 export const getUploadButtonStyling = (isUploaded: boolean, maxUploaded: boolean) => {
   return css({
     display: maxUploaded ? 'none' : 'flex',
