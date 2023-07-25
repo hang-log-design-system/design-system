@@ -13,6 +13,8 @@ export const backdropStyling = css({
   height: '100%',
 
   backgroundColor: 'rgba(0, 0, 0, .15)',
+
+  cursor: 'pointer',
 });
 
 export const dialogStyling = css({
