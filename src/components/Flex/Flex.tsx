@@ -1,16 +1,25 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
 import { FlexStylingProps, getFlexStyling } from '@components/Flex/Flex.style';
 
-export interface FlexPorps extends ComponentPropsWithoutRef<'div'> {
+export interface FlexProps extends ComponentPropsWithoutRef<'div'> {
+  /**
+   * Flex 컴포넌트가 사용할 HTML 태그
+   *
+   * @default 'div'
+   */
+  tag?: ElementType;
+  /** Flex 컴포넌트 스타일 옵션 */
   styles?: FlexStylingProps;
 }
 
-const Flex = ({ styles = {}, children, ...attributes }: FlexPorps) => {
+const Flex = ({ tag = 'div', styles = {}, children, ...attributes }: FlexProps) => {
+  const Tag = tag;
+
   return (
-    <div css={getFlexStyling(styles)} {...attributes}>
+    <Tag css={getFlexStyling(styles)} {...attributes}>
       {children}
-    </div>
+    </Tag>
   );
 };
 

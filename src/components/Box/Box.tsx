@@ -1,16 +1,25 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
 import { BoxStylingProps, getBoxStyling } from '@components/Box/Box.style';
 
 export interface BoxProps extends ComponentPropsWithoutRef<'div'> {
+  /**
+   * Box 컴포넌트가 사용할 HTML 태그
+   *
+   * @default 'div'
+   */
+  tag?: ElementType;
+  /** Box 컴포넌트 스타일 옵션 */
   styles?: BoxStylingProps;
 }
 
-const Box = ({ styles = {}, children, ...attributes }: BoxProps) => {
+const Box = ({ tag = 'div', styles = {}, children, ...attributes }: BoxProps) => {
+  const Tag = tag;
+
   return (
-    <div css={getBoxStyling(styles)} {...attributes}>
+    <Tag css={getBoxStyling(styles)} {...attributes}>
       {children}
-    </div>
+    </Tag>
   );
 };
 
