@@ -1,9 +1,6 @@
 import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
 
-import {
-  getSelectedToggleStyling,
-  getUnSelectedToggleStyling,
-} from '@components/Toggle/Toggle.style';
+import { getToggleStyling } from '@components/Toggle/Toggle.style';
 
 export interface ToggleProps extends ComponentPropsWithRef<'li'> {
   toggleId: string | number;
@@ -19,10 +16,8 @@ const Toggle = (
   return (
     <li
       ref={ref}
-      css={selectedId === toggleId ? getSelectedToggleStyling : getUnSelectedToggleStyling}
-      onClick={() => {
-        changeSelect(toggleId);
-      }}
+      css={getToggleStyling(selectedId === toggleId)}
+      onClick={() => changeSelect(toggleId)}
       {...attributes}
     >
       {text}
