@@ -4,89 +4,48 @@ import { Theme } from '@styles/Theme';
 
 export type TabSelectedStylingProps = 'outline' | 'block';
 
-export const getSelectedTabStyling = {
-  outline: css({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+export const tabStyling = css({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
-    minWidth: 'max-content',
-    padding: '12px 16px',
-    borderBottom: `1px solid ${Theme.color.blue600}`,
+  minWidth: 'max-content',
+  padding: '12px 16px',
 
-    backgroundColor: Theme.color.white,
+  fontSize: Theme.text.medium.fontSize,
+  lineHeight: Theme.text.medium.lineHeight,
 
-    fontSize: Theme.text.medium.fontSize,
-    lineHeight: Theme.text.medium.lineHeight,
-    color: Theme.color.blue600,
+  transition: 'all .2s ease-in',
 
-    cursor: 'pointer',
-  }),
+  cursor: 'pointer',
+});
 
-  block: css({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+export const getVariantStyling = (variant: TabSelectedStylingProps, isSelected: boolean) => {
+  const style = {
+    outline: css({
+      borderBottom: `1px solid ${isSelected ? Theme.color.blue600 : 'transparent'}`,
 
-    minWidth: 'max-content',
-    padding: '12px 16px',
-    border: 'none',
+      backgroundColor: Theme.color.white,
 
-    backgroundColor: Theme.color.blue600,
+      color: isSelected ? Theme.color.blue600 : Theme.color.gray500,
 
-    fontSize: Theme.text.medium.fontSize,
-    lineHeight: Theme.text.medium.lineHeight,
-    color: Theme.color.white,
+      '&:hover': {
+        color: isSelected ? Theme.color.blue600 : Theme.color.gray600,
+      },
+    }),
 
-    cursor: 'pointer',
-  }),
-};
+    block: css({
+      border: 'none',
 
-export const getUnSelectedTabStyling = {
-  outline: css({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+      backgroundColor: isSelected ? Theme.color.blue600 : Theme.color.gray100,
 
-    minWidth: 'max-content',
-    padding: '12px 16px',
-    borderBottom: '1px solid transparent',
+      color: isSelected ? Theme.color.white : Theme.color.gray500,
 
-    backgroundColor: Theme.color.white,
+      '&:hover': {
+        color: isSelected ? Theme.color.white : Theme.color.gray600,
+      },
+    }),
+  };
 
-    fontSize: Theme.text.medium.fontSize,
-    lineHeight: Theme.text.medium.lineHeight,
-    color: Theme.color.gray500,
-
-    transition: 'all .2s ease-in',
-
-    cursor: 'pointer',
-
-    '&:hover': {
-      color: Theme.color.gray600,
-    },
-  }),
-  block: css({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-
-    minWidth: 'max-content',
-    padding: '12px 16px',
-    border: 'none',
-
-    backgroundColor: Theme.color.gray100,
-
-    fontSize: Theme.text.medium.fontSize,
-    lineHeight: Theme.text.medium.lineHeight,
-    color: Theme.color.gray500,
-
-    transition: 'all .2s ease-in',
-
-    cursor: 'pointer',
-
-    '&:hover': {
-      color: Theme.color.gray600,
-    },
-  }),
+  return style[variant];
 };
