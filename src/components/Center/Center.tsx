@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
 import { getCenterStyling } from '@components/Center/Center.style';
 
-interface CenterProps extends ComponentPropsWithoutRef<'div'> {
+export interface CenterProps extends ComponentPropsWithoutRef<'div'> {
   /**
    * Center 컴포넌트가 사용할 HTML 태그
    *

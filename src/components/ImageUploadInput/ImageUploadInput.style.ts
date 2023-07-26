@@ -9,7 +9,7 @@ export const inputContainerStyling = css({
 });
 
 export const inputWrapperStyling = css({
-  overflowX: 'scroll',
+  overflowX: 'auto',
   overflowY: 'hidden',
 });
 
