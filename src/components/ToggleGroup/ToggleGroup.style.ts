@@ -9,11 +9,13 @@ export const ToggleGroupContainerStyling = css({
   borderRadius: Theme.borderRadius.small,
 
   overflow: 'hidden',
-  '& :first-child': {
+
+  '& :first-of-type': {
     borderTopLeftRadius: Theme.borderRadius.small,
     borderBottomLeftRadius: Theme.borderRadius.small,
   },
-  '& :last-child': {
+
+  '& :last-of-type': {
     borderTopRightRadius: Theme.borderRadius.small,
     borderBottomRightRadius: Theme.borderRadius.small,
   },
