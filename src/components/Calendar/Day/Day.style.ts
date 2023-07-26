@@ -8,24 +8,26 @@ export const dayContainerStyling = css({
   height: '40px',
 });
 
-export const dayStyling = css({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+export const getDayStyling = (isClickable: boolean) => {
+  return css({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
 
-  width: '40px',
-  height: '40px',
-  backgroundColor: Theme.color.white,
+    width: '40px',
+    height: '40px',
+    backgroundColor: Theme.color.white,
 
-  fontSize: Theme.text.small.fontSize,
-  fontWeight: '500',
+    fontSize: Theme.text.small.fontSize,
+    fontWeight: '500',
 
-  cursor: 'pointer',
+    cursor: isClickable ? 'pointer' : 'default',
 
-  '&:hover': {
-    backgroundColor: Theme.color.gray100,
-  },
-});
+    '&:hover': {
+      backgroundColor: Theme.color.gray100,
+    },
+  });
+};
 
 export const getTodayStyling = (isToday: boolean) => {
   return (
