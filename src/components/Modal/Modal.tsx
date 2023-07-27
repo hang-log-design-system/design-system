@@ -14,9 +14,16 @@ export interface ModalProps extends PropsWithChildren {
   isOpen: boolean;
   closeModal: () => void;
   hasCloseButton?: boolean;
+  isBackdropClosable?: boolean;
 }
 
-const Modal = ({ isOpen = false, closeModal, hasCloseButton = true, children }: ModalProps) => {
+const Modal = ({
+  closeModal,
+  isOpen = false,
+  hasCloseButton = true,
+  isBackdropClosable = true,
+  children,
+}: ModalProps) => {
   const onEscClicked = (e: KeyboardEvent) => {
     if (e.key === 'Escape') {
       closeModal();
@@ -39,7 +46,7 @@ const Modal = ({ isOpen = false, closeModal, hasCloseButton = true, children }: 
     <>
       {isOpen && (
         <>
-          <div css={backdropStyling} onClick={closeModal} />
+          <div css={backdropStyling} onClick={isBackdropClosable ? closeModal : () => {}} />
           <dialog css={dialogStyling}>
             {hasCloseButton && (
               <button
