@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ForwardedRef, forwardRef, useEffect } from 'react';
 
-import { ToggleGroupContainerStyling } from '@components/ToggleGroup/ToggleGroup.style';
+import { containerStyling } from '@components/ToggleGroup/ToggleGroup.style';
 
 export interface ToggleGroupProps extends ComponentPropsWithRef<'ul'> {}
 
@@ -9,7 +9,7 @@ const ToggleGroup = (
   ref: ForwardedRef<HTMLUListElement>
 ) => {
   return (
-    <ul css={ToggleGroupContainerStyling} ref={ref} {...attributes}>
+    <ul css={containerStyling} ref={ref} {...attributes}>
       {children}
     </ul>
   );

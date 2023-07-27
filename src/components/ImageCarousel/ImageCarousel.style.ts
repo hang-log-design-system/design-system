@@ -14,6 +14,8 @@ export const getContainerStyling = (width: number, height: number) => {
 
     overflow: 'hidden',
 
+    cursor: 'grab',
+
     '& *': {
       userSelect: 'none',
     },

@@ -10,6 +10,10 @@ export const containerStyling = css({
 
   padding: Theme.spacer.spacing3,
 
+  '@media screen and (max-width: 632px)': {
+    flexWrap: 'wrap',
+  },
+
   '& > button': {
     position: 'absolute',
     top: '21px',
@@ -35,6 +39,17 @@ export const containerStyling = css({
   },
 });
 
+export const previousButtonStyling = css({
+  '@media screen and (max-width: 632px)': {
+    left: Theme.spacer.spacing3,
+  },
+});
+
 export const nextButtonStyling = css({
   right: Theme.spacer.spacing3,
+
+  '@media screen and (max-width: 632px)': {
+    left: '292px',
+    right: 'unset',
+  },
 });

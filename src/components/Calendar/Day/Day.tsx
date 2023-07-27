@@ -1,7 +1,7 @@
 import {
   dayContainerStyling,
-  dayStyling,
   getDayInRangeStyling,
+  getDayStyling,
   getDisabledDayStyling,
   getSelectedDayStyling,
   getTodayStyling,
@@ -35,7 +35,7 @@ const Day = ({
       {day && (
         <span
           css={[
-            dayStyling,
+            getDayStyling(!!onClick),
             getTodayStyling(isToday),
             getDayInRangeStyling(isInRange),
             getSelectedDayStyling(isSelected),

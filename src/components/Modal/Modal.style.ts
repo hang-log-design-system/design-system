@@ -13,6 +13,8 @@ export const backdropStyling = css({
   height: '100%',
 
   backgroundColor: 'rgba(0, 0, 0, .15)',
+
+  cursor: 'pointer',
 });
 
 export const dialogStyling = css({
@@ -26,12 +28,11 @@ export const dialogStyling = css({
   alignItems: 'center',
 
   minWidth: '300px',
-  maxWidth: '500px',
   padding: Theme.spacer.spacing4,
   margin: '0 auto',
 
   border: 'none',
-  borderRadius: Theme.borderRadius.medium,
+  borderRadius: Theme.borderRadius.large,
 
   backgroundColor: Theme.color.white,
   boxShadow: Theme.boxShadow.shadow8,
@@ -54,6 +55,6 @@ export const closeButtonStyling = css({
 });
 
 export const closeIconStyling = css({
-  width: '20px',
-  height: '20px',
+  width: '16px',
+  height: '16px',
 });

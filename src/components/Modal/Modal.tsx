@@ -1,5 +1,5 @@
 import CloseIcon from '@assets/svg/close-icon.svg';
-import type { PropsWithChildren } from 'react';
+import type { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -10,7 +10,7 @@ import {
   dialogStyling,
 } from '@components/Modal/Modal.style';
 
-export interface ModalProps extends PropsWithChildren {
+export interface ModalProps extends ComponentPropsWithoutRef<'dialog'> {
   isOpen: boolean;
   closeModal: () => void;
   hasCloseButton?: boolean;
@@ -23,6 +23,7 @@ const Modal = ({
   hasCloseButton = true,
   isBackdropClosable = true,
   children,
+  ...attributes
 }: ModalProps) => {
   const onEscClicked = (e: KeyboardEvent) => {
     if (e.key === 'Escape') {
@@ -47,7 +48,7 @@ const Modal = ({
       {isOpen && (
         <>
           <div css={backdropStyling} onClick={isBackdropClosable ? closeModal : () => {}} />
-          <dialog css={dialogStyling}>
+          <dialog css={dialogStyling} {...attributes}>
             {hasCloseButton && (
               <button
                 type="button"

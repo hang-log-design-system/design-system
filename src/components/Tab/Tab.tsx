@@ -1,7 +1,7 @@
 import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
 
 import type { TabSelectedStylingProps } from '@components/Tab/Tab.style';
-import { getSelectedTabStyling, getUnSelectedTabStyling } from '@components/Tab/Tab.style';
+import { getVariantStyling, tabStyling } from '@components/Tab/Tab.style';
 
 export interface TabProps extends ComponentPropsWithRef<'li'> {
   variant?: TabSelectedStylingProps;
@@ -17,7 +17,7 @@ const Tab = (
 ) => {
   return (
     <li
-      css={selectedId === tabId ? getSelectedTabStyling[variant] : getUnSelectedTabStyling[variant]}
+      css={[tabStyling, getVariantStyling(variant, selectedId === tabId)]}
       ref={ref}
       onClick={() => {
         changeSelect(tabId);

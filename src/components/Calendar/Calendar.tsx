@@ -1,6 +1,6 @@
 import { DAYS_OF_WEEK } from '@constants/index';
 import type { SelectedDateRange, YearMonth } from '@type/date';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { getDayBoxSize, getDayInfo } from '@utils/date';
 
@@ -42,7 +42,7 @@ const Calendar = ({
   selectedDate,
   onDateClick,
 }: CalendarProps) => {
-  const dayBoxSize = useMemo(() => getDayBoxSize(yearMonthData), []);
+  const dayBoxSize = useMemo(() => getDayBoxSize(yearMonthData), [yearMonthData]);
 
   return (
     <div css={containerStyling}>

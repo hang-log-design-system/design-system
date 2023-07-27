@@ -11,6 +11,8 @@ import {
 import SupportingText from '@components/SupportingText/SupportingText';
 
 export interface RadioButtonProps extends ComponentPropsWithoutRef<'input'> {
+  /** Radio에서 처음 선택된 초기 값 */
+  initialCheckedOption?: string;
   /** Radio에서 선택할 수 있는 문자열 option*/
   options: string[];
   /** RadioButton의 라벨 텍스트 */
@@ -22,6 +24,7 @@ export interface RadioButtonProps extends ComponentPropsWithoutRef<'input'> {
 }
 
 const RadioButton = ({
+  initialCheckedOption,
   options,
   label,
   supportingText,
@@ -29,7 +32,7 @@ const RadioButton = ({
   onChange,
   ...attributes
 }: RadioButtonProps) => {
-  const [checkedOption, setCheckedOption] = useState<string>(options[0]);
+  const [checkedOption, setCheckedOption] = useState<string>(initialCheckedOption ?? options[0]);
 
   const handleOptionClick = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e);

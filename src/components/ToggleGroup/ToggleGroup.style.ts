@@ -2,18 +2,20 @@ import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
 
-export const ToggleGroupContainerStyling = css({
+export const containerStyling = css({
   display: 'flex',
 
   width: 'fit-content',
   borderRadius: Theme.borderRadius.small,
 
   overflow: 'hidden',
-  '& :first-child': {
+
+  '& :first-of-type': {
     borderTopLeftRadius: Theme.borderRadius.small,
     borderBottomLeftRadius: Theme.borderRadius.small,
   },
-  '& :last-child': {
+
+  '& :last-of-type': {
     borderTopRightRadius: Theme.borderRadius.small,
     borderBottomRightRadius: Theme.borderRadius.small,
   },

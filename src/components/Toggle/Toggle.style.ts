@@ -2,50 +2,28 @@ import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
 
-export const getSelectedToggleStyling = css({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+export const getToggleStyling = (isSelected: boolean) => {
+  return css({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
 
-  border: `1px solid ${Theme.color.blue700}`,
-  padding: '8px 12px',
+    padding: '8px 12px',
+    border: `1px solid ${isSelected ? Theme.color.blue700 : Theme.color.gray200}`,
 
-  backgroundColor: Theme.color.blue100,
+    backgroundColor: isSelected ? Theme.color.blue100 : Theme.color.white,
 
-  fontSize: Theme.text.small.fontSize,
-  lineHeight: Theme.text.small.lineHeight,
-  color: Theme.color.blue700,
+    fontSize: Theme.text.small.fontSize,
+    lineHeight: Theme.text.small.lineHeight,
+    color: isSelected ? Theme.color.blue700 : Theme.color.gray600,
 
-  transition: `all .2s ease-in`,
+    transition: `all .2s ease-in`,
 
-  cursor: 'pointer',
+    cursor: 'pointer',
 
-  '&:hover': {
-    color: Theme.color.blue700,
-    backgroundColor: Theme.color.blue200,
-  },
-});
-
-export const getUnSelectedToggleStyling = css({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-
-  padding: '8px 12px',
-  border: `1px solid ${Theme.color.gray200}`,
-
-  backgroundColor: Theme.color.white,
-
-  fontSize: Theme.text.small.fontSize,
-  lineHeight: Theme.text.small.lineHeight,
-  color: Theme.color.gray600,
-
-  transition: `all .2s ease-in`,
-
-  cursor: 'pointer',
-
-  '&:hover': {
-    color: Theme.color.gray700,
-    backgroundColor: Theme.color.gray100,
-  },
-});
+    '&:hover': {
+      color: isSelected ? Theme.color.blue700 : Theme.color.gray700,
+      backgroundColor: isSelected ? Theme.color.blue200 : Theme.color.gray100,
+    },
+  });
+};
