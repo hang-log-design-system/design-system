@@ -1,5 +1,5 @@
 import CloseIcon from '@assets/svg/close-icon.svg';
-import type { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -11,10 +11,25 @@ import {
 } from '@components/Modal/Modal.style';
 
 export interface ModalProps extends ComponentPropsWithoutRef<'dialog'> {
+  /**
+   * Modal이 열려있는지에 대한 상태
+   *
+   * @default false
+   */
   isOpen: boolean;
-  closeModal: () => void;
+  /**
+   * Modal에 닫기버튼에 대한 여부
+   *
+   * @default true
+   */
   hasCloseButton?: boolean;
+  /**
+   * Modal Backdrop을 클릭해서 Modal을 닫을 수 있는 지에 대한 여부
+   * @default true
+   */
   isBackdropClosable?: boolean;
+  /** Modal을 닫는 함수 */
+  closeModal: () => void;
 }
 
 const Modal = ({
@@ -26,7 +41,7 @@ const Modal = ({
   ...attributes
 }: ModalProps) => {
   const onEscClicked = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && isBackdropClosable) {
       closeModal();
     }
   };
