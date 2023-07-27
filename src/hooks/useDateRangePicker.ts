@@ -1,5 +1,5 @@
 import { CALENDAR_MONTH_CHANGE } from '@constants/index';
-import type { DateRangePickerCalendar, SelectedDateRange, YearMonth } from '@type/date';
+import type { DateRangePickerCalendar, SelectedDateRange } from '@type/date';
 import { useState } from 'react';
 
 import { getNewYearMonthInfo, getYearMonthInfo, toDate } from '@utils/date';
@@ -7,7 +7,7 @@ import { getNewYearMonthInfo, getYearMonthInfo, toDate } from '@utils/date';
 export const useDateRangePicker = (initialSelectedDateRange?: SelectedDateRange) => {
   const currentDate = new Date();
   const initialDate = initialSelectedDateRange
-    ? toDate(initialSelectedDateRange.start!)
+    ? toDate(initialSelectedDateRange.startDate!)
     : currentDate;
   const currentMonthYearDetail = getYearMonthInfo(initialDate);
 
@@ -21,8 +21,8 @@ export const useDateRangePicker = (initialSelectedDateRange?: SelectedDateRange)
 
   const [selectedDateRange, setSelectedDateRange] = useState<SelectedDateRange>(
     initialSelectedDateRange ?? {
-      start: null,
-      end: null,
+      startDate: null,
+      endDate: null,
     }
   );
 
@@ -51,27 +51,29 @@ export const useDateRangePicker = (initialSelectedDateRange?: SelectedDateRange)
   };
 
   const resetSelectedDateRange = () => {
-    setSelectedDateRange({ start: null, end: null });
+    setSelectedDateRange({ startDate: null, endDate: null });
   };
 
   const handleDateSelect = (dateString: string, onDaySelect?: CallableFunction) => {
     setSelectedDateRange((prevSelectedDateRange) => {
-      const startDate = prevSelectedDateRange.start ? new Date(prevSelectedDateRange.start) : null;
+      const startDate = prevSelectedDateRange.startDate
+        ? new Date(prevSelectedDateRange.startDate)
+        : null;
       const selectedDate = new Date(dateString);
 
       const nextSelectedDates: SelectedDateRange = {
-        start: null,
-        end: null,
+        startDate: null,
+        endDate: null,
       };
 
-      if (startDate && !prevSelectedDateRange.end && selectedDate < startDate) {
-        nextSelectedDates.start = dateString;
-        nextSelectedDates.end = prevSelectedDateRange.start;
-      } else if (startDate && !prevSelectedDateRange.end) {
-        nextSelectedDates.start = prevSelectedDateRange.start;
-        nextSelectedDates.end = dateString;
+      if (startDate && !prevSelectedDateRange.endDate && selectedDate < startDate) {
+        nextSelectedDates.startDate = dateString;
+        nextSelectedDates.endDate = prevSelectedDateRange.startDate;
+      } else if (startDate && !prevSelectedDateRange.endDate) {
+        nextSelectedDates.startDate = prevSelectedDateRange.startDate;
+        nextSelectedDates.endDate = dateString;
       } else {
-        nextSelectedDates.start = dateString;
+        nextSelectedDates.startDate = dateString;
       }
 
       onDaySelect?.(nextSelectedDates);

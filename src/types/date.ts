@@ -36,6 +36,6 @@ export interface DateRangePickerCalendar {
 }
 
 export interface SelectedDateRange {
-  start: string | null;
-  end: string | null;
+  startDate: string | null;
+  endDate: string | null;
 }
