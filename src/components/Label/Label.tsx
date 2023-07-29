@@ -9,7 +9,12 @@ export interface LabelProps extends ComponentPropsWithoutRef<'label'> {
 const Label = ({ id, required = false, children, ...attributes }: LabelProps) => {
   return (
     <label css={labelStyling} htmlFor={id} {...attributes}>
-      {children} {required && <span css={requiredStyling}>*</span>}
+      {children}{' '}
+      {required && (
+        <span css={requiredStyling} aria-hidden>
+          *
+        </span>
+      )}
     </label>
   );
 };
