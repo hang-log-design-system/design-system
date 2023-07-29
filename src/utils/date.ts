@@ -74,9 +74,9 @@ const isDayOutOfRange = (
   dateString: string,
   maxDateRange?: number
 ) => {
-  if (!dateRange?.start || dateRange?.end || !maxDateRange) return false;
+  if (!dateRange?.startDate || dateRange?.endDate || !maxDateRange) return false;
 
-  const startDate = toDate(dateRange?.start); // Date 타입
+  const startDate = toDate(dateRange?.startDate); // Date 타입
   const currentDate = toDate(dateString); // Date 타입
 
   const diffMilliseconds = currentDate.getTime() - startDate.getTime();
@@ -108,11 +108,13 @@ export const getDayInfo = ({
   const isDate = index >= yearMonthData.firstDay && yearMonthData.lastDate >= date;
   const isToday = todayDateString === dateString;
   const isSelected =
-    selectedDate === date || dateRange?.start === dateString || dateRange?.end === dateString;
+    selectedDate === date ||
+    dateRange?.startDate === dateString ||
+    dateRange?.endDate === dateString;
   const isInRange =
-    !!dateRange?.start &&
-    !!dateRange?.end &&
-    isDayWithinRange?.(dateString, dateRange.start, dateRange.end);
+    !!dateRange?.startDate &&
+    !!dateRange?.endDate &&
+    isDayWithinRange?.(dateString, dateRange.startDate, dateRange.endDate);
   const isRestricted =
     (isFutureDaysRestricted && isDayInFuture(dateString, todayDateString)) ||
     (hasRangeRestriction && isDayOutOfRange(dateRange, dateString, maxDateRange));
