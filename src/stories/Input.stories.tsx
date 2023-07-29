@@ -35,6 +35,7 @@ const meta = {
     placeholder: 'placeholder',
     isError: false,
     required: false,
+    id: 'input',
   },
   decorators: [
     (Story) => (
