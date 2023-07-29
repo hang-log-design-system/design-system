@@ -1,18 +1,18 @@
-import { type ComponentPropsWithRef, type ForwardedRef } from 'react';
+import type { ComponentPropsWithRef, ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
 import { menuListStyling } from '@components/MenuList/MenuList.style';
 
-interface MenuListProps extends ComponentPropsWithRef<'div'> {}
+type MenuListProps = ComponentPropsWithRef<'ul'>;
 
 const MenuList = (
   { children, ...attributes }: MenuListProps,
-  ref: ForwardedRef<HTMLDivElement>
+  ref: ForwardedRef<HTMLUListElement>
 ) => {
   return (
-    <div css={menuListStyling} ref={ref} {...attributes}>
+    <ul css={menuListStyling} ref={ref} {...attributes}>
       {children}
-    </div>
+    </ul>
   );
 };
 
