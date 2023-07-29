@@ -20,6 +20,13 @@ export const labelStyling = css({
   cursor: 'pointer',
 });
 
+export const inputStyling = css({
+  position: 'absolute',
+  opacity: 0,
+  pointerEvents: 'none',
+  outline: '1px solid black',
+});
+
 export const buttonStyling = css({
   width: '16px',
   height: '16px',

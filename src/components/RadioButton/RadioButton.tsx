@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import type { ChangeEvent, ComponentPropsWithoutRef } from 'react';
+import type { ChangeEvent, ComponentPropsWithoutRef, KeyboardEvent } from 'react';
 
 import Label from '@components/Label/Label';
 import {
   buttonStyling,
+  inputStyling,
   labelStyling,
   radioContainerStyling,
   radioWrapperStyling,
@@ -30,6 +31,7 @@ const RadioButton = ({
   supportingText,
   name = 'sample',
   onChange,
+  onKeyDown,
   ...attributes
 }: RadioButtonProps) => {
   const [checkedOption, setCheckedOption] = useState<string>(initialCheckedOption ?? options[0]);
@@ -38,6 +40,14 @@ const RadioButton = ({
     onChange?.(e);
 
     setCheckedOption(e.target.id);
+  };
+
+  const handleOptionEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      onKeyDown?.(e);
+
+      setCheckedOption(e.currentTarget.id);
+    }
   };
 
   return (
@@ -49,21 +59,27 @@ const RadioButton = ({
       )}
       <div css={radioWrapperStyling}>
         {options.map((option) => (
-          <>
-            <label htmlFor={option} key={option} css={labelStyling}>
-              <input
-                type="radio"
-                hidden
-                id={option}
-                name={name}
-                checked={checkedOption === option}
-                onChange={handleOptionClick}
-                {...attributes}
-              />
-              <div css={buttonStyling} />
-              {option}
-            </label>
-          </>
+          <label
+            role="radio"
+            htmlFor={option}
+            tabIndex={0}
+            key={option}
+            aria-checked={checkedOption === option}
+            css={labelStyling}
+          >
+            <input
+              type="radio"
+              id={option}
+              name={name}
+              checked={checkedOption === option}
+              onChange={handleOptionClick}
+              onKeyDown={handleOptionEnter}
+              {...attributes}
+              css={inputStyling}
+            />
+            <div css={buttonStyling} />
+            {option}
+          </label>
         ))}
       </div>
       {supportingText && <SupportingText>{supportingText}</SupportingText>}
