@@ -35,7 +35,10 @@ const FloatingButton = ({
       css={[floatingButtonStyling, getSizeStyling(size), getVariantStyling(variant)]}
       {...attributes}
     >
-      <AddIcon css={[getIconSizeStyling(size), getIconVariantStyling(variant)]} />
+      <AddIcon
+        aria-label="추가 버튼"
+        css={[getIconSizeStyling(size), getIconVariantStyling(variant)]}
+      />
     </button>
   );
 };

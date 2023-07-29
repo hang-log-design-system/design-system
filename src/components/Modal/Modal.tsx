@@ -67,7 +67,7 @@ const Modal = ({
             {hasCloseButton && (
               <button
                 type="button"
-                aria-label="close-button"
+                aria-label="모달 닫기 버튼"
                 onClick={closeModal}
                 css={closeButtonStyling}
               >
