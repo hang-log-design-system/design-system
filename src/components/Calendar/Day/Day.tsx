@@ -1,3 +1,5 @@
+import type { KeyboardEvent } from 'react';
+
 import {
   dayContainerStyling,
   getDayInRangeStyling,
@@ -8,7 +10,11 @@ import {
 } from '@components/Calendar/Day/Day.style';
 
 export interface DayProps {
-  /** 날짜 */
+  /** 년 */
+  year?: number | string;
+  /** 월 */
+  month?: number | string;
+  /** 날짜 또는 요일 */
   day?: number | string;
   /** 날짜가 오늘인지에 대한 여부 */
   isToday?: boolean;
@@ -23,6 +29,8 @@ export interface DayProps {
 }
 
 const Day = ({
+  year,
+  month,
   day,
   isToday = false,
   isSelected = false,
@@ -30,6 +38,12 @@ const Day = ({
   isDisabled = false,
   onClick,
 }: DayProps) => {
+  const handleOptionKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      onClick?.();
+    }
+  };
+
   return (
     <div css={dayContainerStyling}>
       {day && (
@@ -41,7 +55,10 @@ const Day = ({
             getSelectedDayStyling(isSelected),
             getDisabledDayStyling(isDisabled),
           ]}
+          tabIndex={onClick ? 0 : undefined}
+          aria-label={`${year}년 ${month}월 ${day}일`}
           onClick={onClick}
+          onKeyDown={handleOptionKeyPress}
         >
           {day}
         </span>
