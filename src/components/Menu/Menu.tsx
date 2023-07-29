@@ -16,10 +16,20 @@ const Menu = ({ children, closeMenu, ...attributes }: MenuProps) => {
     }
   };
 
+  const handleEscClick = (e: globalThis.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
+  };
+
   useEffect(() => {
     window.addEventListener('click', handleBackdropClick);
+    window.addEventListener('keydown', handleEscClick);
 
-    return () => window.removeEventListener('click', handleBackdropClick);
+    return () => {
+      window.removeEventListener('click', handleBackdropClick);
+      window.removeEventListener('keydown', handleEscClick);
+    };
   }, []);
 
   return (
