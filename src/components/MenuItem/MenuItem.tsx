@@ -9,7 +9,7 @@ interface MenuItemProps extends ComponentPropsWithRef<'li'> {
 
 const MenuItem = ({ children, ...attributes }: MenuItemProps, ref: ForwardedRef<HTMLLIElement>) => {
   return (
-    <li css={menuItemStyling} ref={ref} {...attributes} tabIndex={0}>
+    <li role="link" css={menuItemStyling} ref={ref} tabIndex={0} {...attributes}>
       {children}
     </li>
   );

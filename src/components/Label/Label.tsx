@@ -6,9 +6,9 @@ export interface LabelProps extends ComponentPropsWithoutRef<'label'> {
   required?: boolean;
 }
 
-const Label = ({ required = false, children, ...attributes }: LabelProps) => {
+const Label = ({ id, required = false, children, ...attributes }: LabelProps) => {
   return (
-    <label css={labelStyling} {...attributes}>
+    <label css={labelStyling} htmlFor={id} {...attributes}>
       {children} {required && <span css={requiredStyling}>*</span>}
     </label>
   );

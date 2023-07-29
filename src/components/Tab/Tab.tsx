@@ -17,6 +17,8 @@ const Tab = (
 ) => {
   return (
     <li
+      role="tab"
+      tabIndex={0}
       css={[tabStyling, getVariantStyling(variant, selectedId === tabId)]}
       ref={ref}
       onClick={() => {

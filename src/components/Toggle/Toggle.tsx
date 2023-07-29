@@ -15,6 +15,8 @@ const Toggle = (
 ) => {
   return (
     <li
+      role="radio"
+      tabIndex={0}
       ref={ref}
       css={getToggleStyling(selectedId === toggleId)}
       onClick={() => changeSelect(toggleId)}

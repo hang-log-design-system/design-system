@@ -58,15 +58,8 @@ const RadioButton = ({
         </Label>
       )}
       <div css={radioWrapperStyling}>
-        {options.map((option) => (
-          <label
-            role="radio"
-            htmlFor={option}
-            tabIndex={0}
-            key={option}
-            aria-checked={checkedOption === option}
-            css={labelStyling}
-          >
+        {options.map((option, index) => (
+          <label htmlFor={option} key={option} css={labelStyling} aria-label={label}>
             <input
               type="radio"
               id={option}
@@ -77,7 +70,13 @@ const RadioButton = ({
               {...attributes}
               css={inputStyling}
             />
-            <div css={buttonStyling} />
+            <div
+              css={buttonStyling}
+              tabIndex={0}
+              role="radio"
+              aria-label={`${option}, ${index + 1}/${options.length}`}
+              aria-checked={checkedOption === option}
+            />
             {option}
           </label>
         ))}

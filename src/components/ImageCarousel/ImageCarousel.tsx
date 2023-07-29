@@ -64,10 +64,13 @@ const ImageCarousel = ({
         </div>
       </Box>
       {showArrows && (
-        <div css={getButtonContainerStyling(showNavigationOnHover)}>
+        <div
+          css={images.length !== 1 ? getButtonContainerStyling(showNavigationOnHover) : undefined}
+        >
           <button
             type="button"
             css={leftButtonStyling}
+            aria-label="뒤로가기"
             onClick={() => handleSliderNavigationClick(currentPosition - 1)}
           >
             <LeftIcon />
@@ -75,6 +78,7 @@ const ImageCarousel = ({
           <button
             type="button"
             css={rightButtonStyling}
+            aria-label="앞으로가기"
             onClick={() => handleSliderNavigationClick(currentPosition + 1)}
           >
             <RightIcon />
@@ -85,8 +89,11 @@ const ImageCarousel = ({
         <div css={getDotsWrapperStyling(showNavigationOnHover)}>
           {Array.from({ length: images.length }, (_, index) => (
             <span
+              role="button"
               key={index}
+              tabIndex={0}
               css={dotStyling(currentPosition === index)}
+              aria-label={`${index + 1}번 이미지로 이동`}
               onClick={() => handleSliderNavigationClick(index)}
             />
           ))}

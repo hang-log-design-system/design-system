@@ -9,7 +9,7 @@ const ToggleGroup = (
   ref: ForwardedRef<HTMLUListElement>
 ) => {
   return (
-    <ul css={containerStyling} ref={ref} {...attributes}>
+    <ul role="radiogroup" tabIndex={-1} css={containerStyling} ref={ref} {...attributes}>
       {children}
     </ul>
   );
