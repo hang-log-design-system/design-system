@@ -53,8 +53,12 @@ const StarRatingInput = (
 
   return (
     <div css={inputContainerStyling}>
-      {label && <Label required={required}>{label}</Label>}
-      <div className="star" ref={ref}>
+      {label && (
+        <Label id="star-rating-input" required={required}>
+          {label}
+        </Label>
+      )}
+      <div role="" tabIndex={0} className="star" ref={ref} aria-label={label ? label : '별점 입력'}>
         <span
           className="star-box"
           css={getStarRatingInputBoxStyling(size, gap)}
