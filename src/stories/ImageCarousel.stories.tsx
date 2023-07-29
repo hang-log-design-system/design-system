@@ -19,6 +19,7 @@ const meta = {
     showArrows: false,
     showDots: false,
     showNavigationOnHover: false,
+    isDraggable: true,
   },
 } satisfies Meta<typeof ImageCarousel>;
 
