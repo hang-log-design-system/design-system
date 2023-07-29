@@ -47,7 +47,12 @@ const ImageCarousel = ({
   } = useImageCarousel(width, images.length);
 
   return (
-    <Box css={getContainerStyling(width, height)} className="image-carousel-container">
+    <Box
+      tabIndex={-1}
+      css={getContainerStyling(width, height)}
+      className="image-carousel-container"
+      aria-label="이미지 캐러셀"
+    >
       <Box css={sliderWrapperStyling}>
         <div
           ref={sliderRef}

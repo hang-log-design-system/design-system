@@ -3,6 +3,7 @@ import ImageIcon from '@assets/svg/image-icon.svg';
 import type { ComponentPropsWithoutRef } from 'react';
 import { useRef } from 'react';
 
+import Box from '@components/Box/Box';
 import Button from '@components/Button/Button';
 import Flex from '@components/Flex/Flex';
 import {
@@ -15,11 +16,9 @@ import {
   inputWrapperStyling,
 } from '@components/ImageUploadInput/ImageUploadInput.style';
 import Label from '@components/Label/Label';
+import SupportingText from '@components/SupportingText/SupportingText';
 
 import { Theme } from '@styles/Theme';
-
-import Box from '../Box/Box';
-import SupportingText from '../SupportingText/SupportingText';
 
 export interface ImageUploadInputProps extends ComponentPropsWithoutRef<'input'> {
   label?: string;
