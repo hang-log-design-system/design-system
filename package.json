@@ -14,7 +14,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "publish:npm": "rm -rf dist && mkdir dist && tsc && rm -rf ./dist/stories && cp -r ./src/assets ./dist && tsc-alias",
-    "chromatic": "npx chromatic --project-token=chpt_9e90f3a3f28a532"
+    "chromatic": "npx chromatic --project-token=chpt_9e90f3a3f28a532",
+    "lint": "eslint src"
   },
   "keywords": [
     "react",
@@ -72,6 +73,8 @@
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "babel-plugin-react-require": "^4.0.0",
     "chromatic": "^6.19.9",
     "eslint": "^8.44.0",
