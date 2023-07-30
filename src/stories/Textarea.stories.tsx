@@ -30,13 +30,6 @@ const meta = {
     isError: false,
     required: false,
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Textarea>;
 
 export default meta;
@@ -47,7 +40,7 @@ export const Playground: Story = {};
 export const Sizes: Story = {
   render: ({ isError, placeholder }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Small</h6>
           <Textarea size="small" isError={isError} placeholder={placeholder} />
@@ -60,7 +53,7 @@ export const Sizes: Story = {
           <h6>Large</h6>
           <Textarea size="large" isError={isError} placeholder={placeholder} />
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {

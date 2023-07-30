@@ -21,13 +21,6 @@ const meta = {
     variant: 'primary',
     size: 'medium',
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof FloatingButton>;
 
 export default meta;
@@ -49,7 +42,7 @@ export const Playground: Story = {};
 export const Variants: Story = {
   render: ({ size }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Primary</h6>
           <FloatingButton variant="primary" size={size} />
@@ -58,7 +51,7 @@ export const Variants: Story = {
           <h6>Default</h6>
           <FloatingButton variant="default" size={size} />
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {
@@ -71,7 +64,7 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: ({ variant }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Small</h6>
           <FloatingButton variant={variant} size="small" />
@@ -80,7 +73,7 @@ export const Sizes: Story = {
           <h6>Medium</h6>
           <FloatingButton variant={variant} size="medium" />
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {

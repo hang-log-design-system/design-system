@@ -48,7 +48,7 @@ const Day = ({
     <div css={dayContainerStyling}>
       {day && (
         <span
-          role={onClick ? 'button' : undefined}
+          role={onClick ? 'button' : 'none'}
           css={[
             getDayStyling(!!onClick),
             getTodayStyling(isToday),
@@ -57,7 +57,7 @@ const Day = ({
             getDisabledDayStyling(isDisabled),
           ]}
           tabIndex={onClick ? 0 : undefined}
-          aria-label={`${year}년 ${month}월 ${day}일`}
+          aria-label={year ? `${year}년 ${month}월 ${day}일` : `${day}요일`}
           onClick={onClick}
           onKeyDown={handleOptionKeyPress}
         >

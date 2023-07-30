@@ -31,10 +31,10 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <ul css={containerStyle}>
+      <div css={containerStyle}>
         <ToastContainer />
         <Story />
-      </ul>
+      </div>
     ),
   ],
 } satisfies Meta<typeof Toast>;

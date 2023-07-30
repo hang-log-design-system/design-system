@@ -20,13 +20,6 @@ const meta = {
     size: 'medium',
     children: 'Text',
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Text>;
 
 export default meta;
@@ -48,7 +41,7 @@ export const Playground: Story = {};
 export const Sizes: Story = {
   render: ({ children }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>X Small</h6>
           <Text size="xSmall">{children}</Text>
@@ -65,7 +58,7 @@ export const Sizes: Story = {
           <h6>Large</h6>
           <Text size="large">{children}</Text>
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {

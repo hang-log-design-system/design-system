@@ -42,13 +42,6 @@ const meta = {
       <option value="option3">option 3</option>,
     ],
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Select>;
 
 export default meta;
@@ -60,7 +53,7 @@ export const Sizes: Story = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ isError, placeholder, children }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Small</h6>
           <Select size="small" isError={isError}>
@@ -77,7 +70,7 @@ export const Sizes: Story = {
             {children}
           </Select>
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {

@@ -30,13 +30,6 @@ const meta = {
     isInRange: false,
     isDisabled: false,
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Day>;
 
 export default meta;
@@ -47,7 +40,7 @@ export const Playground: Story = {};
 export const Variants: Story = {
   render: ({ ...args }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Default</h6>
           <Day {...args} />
@@ -68,7 +61,7 @@ export const Variants: Story = {
           <h6>Disabled Day</h6>
           <Day {...args} isDisabled />
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {

@@ -56,7 +56,8 @@ const StarRatingInput = (
       };
 
       return (
-        <span key={index} ref={ref} onClick={handleClick} className={isActive ? 'active' : ''} />
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/alt-text
+        <img key={index} ref={ref} onClick={handleClick} className={isActive ? 'active' : ''} />
       );
     });
 
