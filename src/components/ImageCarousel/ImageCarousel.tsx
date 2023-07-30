@@ -68,10 +68,8 @@ const ImageCarousel = ({
           ))}
         </div>
       </Box>
-      {showArrows && (
-        <div
-          css={images.length !== 1 ? getButtonContainerStyling(showNavigationOnHover) : undefined}
-        >
+      {showArrows && images.length !== 1 && (
+        <div css={getButtonContainerStyling(showNavigationOnHover)}>
           <button
             type="button"
             css={leftButtonStyling}
