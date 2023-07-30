@@ -1,8 +1,7 @@
 import CheckedIcon from '@assets/svg/checked-icon.svg';
 import UncheckedIcon from '@assets/svg/unchecked-icon.svg';
-import { useCallback } from 'react';
-import { forwardRef, useState } from 'react';
 import type { ComponentPropsWithRef, ForwardedRef } from 'react';
+import { forwardRef, useCallback, useState } from 'react';
 
 import { checkboxStyling, inputStyling } from '@components/Checkbox/Checkbox.style';
 

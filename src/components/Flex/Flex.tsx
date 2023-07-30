@@ -1,6 +1,7 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
-import { FlexStylingProps, getFlexStyling } from '@components/Flex/Flex.style';
+import type { FlexStylingProps } from '@components/Flex/Flex.style';
+import { getFlexStyling } from '@components/Flex/Flex.style';
 
 export interface FlexProps extends ComponentPropsWithoutRef<'div'> {
   /**

@@ -1,7 +1,8 @@
 import { containerStyle, informationStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Text, { TextProps } from '@components/Text/Text';
+import type { TextProps } from '@components/Text/Text';
+import Text from '@components/Text/Text';
 
 const meta = {
   title: 'Text',

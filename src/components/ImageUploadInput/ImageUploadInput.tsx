@@ -67,6 +67,7 @@ const ImageUploadInput = ({
           accept="image/*"
           id={id}
           ref={inputRef}
+          multiple={multiple}
           {...attributes}
         />
         {imageUrls &&

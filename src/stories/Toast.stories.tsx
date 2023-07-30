@@ -1,7 +1,6 @@
 import CheckCircleIcon from '@assets/svg/check-circle-icon.svg';
-import { containerStyle, informationStyle } from '@stories/styles';
+import { containerStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
 
 import Button from '@components/Button/Button';
 import Toast from '@components/Toast/Toast';
@@ -44,7 +43,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Variants: Story = {
-  render: ({ children, variant, ...args }) => {
+  render: ({ children, ...args }) => {
     const { isOpen, open } = useOverlay();
 
     setTimeout(() => {
@@ -156,7 +155,8 @@ export const ClosableToast: Story = {
   },
 };
 
-export const withIcon: Story = {
+export const WithIcon: Story = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ children, ...args }) => {
     const { isOpen, open, close } = useOverlay();
 

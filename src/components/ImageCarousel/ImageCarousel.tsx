@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import LeftIcon from '@assets/svg/left-icon.svg';
 import RightIcon from '@assets/svg/right-icon.svg';
 
@@ -41,6 +42,7 @@ const ImageCarousel = ({
     currentPosition,
     translateX,
     handleSliderNavigationClick,
+    handleSliderNavigationEnterKeyPress,
     handlerSliderMoueDown,
     handleSliderTouchStart,
     handleSliderTransitionEnd,
@@ -62,6 +64,7 @@ const ImageCarousel = ({
           onTransitionEnd={isDraggable ? handleSliderTransitionEnd : undefined}
         >
           {images.map((imageUrl, index) => (
+            // eslint-disable-next-line react/no-array-index-key
             <div key={index} css={getImageWrapperStyling(width, height)}>
               <img draggable={false} src={imageUrl} alt="이미지" />
             </div>
@@ -98,6 +101,7 @@ const ImageCarousel = ({
               css={dotStyling(currentPosition === index)}
               aria-label={`${index + 1}번 이미지로 이동`}
               onClick={() => handleSliderNavigationClick(index)}
+              onKeyDown={handleSliderNavigationEnterKeyPress(index)}
             />
           ))}
         </div>

@@ -48,6 +48,7 @@ const Day = ({
     <div css={dayContainerStyling}>
       {day && (
         <span
+          role={onClick ? 'button' : undefined}
           css={[
             getDayStyling(!!onClick),
             getTodayStyling(isToday),

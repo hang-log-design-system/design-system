@@ -38,7 +38,7 @@ export const Checkboxes: Story = {
       <>
         <li css={informationStyle}>
           <h6>Checked</h6>
-          <Checkbox isChecked={true} />
+          <Checkbox isChecked />
         </li>
         <li css={informationStyle}>
           <h6>Unchecked</h6>
@@ -46,7 +46,7 @@ export const Checkboxes: Story = {
         </li>
         <li css={informationStyle}>
           <h6>Checked with Label</h6>
-          <Checkbox checked label="Label" isChecked={true} />
+          <Checkbox checked label="Label" isChecked />
         </li>
         <li css={informationStyle}>
           <h6>Unchecked with Label</h6>

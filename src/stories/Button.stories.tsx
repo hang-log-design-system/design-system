@@ -101,7 +101,7 @@ export const Variants: Story = {
 };
 
 export const Sizes: Story = {
-  render: ({ variant, children, ...args }) => {
+  render: ({ variant, children }) => {
     return (
       <>
         <li css={informationStyle}>

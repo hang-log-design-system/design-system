@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import { badgeStyling, getVariantStyling } from '@components/Badge/Badge.style';
 

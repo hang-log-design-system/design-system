@@ -57,6 +57,7 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {};
 
 export const Sizes: Story = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ isError, placeholder, children }) => {
     return (
       <>
@@ -86,21 +87,21 @@ export const Sizes: Story = {
   },
 };
 
-export const withLabel: Story = {
+export const WithLabel: Story = {
   args: {
     label: 'Label',
   },
   name: 'Select with Label',
 };
 
-export const withSupportingText: Story = {
+export const WithSupportingText: Story = {
   args: {
     supportingText: 'Supporting Text',
   },
   name: 'Select with Supporting Text',
 };
 
-export const withLabelAndSupportingText: Story = {
+export const WithLabelAndSupportingText: Story = {
   args: {
     label: 'Label',
     supportingText: 'Supporting Text',

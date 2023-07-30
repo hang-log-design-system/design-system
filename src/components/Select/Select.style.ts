@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { SelectProps } from '@components/Select/Select';
+import type { SelectProps } from '@components/Select/Select';
 
 import { Theme } from '@styles/Theme';
 

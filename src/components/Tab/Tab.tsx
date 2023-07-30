@@ -1,4 +1,5 @@
-import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
+import type { ComponentPropsWithRef, ForwardedRef, KeyboardEvent } from 'react';
+import { forwardRef } from 'react';
 
 import type { TabSelectedStylingProps } from '@components/Tab/Tab.style';
 import { getVariantStyling, tabStyling } from '@components/Tab/Tab.style';
@@ -15,6 +16,12 @@ const Tab = (
   { tabId, selectedId, variant = 'outline', text, changeSelect, ...attributes }: TabProps,
   ref?: ForwardedRef<HTMLLIElement>
 ) => {
+  const handleEnterKeyPress = (event: KeyboardEvent<HTMLLIElement>) => {
+    if (event.key === 'Enter') {
+      changeSelect(tabId);
+    }
+  };
+
   return (
     <li
       role="tab"
@@ -24,6 +31,7 @@ const Tab = (
       onClick={() => {
         changeSelect(tabId);
       }}
+      onKeyDown={handleEnterKeyPress}
       {...attributes}
     >
       {text}

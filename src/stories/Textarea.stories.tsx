@@ -70,21 +70,21 @@ export const Sizes: Story = {
   },
 };
 
-export const withLabel: Story = {
+export const WithLabel: Story = {
   args: {
     label: 'Label',
   },
   name: 'Textarea with Label',
 };
 
-export const withSupportingText: Story = {
+export const WithSupportingText: Story = {
   args: {
     supportingText: 'Supporting Text',
   },
   name: 'Textarea with Supporting Text',
 };
 
-export const withLabelAndSupportingText: Story = {
+export const WithLabelAndSupportingText: Story = {
   args: {
     label: 'Label',
     supportingText: 'Supporting Text',

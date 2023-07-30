@@ -121,7 +121,7 @@ export const Text: Story = {
   },
 };
 
-export const withIcon: Story = {
+export const WithIcon: Story = {
   args: {
     icon: <SearchIcon />,
   },
@@ -133,21 +133,21 @@ export const withIcon: Story = {
   name: 'Input with Icon',
 };
 
-export const withLabel: Story = {
+export const WithLabel: Story = {
   args: {
     label: 'Label',
   },
   name: 'Input with Label',
 };
 
-export const withSupportingText: Story = {
+export const WithSupportingText: Story = {
   args: {
     supportingText: 'Supporting Text',
   },
   name: 'Input with Supporting Text',
 };
 
-export const withLabelAndSupportingText: Story = {
+export const WithLabelAndSupportingText: Story = {
   args: {
     label: 'Label',
     supportingText: 'Supporting Text',
@@ -156,7 +156,7 @@ export const withLabelAndSupportingText: Story = {
   name: 'Input with Label and Supporting Text',
 };
 
-export const withIconLabelAndSupportingText: Story = {
+export const WithIconLabelAndSupportingText: Story = {
   args: {
     label: 'Label',
     icon: <SearchIcon />,
