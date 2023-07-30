@@ -1,4 +1,4 @@
-import { Size } from '@type/index';
+import type { Size } from '@type/index';
 import type { ComponentPropsWithRef, ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
@@ -6,9 +6,9 @@ import Label from '@components/Label/Label';
 import {
   getSelectStyling,
   getSelectWrapperStyling,
+  getSizeStyling,
   selectContainerStyling,
 } from '@components/Select/Select.style';
-import { getSizeStyling } from '@components/Select/Select.style';
 import SupportingText from '@components/SupportingText/SupportingText';
 
 export interface SelectProps extends Omit<ComponentPropsWithRef<'select'>, 'size'> {

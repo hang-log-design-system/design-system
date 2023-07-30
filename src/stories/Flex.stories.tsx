@@ -1,4 +1,3 @@
-import { containerStyle, informationStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Box from '@components/Box/Box';
@@ -9,13 +8,6 @@ import { Theme } from '@styles/Theme';
 const meta = {
   title: 'Flex',
   component: Flex,
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Flex>;
 
 export default meta;

@@ -14,7 +14,7 @@ import SupportingText from '@components/SupportingText/SupportingText';
 export interface RadioButtonProps extends ComponentPropsWithoutRef<'input'> {
   /** Radio에서 처음 선택된 초기 값 */
   initialCheckedOption?: string;
-  /** Radio에서 선택할 수 있는 문자열 option*/
+  /** Radio에서 선택할 수 있는 문자열 option */
   options: string[];
   /** RadioButton의 라벨 텍스트 */
   label?: string;

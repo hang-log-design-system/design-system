@@ -1,5 +1,5 @@
 import { Global, ThemeProvider } from '@emotion/react';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import ToastContainer from '@components/ToastContainer/ToastContainer';
 

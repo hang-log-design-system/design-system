@@ -32,6 +32,7 @@ const FloatingButton = ({
 }: FloatingButtonProps) => {
   return (
     <button
+      type="button"
       css={[floatingButtonStyling, getSizeStyling(size), getVariantStyling(variant)]}
       {...attributes}
     >

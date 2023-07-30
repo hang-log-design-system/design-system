@@ -1,6 +1,9 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import CloseIcon from '@assets/svg/close-icon.svg';
 import type { ComponentPropsWithoutRef } from 'react';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import {
@@ -36,33 +39,36 @@ const Modal = ({
   closeModal,
   isOpen = false,
   hasCloseButton = true,
-  isBackdropClosable = true,
   children,
   ...attributes
 }: ModalProps) => {
-  const onEscClicked = (e: KeyboardEvent) => {
-    if (e.key === 'Escape' && isBackdropClosable) {
-      closeModal();
-    }
-  };
+  const handleEscKeyPress = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    },
+    [closeModal]
+  );
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', onEscClicked);
+      window.addEventListener('keydown', handleEscKeyPress);
     }
 
     return () => {
       document.body.style.overflow = 'auto';
-      window.removeEventListener('keydown', onEscClicked);
+      window.removeEventListener('keydown', handleEscKeyPress);
     };
-  }, [isOpen]);
+  }, [isOpen, handleEscKeyPress]);
 
   return createPortal(
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {isOpen && (
         <>
-          <div css={backdropStyling} onClick={isBackdropClosable ? closeModal : () => {}} />
+          <div css={backdropStyling} onClick={closeModal} />
           <dialog css={dialogStyling} {...attributes}>
             {hasCloseButton && (
               <button

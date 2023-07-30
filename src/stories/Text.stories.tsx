@@ -1,7 +1,8 @@
 import { containerStyle, informationStyle } from '@stories/styles';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Text, { TextProps } from '@components/Text/Text';
+import type { TextProps } from '@components/Text/Text';
+import Text from '@components/Text/Text';
 
 const meta = {
   title: 'Text',
@@ -19,13 +20,6 @@ const meta = {
     size: 'medium',
     children: 'Text',
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Text>;
 
 export default meta;
@@ -47,7 +41,7 @@ export const Playground: Story = {};
 export const Sizes: Story = {
   render: ({ children }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>X Small</h6>
           <Text size="xSmall">{children}</Text>
@@ -64,7 +58,7 @@ export const Sizes: Story = {
           <h6>Large</h6>
           <Text size="large">{children}</Text>
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {

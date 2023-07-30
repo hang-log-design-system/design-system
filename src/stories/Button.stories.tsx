@@ -25,13 +25,6 @@ const meta = {
     size: 'medium',
     children: 'Button',
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -53,7 +46,7 @@ export const Playground: Story = {};
 export const Variants: Story = {
   render: ({ size, children }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Default</h6>
           <Button variant="default" size={size}>
@@ -90,7 +83,7 @@ export const Variants: Story = {
             {children}
           </Button>
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {
@@ -101,9 +94,9 @@ export const Variants: Story = {
 };
 
 export const Sizes: Story = {
-  render: ({ variant, children, ...args }) => {
+  render: ({ variant, children }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Small</h6>
           <Button variant={variant} size="small">
@@ -122,7 +115,7 @@ export const Sizes: Story = {
             {children}
           </Button>
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {

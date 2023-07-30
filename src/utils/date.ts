@@ -1,5 +1,5 @@
 import { CALENDAR_DATE_LENGTH } from '@constants/index';
-import { DayInfo, YearMonth } from '@type/date';
+import type { DayInfo, YearMonth } from '@type/date';
 
 /** 2023-07-10 포맷인 날짜 문자열을 Date로 변경해 주는 함수 */
 export const toDate = (dateString: string) => {

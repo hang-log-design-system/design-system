@@ -1,7 +1,7 @@
 import CloseIcon from '@assets/svg/close-icon.svg';
 import { TOAST_CLOSE_ANIMATION_DURATION, TOAST_SHOW_DURATION } from '@constants/index';
 import type { ComponentPropsWithoutRef } from 'react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import {
@@ -44,19 +44,19 @@ const Toast = ({
 }: ToastProps) => {
   const [isVisible, setIsVisible] = useState(true);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setIsVisible(false);
 
     setTimeout(() => {
       closeToast();
     }, TOAST_CLOSE_ANIMATION_DURATION);
-  };
+  }, [closeToast]);
 
   useEffect(() => {
     setTimeout(() => {
       handleClose();
     }, showDuration);
-  }, [handleClose]);
+  }, [handleClose, showDuration]);
 
   return createPortal(
     <div

@@ -1,4 +1,5 @@
-import { ComponentPropsWithRef, ForwardedRef, forwardRef, useEffect } from 'react';
+import type { ComponentPropsWithRef, ForwardedRef } from 'react';
+import { forwardRef } from 'react';
 
 import { containerStyling } from '@components/ToggleGroup/ToggleGroup.style';
 

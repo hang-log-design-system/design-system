@@ -22,35 +22,33 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Variants: Story = {
-  render: ({}) => {
+  render: () => {
     const { selected, handleSelectClick } = useSelect('toggle1');
 
     return (
-      <>
-        <li css={informationStyle}>
-          <h6>Toggle Group and Toggle</h6>
-          <ToggleGroup>
-            <Toggle
-              text="Toggle 1"
-              toggleId="toggle1"
-              selectedId={selected}
-              changeSelect={handleSelectClick}
-            />
-            <Toggle
-              text="Toggle 2"
-              toggleId="toggle2"
-              selectedId={selected}
-              changeSelect={handleSelectClick}
-            />
-            <Toggle
-              text="Toggle 3"
-              toggleId="toggle3"
-              selectedId={selected}
-              changeSelect={handleSelectClick}
-            />
-          </ToggleGroup>
-        </li>
-      </>
+      <li css={informationStyle}>
+        <h6>Toggle Group and Toggle</h6>
+        <ToggleGroup>
+          <Toggle
+            text="Toggle 1"
+            toggleId="toggle1"
+            selectedId={selected}
+            changeSelect={handleSelectClick}
+          />
+          <Toggle
+            text="Toggle 2"
+            toggleId="toggle2"
+            selectedId={selected}
+            changeSelect={handleSelectClick}
+          />
+          <Toggle
+            text="Toggle 3"
+            toggleId="toggle3"
+            selectedId={selected}
+            changeSelect={handleSelectClick}
+          />
+        </ToggleGroup>
+      </li>
     );
   },
 };

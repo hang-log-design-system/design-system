@@ -37,13 +37,6 @@ const meta = {
     required: false,
     id: 'input',
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Input>;
 
 export default meta;
@@ -54,7 +47,7 @@ export const Playground: Story = {};
 export const Variants: Story = {
   render: ({ size, isError, placeholder }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Default</h6>
           <Input size={size} isError={isError} placeholder={placeholder} />
@@ -63,7 +56,7 @@ export const Variants: Story = {
           <h6>Text</h6>
           <Input variant="text" size={size} isError={isError} placeholder={placeholder} />
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {
@@ -76,7 +69,7 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: ({ variant, isError, placeholder }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Small</h6>
           <Input size="small" variant={variant} isError={isError} placeholder={placeholder} />
@@ -89,7 +82,7 @@ export const Sizes: Story = {
           <h6>Large</h6>
           <Input size="large" variant={variant} isError={isError} placeholder={placeholder} />
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {
@@ -121,7 +114,7 @@ export const Text: Story = {
   },
 };
 
-export const withIcon: Story = {
+export const WithIcon: Story = {
   args: {
     icon: <SearchIcon />,
   },
@@ -133,21 +126,21 @@ export const withIcon: Story = {
   name: 'Input with Icon',
 };
 
-export const withLabel: Story = {
+export const WithLabel: Story = {
   args: {
     label: 'Label',
   },
   name: 'Input with Label',
 };
 
-export const withSupportingText: Story = {
+export const WithSupportingText: Story = {
   args: {
     supportingText: 'Supporting Text',
   },
   name: 'Input with Supporting Text',
 };
 
-export const withLabelAndSupportingText: Story = {
+export const WithLabelAndSupportingText: Story = {
   args: {
     label: 'Label',
     supportingText: 'Supporting Text',
@@ -156,7 +149,7 @@ export const withLabelAndSupportingText: Story = {
   name: 'Input with Label and Supporting Text',
 };
 
-export const withIconLabelAndSupportingText: Story = {
+export const WithIconLabelAndSupportingText: Story = {
   args: {
     label: 'Label',
     icon: <SearchIcon />,

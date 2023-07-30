@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import { labelStyling, requiredStyling } from '@components/Label/Label.style';
 

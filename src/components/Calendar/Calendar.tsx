@@ -1,6 +1,6 @@
 import { DAYS_OF_WEEK } from '@constants/index';
 import type { SelectedDateRange, YearMonth } from '@type/date';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import { getDayBoxSize, getDayInfo } from '@utils/date';
 
@@ -54,8 +54,8 @@ const Calendar = ({
     >
       <header
         role="group"
-        tabIndex={0}
         css={headerStyling}
+        tabIndex={-1}
         aria-label={`${yearMonthData.year}년 ${yearMonthData.month}월`}
       >
         <Heading size="xSmall">
