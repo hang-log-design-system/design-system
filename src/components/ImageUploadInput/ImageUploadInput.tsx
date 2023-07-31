@@ -26,7 +26,7 @@ export interface ImageUploadInputProps extends ComponentPropsWithoutRef<'input'>
   imageUrls: string[] | null;
   imageAltText: string;
   maxUploadCount?: number;
-  onRemove: () => void;
+  onRemove: (imageUrl: string) => () => void;
 }
 
 const ImageUploadInput = ({
@@ -78,7 +78,7 @@ const ImageUploadInput = ({
                 css={deleteButtonStyling}
                 type="button"
                 aria-label="이미지 삭제"
-                onClick={onRemove}
+                onClick={onRemove(imageUrl)}
               >
                 <CloseIcon />
               </button>
