@@ -91,6 +91,6 @@ export const Medium: Story = createHeadingStory('medium');
 
 export const Large: Story = createHeadingStory('large');
 
-export const xLarge: Story = createHeadingStory('xLarge');
+export const XLarge: Story = createHeadingStory('xLarge');
 
-export const xxLarge: Story = createHeadingStory('xxLarge');
+export const XXLarge: Story = createHeadingStory('xxLarge');

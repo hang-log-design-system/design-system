@@ -10,13 +10,6 @@ const meta = {
     width: '500px',
     height: '24px',
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Skeleton>;
 
 export default meta;
@@ -59,12 +52,12 @@ export const Circle: Story = {
 export const Combination: Story = {
   render: () => {
     return (
-      <>
+      <div css={containerStyle}>
         <Skeleton variant="circle" width="100px" />
         <Skeleton width="300px" height="100px" />
         <Skeleton />
         <Skeleton />
-      </>
+      </div>
     );
   },
   argTypes: {

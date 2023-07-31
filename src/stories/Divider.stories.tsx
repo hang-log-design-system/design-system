@@ -19,13 +19,6 @@ const meta = {
     direction: 'horizontal',
     length: '700px',
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Divider>;
 
 export default meta;
@@ -36,7 +29,7 @@ export const Playground: Story = {};
 export const Directions: Story = {
   render: () => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Horizontal</h6>
           <Divider />
@@ -45,7 +38,7 @@ export const Directions: Story = {
           <h6>Vertical</h6>
           <Divider direction="vertical" length="200px" />
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {

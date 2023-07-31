@@ -1,4 +1,4 @@
-import type { MouseEvent, TouchEvent } from 'react';
+import type { KeyboardEvent, MouseEvent, TouchEvent } from 'react';
 import { useRef, useState } from 'react';
 
 import { limitToRange } from '@utils/number';
@@ -30,6 +30,13 @@ export const useImageCarousel = (width: number, slideLength: number) => {
     setAnimate(true);
     setTranslateX(0);
   };
+
+  const handleSliderNavigationEnterKeyPress =
+    (position: number) => (event: KeyboardEvent<HTMLElement>) => {
+      if (event.key === 'Enter') {
+        handleSliderNavigationClick(position);
+      }
+    };
 
   const handlerSliderMoueDown = (clickEvent: MouseEvent<HTMLDivElement>) => {
     const handleMouseMove = (moveEvent: globalThis.MouseEvent) => {
@@ -78,6 +85,7 @@ export const useImageCarousel = (width: number, slideLength: number) => {
     currentPosition,
     translateX,
     handleSliderNavigationClick,
+    handleSliderNavigationEnterKeyPress,
     handlerSliderMoueDown,
     handleSliderTouchStart,
     handleSliderTransitionEnd,

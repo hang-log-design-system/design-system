@@ -15,6 +15,7 @@ const Button = (
 ) => {
   return (
     <button
+      type="button"
       ref={ref}
       css={[buttonStyling, getVariantStyling(variant), getSizeStyling(size)]}
       {...attributes}

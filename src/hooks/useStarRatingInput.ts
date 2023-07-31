@@ -27,7 +27,7 @@ export const useStarRatingInput = (initialRate: InitialRateType, onClick?: Calla
 
       setIsClicked(true);
     },
-    [starRate, isClicked]
+    [starRate, isClicked, onClick]
   );
 
   const handleStarHover = useCallback((e: MouseEvent<HTMLSpanElement>) => {

@@ -14,7 +14,7 @@ import SupportingText from '@components/SupportingText/SupportingText';
 export interface RadioButtonProps extends ComponentPropsWithoutRef<'input'> {
   /** Radio에서 처음 선택된 초기 값 */
   initialCheckedOption?: string;
-  /** Radio에서 선택할 수 있는 문자열 option*/
+  /** Radio에서 선택할 수 있는 문자열 option */
   options: string[];
   /** RadioButton의 라벨 텍스트 */
   label?: string;
@@ -58,15 +58,8 @@ const RadioButton = ({
         </Label>
       )}
       <div css={radioWrapperStyling}>
-        {options.map((option) => (
-          <label
-            role="radio"
-            htmlFor={option}
-            tabIndex={0}
-            key={option}
-            aria-checked={checkedOption === option}
-            css={labelStyling}
-          >
+        {options.map((option, index) => (
+          <label htmlFor={option} key={option} css={labelStyling} aria-label={label}>
             <input
               type="radio"
               id={option}
@@ -77,7 +70,13 @@ const RadioButton = ({
               {...attributes}
               css={inputStyling}
             />
-            <div css={buttonStyling} />
+            <div
+              css={buttonStyling}
+              tabIndex={0}
+              role="radio"
+              aria-label={`${option}, ${index + 1}/${options.length}`}
+              aria-checked={checkedOption === option}
+            />
             {option}
           </label>
         ))}

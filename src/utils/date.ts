@@ -1,5 +1,5 @@
 import { CALENDAR_DATE_LENGTH } from '@constants/index';
-import { DayInfo, YearMonth } from '@type/date';
+import type { DayInfo, YearMonth } from '@type/date';
 
 /** 2023-07-10 포맷인 날짜 문자열을 Date로 변경해 주는 함수 */
 export const toDate = (dateString: string) => {
@@ -74,9 +74,9 @@ const isDayOutOfRange = (
   dateString: string,
   maxDateRange?: number
 ) => {
-  if (!dateRange?.start || dateRange?.end || !maxDateRange) return false;
+  if (!dateRange?.startDate || dateRange?.endDate || !maxDateRange) return false;
 
-  const startDate = toDate(dateRange?.start); // Date 타입
+  const startDate = toDate(dateRange?.startDate); // Date 타입
   const currentDate = toDate(dateString); // Date 타입
 
   const diffMilliseconds = currentDate.getTime() - startDate.getTime();
@@ -108,11 +108,13 @@ export const getDayInfo = ({
   const isDate = index >= yearMonthData.firstDay && yearMonthData.lastDate >= date;
   const isToday = todayDateString === dateString;
   const isSelected =
-    selectedDate === date || dateRange?.start === dateString || dateRange?.end === dateString;
+    selectedDate === date ||
+    dateRange?.startDate === dateString ||
+    dateRange?.endDate === dateString;
   const isInRange =
-    !!dateRange?.start &&
-    !!dateRange?.end &&
-    isDayWithinRange?.(dateString, dateRange.start, dateRange.end);
+    !!dateRange?.startDate &&
+    !!dateRange?.endDate &&
+    isDayWithinRange?.(dateString, dateRange.startDate, dateRange.endDate);
   const isRestricted =
     (isFutureDaysRestricted && isDayInFuture(dateString, todayDateString)) ||
     (hasRangeRestriction && isDayOutOfRange(dateRange, dateString, maxDateRange));

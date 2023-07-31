@@ -21,10 +21,13 @@ export const labelStyling = css({
 });
 
 export const inputStyling = css({
+  display: 'none',
   position: 'absolute',
+
+  outline: '1px solid black',
+
   opacity: 0,
   pointerEvents: 'none',
-  outline: '1px solid black',
 });
 
 export const buttonStyling = css({

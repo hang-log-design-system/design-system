@@ -1,4 +1,4 @@
-import { Size } from '@type/index';
+import type { Size } from '@type/index';
 import type { ComponentPropsWithoutRef } from 'react';
 
 import { getSizeStyling } from '@components/Heading/Heading.style';

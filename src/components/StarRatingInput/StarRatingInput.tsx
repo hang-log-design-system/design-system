@@ -1,3 +1,12 @@
+/* eslint-disable react/no-array-index-key */
+
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
+
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { forwardRef, useRef } from 'react';
 import type { ForwardedRef, MouseEvent } from 'react';
 
@@ -47,14 +56,19 @@ const StarRatingInput = (
       };
 
       return (
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/alt-text
         <img key={index} ref={ref} onClick={handleClick} className={isActive ? 'active' : ''} />
       );
     });
 
   return (
     <div css={inputContainerStyling}>
-      {label && <Label required={required}>{label}</Label>}
-      <div className="star" ref={ref}>
+      {label && (
+        <Label id="star-rating-input" required={required}>
+          {label}
+        </Label>
+      )}
+      <div tabIndex={0} className="star" ref={ref} aria-label={label || '별점 입력'}>
         <span
           className="star-box"
           css={getStarRatingInputBoxStyling(size, gap)}

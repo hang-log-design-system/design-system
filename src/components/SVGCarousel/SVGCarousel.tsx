@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import LeftIcon from '@assets/svg/left-icon.svg';
 import RightIcon from '@assets/svg/right-icon.svg';
 
@@ -39,6 +40,7 @@ const SVGCarousel = ({
     currentPosition,
     translateX,
     handleSliderNavigationClick,
+    handleSliderNavigationEnterKeyPress,
     handlerSliderMoueDown,
     handleSliderTouchStart,
     handleSliderTransitionEnd,
@@ -55,6 +57,7 @@ const SVGCarousel = ({
           onTransitionEnd={handleSliderTransitionEnd}
         >
           {images.map((SVG, index) => (
+            // eslint-disable-next-line react/no-array-index-key
             <div key={index} css={getSVGWrapperStyling(width, height)}>
               <SVG />
             </div>
@@ -83,9 +86,13 @@ const SVGCarousel = ({
         <div css={getDotsWrapperStyling(showNavigationOnHover)}>
           {Array.from({ length: images.length }, (_, index) => (
             <span
+              role="button"
               key={index}
+              tabIndex={0}
               css={dotStyling(currentPosition === index)}
+              aria-label={`${index + 1}번 이미지로 이동`}
               onClick={() => handleSliderNavigationClick(index)}
+              onKeyDown={handleSliderNavigationEnterKeyPress(index)}
             />
           ))}
         </div>

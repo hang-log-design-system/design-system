@@ -23,21 +23,21 @@ export const Playground: Story = {
 
 export const Default: Story = {};
 
-export const withLabel: Story = {
+export const WithLabel: Story = {
   args: {
     label: 'Label',
   },
   name: 'Input with Label',
 };
 
-export const withSupportingText: Story = {
+export const WithSupportingText: Story = {
   args: {
     supportingText: 'Supporting Text',
   },
   name: 'Input with Supporting Text',
 };
 
-export const withLabelAndSupportingText: Story = {
+export const WithLabelAndSupportingText: Story = {
   args: {
     label: 'Label',
     supportingText: 'Supporting Text',

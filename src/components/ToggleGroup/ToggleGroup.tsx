@@ -1,4 +1,5 @@
-import { ComponentPropsWithRef, ForwardedRef, forwardRef, useEffect } from 'react';
+import type { ComponentPropsWithRef, ForwardedRef } from 'react';
+import { forwardRef } from 'react';
 
 import { containerStyling } from '@components/ToggleGroup/ToggleGroup.style';
 
@@ -9,7 +10,7 @@ const ToggleGroup = (
   ref: ForwardedRef<HTMLUListElement>
 ) => {
   return (
-    <ul css={containerStyling} ref={ref} {...attributes}>
+    <ul role="radiogroup" tabIndex={-1} css={containerStyling} ref={ref} {...attributes}>
       {children}
     </ul>
   );

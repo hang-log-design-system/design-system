@@ -18,13 +18,6 @@ const meta = {
     checked: true,
     label: 'Label',
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Checkbox>;
 
 export default meta;
@@ -35,10 +28,10 @@ export const Playground: Story = {};
 export const Checkboxes: Story = {
   render: () => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Checked</h6>
-          <Checkbox isChecked={true} />
+          <Checkbox isChecked />
         </li>
         <li css={informationStyle}>
           <h6>Unchecked</h6>
@@ -46,13 +39,13 @@ export const Checkboxes: Story = {
         </li>
         <li css={informationStyle}>
           <h6>Checked with Label</h6>
-          <Checkbox checked label="Label" isChecked={true} />
+          <Checkbox checked label="Label" isChecked />
         </li>
         <li css={informationStyle}>
           <h6>Unchecked with Label</h6>
           <Checkbox label="Label" />
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {

@@ -42,10 +42,10 @@ const DateRangePicker = ({
   };
 
   return (
-    <div css={containerStyling}>
+    <div css={containerStyling} role="application" aria-roledescription="date picker" tabIndex={-1}>
       <button
         type="button"
-        aria-label="show previous month"
+        aria-label="이전 달 달력 보기"
         onClick={handleMonthChange(CALENDAR_MONTH_CHANGE.PREVIOUS_MONTH)}
       >
         <LeftIcon />
@@ -71,7 +71,7 @@ const DateRangePicker = ({
       <button
         css={nextButtonStyling}
         type="button"
-        aria-label="show next month"
+        aria-label="다음 달 달력 보기"
         onClick={handleMonthChange(CALENDAR_MONTH_CHANGE.NEXT_MONTH)}
       >
         <RightIcon />

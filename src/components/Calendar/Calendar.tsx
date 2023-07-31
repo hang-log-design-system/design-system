@@ -1,6 +1,6 @@
 import { DAYS_OF_WEEK } from '@constants/index';
 import type { SelectedDateRange, YearMonth } from '@type/date';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import { getDayBoxSize, getDayInfo } from '@utils/date';
 
@@ -45,8 +45,19 @@ const Calendar = ({
   const dayBoxSize = useMemo(() => getDayBoxSize(yearMonthData), [yearMonthData]);
 
   return (
-    <div css={containerStyling}>
-      <header css={headerStyling}>
+    <div
+      css={containerStyling}
+      role="application"
+      aria-roledescription="calendar"
+      aria-label="달력"
+      tabIndex={-1}
+    >
+      <header
+        role="group"
+        css={headerStyling}
+        tabIndex={-1}
+        aria-label={`${yearMonthData.year}년 ${yearMonthData.month}월`}
+      >
         <Heading size="xSmall">
           {yearMonthData.year}.{yearMonthData.month}
         </Heading>
@@ -73,6 +84,8 @@ const Calendar = ({
           return isDate ? (
             <Day
               key={dateString}
+              year={yearMonthData.year}
+              month={yearMonthData.month}
               day={date}
               isToday={isToday}
               isSelected={isSelected}

@@ -1,4 +1,5 @@
-import { type ComponentPropsWithRef, type ForwardedRef, forwardRef } from 'react';
+import type { ComponentPropsWithRef, ForwardedRef, KeyboardEvent } from 'react';
+import { forwardRef, useCallback } from 'react';
 
 import { menuItemStyling } from '@components/MenuItem/MenuItem.style';
 
@@ -7,9 +8,30 @@ interface MenuItemProps extends ComponentPropsWithRef<'li'> {
   onClick: () => void;
 }
 
-const MenuItem = ({ children, ...attributes }: MenuItemProps, ref: ForwardedRef<HTMLLIElement>) => {
+const MenuItem = (
+  { children, onClick, ...attributes }: MenuItemProps,
+  ref: ForwardedRef<HTMLLIElement>
+) => {
+  const handleEnterKeyPress = useCallback(
+    (event: KeyboardEvent<HTMLLIElement>) => {
+      if (event.key === 'Enter') {
+        onClick();
+      }
+    },
+    [onClick]
+  );
+
   return (
-    <li css={menuItemStyling} ref={ref} {...attributes} tabIndex={0}>
+    <li
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+      role="button"
+      css={menuItemStyling}
+      ref={ref}
+      tabIndex={0}
+      onClick={onClick}
+      onKeyDown={handleEnterKeyPress}
+      {...attributes}
+    >
       {children}
     </li>
   );

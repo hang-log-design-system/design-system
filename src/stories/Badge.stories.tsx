@@ -21,13 +21,6 @@ const meta = {
     variant: 'default',
     children: 'Badge',
   },
-  decorators: [
-    (Story) => (
-      <ul css={containerStyle}>
-        <Story />
-      </ul>
-    ),
-  ],
 } satisfies Meta<typeof Badge>;
 
 export default meta;
@@ -38,7 +31,7 @@ export const Playground: Story = {};
 export const Variants: Story = {
   render: ({ children }) => {
     return (
-      <>
+      <ul css={containerStyle}>
         <li css={informationStyle}>
           <h6>Default</h6>
           <Badge variant="default">{children}</Badge>
@@ -51,7 +44,7 @@ export const Variants: Story = {
           <h6>Outline</h6>
           <Badge variant="outline">{children}</Badge>
         </li>
-      </>
+      </ul>
     );
   },
   argTypes: {
