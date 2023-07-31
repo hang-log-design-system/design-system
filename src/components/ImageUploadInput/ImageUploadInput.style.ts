@@ -25,6 +25,8 @@ export const getUploadButtonStyling = (isUploaded: boolean, maxUploaded: boolean
     height: '100px',
 
     fontWeight: 'normal',
+
+    transition: 'none',
   });
 };
 
