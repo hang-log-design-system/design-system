@@ -28,7 +28,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const WithUploadedImages = {
+export const WithUploadedImages: Story = {
   args: {
     imageAltText: '이미지',
     imageUrls: [
@@ -39,7 +39,7 @@ export const WithUploadedImages = {
   },
 };
 
-export const MaximumImagesUploaded = {
+export const MaximumImagesUploaded: Story = {
   args: {
     imageAltText: '이미지',
     imageUrls: [
