@@ -14,8 +14,8 @@ const Button = (
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
   return (
+    // eslint-disable-next-line react/button-has-type
     <button
-      type="button"
       ref={ref}
       css={[buttonStyling, getVariantStyling(variant), getSizeStyling(size)]}
       {...attributes}
