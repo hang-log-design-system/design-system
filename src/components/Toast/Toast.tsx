@@ -1,7 +1,7 @@
 import CloseIcon from '@assets/svg/close-icon.svg';
 import { TOAST_CLOSE_ANIMATION_DURATION, TOAST_SHOW_DURATION } from '@constants/index';
 import type { ComponentPropsWithoutRef } from 'react';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import {
@@ -30,45 +30,55 @@ export interface ToastProps extends ComponentPropsWithoutRef<'div'> {
    * @default 2000
    */
   showDuration?: number;
-  /** Toast를 안 보여주기 위한 함수 */
-  closeToast: () => void;
+  /** Toast를 닫을 때 실행할 함수 */
+  onClose: () => void;
 }
 
 const Toast = ({
   variant = 'default',
   hasCloseButton = false,
   showDuration = TOAST_SHOW_DURATION,
-  closeToast,
+  onClose,
   children,
   ...attributes
 }: ToastProps) => {
+  const [isAdded, setIsAdded] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
 
-  const handleClose = useCallback(() => {
-    setIsVisible(false);
+  const showAnimationRef = useRef<NodeJS.Timeout>();
+  const hideAnimationRef = useRef<NodeJS.Timeout>();
 
-    setTimeout(() => {
-      closeToast();
+  const handleClose = useCallback(() => {
+    hideAnimationRef.current = setTimeout(() => {
+      setIsAdded(false);
+      onClose?.();
+      clearTimeout(showAnimationRef.current);
     }, TOAST_CLOSE_ANIMATION_DURATION);
-  }, [closeToast]);
+  }, [onClose]);
 
   useEffect(() => {
-    setTimeout(() => {
+    showAnimationRef.current = setTimeout(() => {
+      setIsVisible(false);
       handleClose();
     }, showDuration);
-  }, [handleClose, showDuration]);
 
-  return createPortal(
-    <div
-      css={[getToastStyling(isVisible), getVariantStyling(variant)]}
-      role="alert"
-      aria-live="assertive"
-      {...attributes}
-    >
-      <span css={contentStyling}>{children}</span>
-      {hasCloseButton && <CloseIcon css={closeIconStyling} onClick={handleClose} />}
-    </div>,
-    document.getElementById('toast-container') as Element
+    return () => clearTimeout(hideAnimationRef.current);
+  }, [handleClose, onClose, showDuration]);
+
+  return (
+    isAdded &&
+    createPortal(
+      <div
+        css={[getToastStyling(isVisible), getVariantStyling(variant)]}
+        role="alert"
+        aria-live="assertive"
+        {...attributes}
+      >
+        <span css={contentStyling}>{children}</span>
+        {hasCloseButton && <CloseIcon css={closeIconStyling} onClick={handleClose} />}
+      </div>,
+      document.getElementById('toast-container') as Element
+    )
   );
 };
 

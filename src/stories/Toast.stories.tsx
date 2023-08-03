@@ -51,7 +51,7 @@ export const Variants: Story = {
     }, 300);
 
     return (
-      <div id="toast-container">
+      <div>
         {isOpen && (
           <>
             <Toast variant="default" {...args}>
@@ -86,7 +86,7 @@ export const Default: Story = {
       <>
         <Button onClick={open}>Show Toast</Button>
         {isOpen && (
-          <Toast {...args} closeToast={close}>
+          <Toast {...args} onClose={close}>
             {children}
           </Toast>
         )}
@@ -97,16 +97,12 @@ export const Default: Story = {
 
 export const Success: Story = {
   render: ({ children, ...args }) => {
-    const { isOpen, open, close } = useOverlay();
+    const { isOpen, open } = useOverlay();
 
     return (
       <>
         <Button onClick={open}>Show Toast</Button>
-        {isOpen && (
-          <Toast {...args} closeToast={close}>
-            {children}
-          </Toast>
-        )}
+        {isOpen && <Toast {...args}>{children}</Toast>}
       </>
     );
   },
@@ -117,16 +113,12 @@ export const Success: Story = {
 
 export const Error: Story = {
   render: ({ children, ...args }) => {
-    const { isOpen, open, close } = useOverlay();
+    const { isOpen, open } = useOverlay();
 
     return (
       <>
         <Button onClick={open}>Show Toast</Button>
-        {isOpen && (
-          <Toast {...args} closeToast={close}>
-            {children}
-          </Toast>
-        )}
+        {isOpen && <Toast {...args}>{children}</Toast>}
       </>
     );
   },
@@ -143,7 +135,7 @@ export const ClosableToast: Story = {
       <>
         <Button onClick={open}>Show Toast</Button>
         {isOpen && (
-          <Toast {...args} closeToast={close}>
+          <Toast {...args} onClose={close}>
             {children}
           </Toast>
         )}
@@ -164,7 +156,7 @@ export const WithIcon: Story = {
       <>
         <Button onClick={open}>Show Toast</Button>
         {isOpen && (
-          <Toast {...args} closeToast={close}>
+          <Toast {...args} onClose={close}>
             <CheckCircleIcon />
             Message
           </Toast>
@@ -188,13 +180,13 @@ export const PilingToast: Story = {
       <>
         <Button onClick={open}>Show Toast 1</Button>
         {isOpen && (
-          <Toast {...args} closeToast={close}>
+          <Toast {...args} onClose={close}>
             {children}
           </Toast>
         )}
         <Button onClick={open2}>Show Toast 2</Button>
         {isOpen2 && (
-          <Toast {...args} closeToast={close2}>
+          <Toast {...args} onClose={close2}>
             {children}
           </Toast>
         )}
