@@ -1,5 +1,6 @@
 import SampleImage from '@assets/svg/modal-sample.svg';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useEffect } from 'react';
 
 import { useOverlay } from '@hooks/useOverlay';
 
@@ -95,6 +96,31 @@ export const TextModal: Story = {
                 Action
               </Button>
             </div>
+          </div>
+        </Modal>
+      </>
+    );
+  },
+};
+
+export const ModalOpenStart: Story = {
+  render: ({ ...args }) => {
+    const { isOpen, open, close } = useOverlay();
+
+    useEffect(() => {
+      open();
+    }, [open]);
+
+    return (
+      <>
+        <Button onClick={open}>Show Modal</Button>
+        <Modal {...args} isOpen={isOpen} closeModal={close}>
+          <div css={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <Heading size="large">Title</Heading>
+            <SampleImage />
+            <Button variant="primary" onClick={close} css={{ width: '100%' }}>
+              확인
+            </Button>
           </div>
         </Modal>
       </>
