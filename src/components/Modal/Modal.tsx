@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import CloseIcon from '@assets/svg/close-icon.svg';
 import type { ComponentPropsWithoutRef } from 'react';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import {
@@ -39,12 +39,15 @@ const Modal = ({
   closeModal,
   isOpen = false,
   hasCloseButton = true,
+  isBackdropClosable = true,
   children,
   ...attributes
 }: ModalProps) => {
+  const modalRef = useRef<HTMLDialogElement>(null);
+
   const handleEscKeyPress = useCallback(
     (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && isBackdropClosable) {
         closeModal();
       }
     },
@@ -53,6 +56,7 @@ const Modal = ({
 
   useEffect(() => {
     if (isOpen) {
+      modalRef.current?.showModal();
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleEscKeyPress);
     }
@@ -68,8 +72,8 @@ const Modal = ({
     <>
       {isOpen && (
         <>
-          <div css={backdropStyling} onClick={closeModal} />
-          <dialog css={dialogStyling} {...attributes}>
+          <div css={backdropStyling} onClick={isBackdropClosable ? closeModal : () => {}} />
+          <dialog aria-modal={isOpen} css={dialogStyling} ref={modalRef} {...attributes}>
             {hasCloseButton && (
               <button
                 type="button"
