@@ -26,6 +26,7 @@ export const getToastStyling = (isVisible: boolean) => {
     bottom: Theme.spacer.spacing6,
     display: 'flex',
     justifyContent: 'space-between',
+    gap: Theme.spacer.spacing4,
     alignItems: 'center',
 
     minWidth: '300px',
