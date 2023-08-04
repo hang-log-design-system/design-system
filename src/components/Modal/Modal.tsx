@@ -43,8 +43,6 @@ const Modal = ({
   children,
   ...attributes
 }: ModalProps) => {
-  const modalRef = useRef<HTMLDialogElement>(null);
-
   const handleEscKeyPress = useCallback(
     (event: KeyboardEvent) => {
       if (event.key === 'Escape' && isBackdropClosable) {
@@ -56,7 +54,6 @@ const Modal = ({
 
   useEffect(() => {
     if (isOpen) {
-      modalRef.current?.showModal();
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleEscKeyPress);
     }
@@ -73,7 +70,7 @@ const Modal = ({
       {isOpen && (
         <>
           <div css={backdropStyling} onClick={isBackdropClosable ? closeModal : () => {}} />
-          <dialog aria-modal={isOpen} css={dialogStyling} ref={modalRef} {...attributes}>
+          <dialog aria-modal={isOpen} css={dialogStyling} {...attributes}>
             {hasCloseButton && (
               <button
                 type="button"
