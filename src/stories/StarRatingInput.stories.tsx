@@ -35,7 +35,7 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {
   render: ({ size, gap, ...args }) => {
     const { starRate, handleStarClick, handleStarHover, handleStarHoverOut } =
-      useStarRatingInput(0);
+      useStarRatingInput(2.5);
 
     return (
       <StarRatingInput
