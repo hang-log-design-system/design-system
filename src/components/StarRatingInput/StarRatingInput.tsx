@@ -43,7 +43,7 @@ const StarRatingInput = (
   return (
     <>
       {label && <Label required={required}>{label}</Label>}
-      <div css={() => inputContainerStyling(size, gap)} ref={ref}>
+      <div className="star-box" css={inputContainerStyling(size, gap)} ref={ref}>
         {StarRatingTemp.map((_, index) => {
           if (index % 2 === 0) {
             if (rate > 0 && index + 1 <= rate * 2)
