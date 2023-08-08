@@ -5,7 +5,7 @@ export const inputContainerStyling = (size: number, gap: number) => {
     display: 'flex',
 
     'div:not(:last-of-type):nth-of-type(even)': {
-      marginRight: gap,
+      paddingRight: gap,
     },
     svg: {
       width: size / 2,
