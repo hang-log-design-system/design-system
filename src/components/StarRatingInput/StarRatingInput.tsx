@@ -1,20 +1,12 @@
-/* eslint-disable react/no-array-index-key */
-
-/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-
-/* eslint-disable jsx-a11y/mouse-events-have-key-events */
-
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-import { forwardRef, useRef } from 'react';
-import type { ForwardedRef, MouseEvent } from 'react';
+import HalfEmptyLeftStar from '@assets/svg/half-empty-left-star.svg';
+import HalfEmptyRightStar from '@assets/svg/half-empty-right-star.svg';
+import HalfFilledLeftStar from '@assets/svg/half-filled-left-star.svg';
+import HalfFilledRightStar from '@assets/svg/half-filled-right-star.svg';
+import { forwardRef } from 'react';
+import type { ForwardedRef } from 'react';
 
 import Label from '@components/Label/Label';
-import {
-  getStarRatingInputBoxStyling,
-  inputContainerStyling,
-} from '@components/StarRatingInput/StarRatingInput.style';
+import { inputContainerStyling } from '@components/StarRatingInput/StarRatingInput.style';
 import SupportingText from '@components/SupportingText/SupportingText';
 
 const STAR_RATING_EMPTY_LENGTH = 10;
@@ -27,9 +19,9 @@ export interface StarRatingInputProps {
   rate: 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 4.5 | 5;
   size?: number;
   gap?: number;
-  onStarClick: (e: MouseEvent<HTMLSpanElement>) => void;
-  onStarHover: (e: MouseEvent<HTMLSpanElement>) => void;
-  onStarHoverOut: (e: MouseEvent<HTMLSpanElement>) => void;
+  onStarClick: (index: number) => void;
+  onStarHover: (index: number) => void;
+  onStarHoverOut: (index: number) => void;
 }
 
 const StarRatingInput = (
@@ -46,40 +38,89 @@ const StarRatingInput = (
   }: StarRatingInputProps,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
-  const rateContainers = Array(STAR_RATING_EMPTY_LENGTH)
-    .fill(useRef(null))
-    .map((ref, index) => {
-      const isActive = index === rate * 2 - 1;
-
-      const handleClick = (e: MouseEvent<HTMLImageElement>) => {
-        onStarClick(e);
-      };
-
-      return (
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/alt-text
-        <img key={index} ref={ref} onClick={handleClick} className={isActive ? 'active' : ''} />
-      );
-    });
+  const StarRatingTemp = Array.from({ length: STAR_RATING_EMPTY_LENGTH }, () => '');
 
   return (
-    <div css={inputContainerStyling}>
-      {label && (
-        <Label id="star-rating-input" required={required}>
-          {label}
-        </Label>
-      )}
-      <div tabIndex={0} className="star" ref={ref} aria-label={label || '별점 입력'}>
-        <span
-          className="star-box"
-          css={getStarRatingInputBoxStyling(size, gap)}
-          onMouseOver={onStarHover}
-          onMouseOut={onStarHoverOut}
-        >
-          {rateContainers}
-        </span>
+    <>
+      {label && <Label required={required}>{label}</Label>}
+      <div className="star-box" css={inputContainerStyling(size, gap)} ref={ref}>
+        {StarRatingTemp.map((_, index) => {
+          if (index % 2 === 0) {
+            if (rate > 0 && index + 1 <= rate * 2)
+              return (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, jsx-a11y/mouse-events-have-key-events
+                <div
+                  onClick={() => {
+                    onStarClick(index);
+                  }}
+                  onMouseOver={() => {
+                    onStarHover(index);
+                  }}
+                  onMouseOut={() => {
+                    onStarHoverOut(index);
+                  }}
+                  key={Math.random()}
+                >
+                  <HalfFilledLeftStar />
+                </div>
+              );
+            return (
+              // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, jsx-a11y/mouse-events-have-key-events
+              <div
+                onClick={() => {
+                  onStarClick(index);
+                }}
+                onMouseOver={() => {
+                  onStarHover(index);
+                }}
+                onMouseOut={() => {
+                  onStarHoverOut(index);
+                }}
+                key={Math.random()}
+              >
+                <HalfEmptyLeftStar width={size / 2} height={size} />
+              </div>
+            );
+          }
+          if (rate > 0 && index + 1 <= rate * 2)
+            return (
+              // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, jsx-a11y/mouse-events-have-key-events
+              <div
+                onClick={() => {
+                  onStarClick(index);
+                }}
+                onMouseOver={() => {
+                  onStarHover(index);
+                }}
+                onMouseOut={() => {
+                  onStarHoverOut(index);
+                }}
+                key={Math.random()}
+              >
+                <HalfFilledRightStar width={size / 2} height={size} />
+              </div>
+            );
+          return (
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, jsx-a11y/mouse-events-have-key-events
+            <div
+              onClick={() => {
+                onStarClick(index);
+              }}
+              onMouseOver={() => {
+                onStarHover(index);
+              }}
+              onMouseOut={() => {
+                onStarHoverOut(index);
+              }}
+              key={Math.random()}
+            >
+              <HalfEmptyRightStar width={size / 2} height={size} />
+            </div>
+          );
+        })}
       </div>
       {supportingText && <SupportingText>{supportingText}</SupportingText>}
-    </div>
+    </>
   );
 };
 

@@ -17,9 +17,16 @@ const Skeleton = ({
   width = '100%',
   height = '24px',
   variant = 'square',
+  className = '',
   ...attributes
 }: SkeletonProps) => {
-  return <div css={getSkeletonStyling(width, height, variant)} {...attributes} />;
+  return (
+    <div
+      css={getSkeletonStyling(width, height, variant)}
+      className={`skeleton ${className}`}
+      {...attributes}
+    />
+  );
 };
 
 export default Skeleton;
