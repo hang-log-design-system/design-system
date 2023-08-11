@@ -32,6 +32,7 @@ import Skeleton from '@components/Skeleton/Skeleton';
 import Spinner from '@components/Spinner/Spinner';
 import StarRatingInput from '@components/StarRatingInput/StarRatingInput';
 import SupportingText from '@components/SupportingText/SupportingText';
+import SwitchToggle from '@components/SwitchToggle/SwitchToggle';
 import Tab from '@components/Tab/Tab';
 import Tabs from '@components/Tabs/Tabs';
 import Text from '@components/Text/Text';
@@ -51,6 +52,7 @@ export {
   useOverlay,
   Badge,
   Box,
+  SwitchToggle,
   Button,
   Calendar,
   Center,
