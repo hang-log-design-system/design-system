@@ -19,9 +19,13 @@ export const boxStyling = (width: number, height: number) => {
   });
 };
 
-export const buttonStyling = css({
-  width: '100%',
-});
+export const buttonStyling = (buttonGap: number) => {
+  return css({
+    width: '100%',
+    marginTop: `${buttonGap}px`,
+    marginBottom: '10px',
+  });
+};
 
 export const getContainerStyling = (width: number, height: number) => {
   return css({
