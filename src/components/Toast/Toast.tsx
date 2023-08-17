@@ -63,7 +63,7 @@ const Toast = ({
     }, showDuration);
 
     return () => clearTimeout(hideAnimationRef.current);
-  }, [handleClose, onClose, showDuration]);
+  }, [handleClose, showDuration]);
 
   return (
     isAdded &&

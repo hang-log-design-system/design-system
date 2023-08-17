@@ -10,4 +10,6 @@ export const containerStyling = css({
   alignItems: 'center',
 
   width: '100%',
+
+  zIndex: 9999,
 });
