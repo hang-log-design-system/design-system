@@ -26,7 +26,7 @@ export interface ImageUploadInputProps extends ComponentPropsWithoutRef<'input'>
   imageUrls: string[] | null;
   imageAltText: string;
   maxUploadCount?: number;
-  onRemove?: (imageUrl: string) => () => void;
+  onRemove?: CallableFunction;
 }
 
 const ImageUploadInput = ({
