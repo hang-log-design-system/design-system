@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 export const containerStyling = css({
-  position: 'absolute',
+  position: 'fixed',
   bottom: '24px',
   display: 'flex',
   flexDirection: 'column',
