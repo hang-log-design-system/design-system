@@ -21,6 +21,8 @@ import {
 } from '@components/SVGCarouselModal/SVGCarouselModal.style';
 
 export interface SVGCarouselModalProps {
+  modalWidth: number;
+  modalHeight: number;
   isOpen: boolean;
   closeModal: () => void;
   carouselWidth: number;
@@ -32,6 +34,8 @@ export interface SVGCarouselModalProps {
 }
 
 const SVGCarouselModal = ({
+  modalWidth,
+  modalHeight,
   isOpen,
   closeModal,
   carouselWidth,
@@ -55,7 +59,7 @@ const SVGCarouselModal = ({
 
   return (
     <Modal isOpen={isOpen} closeModal={closeModal} hasCloseButton>
-      <Flex css={boxStyling}>
+      <Flex css={boxStyling(modalWidth, modalHeight)}>
         <Box css={sliderWrapperStyling}>
           <div
             ref={sliderRef}

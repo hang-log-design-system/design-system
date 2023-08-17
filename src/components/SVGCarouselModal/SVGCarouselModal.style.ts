@@ -2,20 +2,22 @@ import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
 
-export const boxStyling = css({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
+export const boxStyling = (width: number, height: number) => {
+  return css({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
 
-  width: '450px',
-  height: '500px',
-  marginTop: '30px',
+    width: `${width}px`,
+    height: `${height}px`,
+    marginTop: '30px',
 
-  '@media screen and (max-width: 600px)': {
-    width: '346px',
-    marginBottom: Theme.spacer.spacing6,
-  },
-});
+    '@media screen and (max-width: 600px)': {
+      width: `${width}px`,
+      marginBottom: Theme.spacer.spacing6,
+    },
+  });
+};
 
 export const buttonStyling = css({
   width: '100%',
@@ -156,7 +158,7 @@ export const dotStyling = (isSelected: boolean) => {
     height: '6px',
     borderRadius: '50%',
 
-    backgroundColor: Theme.color.white,
+    backgroundColor: Theme.color.black,
 
     opacity: isSelected ? 1 : 0.6,
   });

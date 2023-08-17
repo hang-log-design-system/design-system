@@ -41,5 +41,7 @@ export const Default: Story = {
   args: {
     showArrows: true,
     showDots: true,
+    modalWidth: 300,
+    modalHeight: 300,
   },
 };
