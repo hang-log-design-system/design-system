@@ -27,6 +27,7 @@ import MenuList from '@components/MenuList/MenuList';
 import Modal from '@components/Modal/Modal';
 import RadioButton from '@components/RadioButton/RadioButton';
 import SVGCarousel from '@components/SVGCarousel/SVGCarousel';
+import SVGCarouselModal from '@components/SVGCarouselModal/SVGCarouselModal';
 import Select from '@components/Select/Select';
 import Skeleton from '@components/Skeleton/Skeleton';
 import Spinner from '@components/Spinner/Spinner';
@@ -84,5 +85,6 @@ export {
   Toggle,
   ToggleGroup,
   SVGCarousel,
+  SVGCarouselModal,
   Theme,
 };
