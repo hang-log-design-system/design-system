@@ -43,5 +43,6 @@ export const Default: Story = {
     showDots: true,
     modalWidth: 300,
     modalHeight: 300,
+    buttonGap: 48,
   },
 };

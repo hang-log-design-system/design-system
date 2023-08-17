@@ -28,6 +28,7 @@ export interface SVGCarouselModalProps {
   carouselWidth: number;
   carouselHeight: number;
   carouselImages: React.FC<React.SVGProps<SVGSVGElement>>[];
+  buttonGap?: number;
   showArrows?: boolean;
   showDots?: boolean;
   showNavigationOnHover?: boolean;
@@ -41,6 +42,7 @@ const SVGCarouselModal = ({
   carouselWidth,
   carouselHeight,
   carouselImages,
+  buttonGap = 0,
   showArrows = false,
   showDots = false,
   showNavigationOnHover = false,
@@ -77,7 +79,7 @@ const SVGCarouselModal = ({
           </div>
         </Box>
       </Flex>
-      <Button variant="primary" css={buttonStyling} onClick={closeModal}>
+      <Button variant="primary" css={buttonStyling(buttonGap)} onClick={closeModal}>
         닫기
       </Button>
       {showArrows && (
