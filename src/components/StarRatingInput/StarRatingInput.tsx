@@ -12,6 +12,7 @@ import SupportingText from '@components/SupportingText/SupportingText';
 const STAR_RATING_EMPTY_LENGTH = 10;
 
 export interface StarRatingInputProps {
+  isMobile: boolean;
   label?: string;
   supportingText?: string;
   required?: boolean;
@@ -26,6 +27,7 @@ export interface StarRatingInputProps {
 
 const StarRatingInput = (
   {
+    isMobile = false,
     label,
     supportingText,
     required = false,
@@ -54,10 +56,10 @@ const StarRatingInput = (
                     onStarClick(index);
                   }}
                   onMouseOver={() => {
-                    onStarHover(index);
+                    if (!isMobile) onStarHover(index);
                   }}
                   onMouseOut={() => {
-                    onStarHoverOut(index);
+                    if (!isMobile) onStarHoverOut(index);
                   }}
                   key={Math.random()}
                 >
@@ -71,10 +73,10 @@ const StarRatingInput = (
                   onStarClick(index);
                 }}
                 onMouseOver={() => {
-                  onStarHover(index);
+                  if (!isMobile) onStarHover(index);
                 }}
                 onMouseOut={() => {
-                  onStarHoverOut(index);
+                  if (!isMobile) onStarHoverOut(index);
                 }}
                 key={Math.random()}
               >
@@ -90,10 +92,10 @@ const StarRatingInput = (
                   onStarClick(index);
                 }}
                 onMouseOver={() => {
-                  onStarHover(index);
+                  if (!isMobile) onStarHover(index);
                 }}
                 onMouseOut={() => {
-                  onStarHoverOut(index);
+                  if (!isMobile) onStarHoverOut(index);
                 }}
                 key={Math.random()}
               >
@@ -107,10 +109,10 @@ const StarRatingInput = (
                 onStarClick(index);
               }}
               onMouseOver={() => {
-                onStarHover(index);
+                if (!isMobile) onStarHover(index);
               }}
               onMouseOut={() => {
-                onStarHoverOut(index);
+                if (!isMobile) onStarHoverOut(index);
               }}
               key={Math.random()}
             >
