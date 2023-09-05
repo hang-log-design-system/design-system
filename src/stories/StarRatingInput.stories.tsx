@@ -19,6 +19,10 @@ const meta = {
       control: { type: 'number' },
       description: 'gap',
     },
+    isMobile: {
+      control: { type: 'boolean' },
+      description: 'isMobile',
+    },
   },
   args: {
     label: '별점',
