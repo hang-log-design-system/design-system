@@ -25,6 +25,7 @@ const meta = {
     },
   },
   args: {
+    isMobile: true,
     label: '별점',
     supportingText: '별점을 입력해 주세요',
     rate: 1,
