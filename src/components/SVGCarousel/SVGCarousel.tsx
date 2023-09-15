@@ -69,14 +69,14 @@ const SVGCarousel = ({
           <button
             type="button"
             css={leftButtonStyling}
-            onClick={() => handleSliderNavigationClick(currentPosition - 1)}
+            onClick={handleSliderNavigationClick(currentPosition - 1)}
           >
             <LeftIcon />
           </button>
           <button
             type="button"
             css={rightButtonStyling}
-            onClick={() => handleSliderNavigationClick(currentPosition + 1)}
+            onClick={handleSliderNavigationClick(currentPosition + 1)}
           >
             <RightIcon />
           </button>
@@ -91,7 +91,7 @@ const SVGCarousel = ({
               tabIndex={0}
               css={dotStyling(currentPosition === index)}
               aria-label={`${index + 1}번 이미지로 이동`}
-              onClick={() => handleSliderNavigationClick(index)}
+              onClick={handleSliderNavigationClick(index)}
               onKeyDown={handleSliderNavigationEnterKeyPress(index)}
             />
           ))}

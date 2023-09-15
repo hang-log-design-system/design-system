@@ -77,7 +77,7 @@ const ImageCarousel = ({
             type="button"
             css={leftButtonStyling}
             aria-label="뒤로가기"
-            onClick={() => handleSliderNavigationClick(currentPosition - 1)}
+            onClick={handleSliderNavigationClick(currentPosition - 1)}
           >
             <LeftIcon />
           </button>
@@ -85,7 +85,7 @@ const ImageCarousel = ({
             type="button"
             css={rightButtonStyling}
             aria-label="앞으로가기"
-            onClick={() => handleSliderNavigationClick(currentPosition + 1)}
+            onClick={handleSliderNavigationClick(currentPosition + 1)}
           >
             <RightIcon />
           </button>
@@ -100,7 +100,7 @@ const ImageCarousel = ({
               tabIndex={0}
               css={dotStyling(currentPosition === index)}
               aria-label={`${index + 1}번 이미지로 이동`}
-              onClick={() => handleSliderNavigationClick(index)}
+              onClick={handleSliderNavigationClick(index)}
               onKeyDown={handleSliderNavigationEnterKeyPress(index)}
             />
           ))}

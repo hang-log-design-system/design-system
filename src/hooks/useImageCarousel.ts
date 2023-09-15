@@ -23,13 +23,16 @@ export const useImageCarousel = (width: number, slideLength: number) => {
     setTranslateX(0);
   };
 
-  const handleSliderNavigationClick = (position: number) => {
-    if (position < 0 || position >= slideLength) return;
+  const handleSliderNavigationClick =
+    (position: number) => (event: MouseEvent<HTMLButtonElement>) => {
+      event.stopPropagation();
 
-    setCurrentPosition(position);
-    setAnimate(true);
-    setTranslateX(0);
-  };
+      if (position < 0 || position >= slideLength) return;
+
+      setCurrentPosition(position);
+      setAnimate(true);
+      setTranslateX(0);
+    };
 
   const handleSliderNavigationEnterKeyPress =
     (position: number) => (event: KeyboardEvent<HTMLElement>) => {
