@@ -24,7 +24,7 @@ export interface ImageCarouselProps {
   showArrows?: boolean;
   showDots?: boolean;
   showNavigationOnHover?: boolean;
-  children: JSX.Element[];
+  children: JSX.Element | JSX.Element[];
 }
 
 const ImageCarousel = ({
