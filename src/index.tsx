@@ -10,6 +10,7 @@ import Badge from '@components/Badge/Badge';
 import Box from '@components/Box/Box';
 import Button from '@components/Button/Button';
 import Calendar from '@components/Calendar/Calendar';
+import Carousel from '@components/Carousel/Carousel';
 import Center from '@components/Center/Center';
 import Checkbox from '@components/Checkbox/Checkbox';
 import DateRangePicker from '@components/DateRangePicker/DateRangePicker';
@@ -56,6 +57,7 @@ export {
   SwitchToggle,
   Button,
   Calendar,
+  Carousel,
   Center,
   Checkbox,
   DateRangePicker,
