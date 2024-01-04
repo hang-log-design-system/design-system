@@ -19,6 +19,7 @@ const useGeneralCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] | s
       });
     }
   };
+
   const handleClickLeft = () => {
     if (itemRef.current) {
       flushSync(() => {

@@ -1,7 +1,7 @@
 import LeftIcon from '@assets/svg/left-icon.svg';
 import RightIcon from '@assets/svg/right-icon.svg';
 
-import useuseGeneralCarousel from '@hooks/useGeneralCarousel';
+import useGeneralCarousel from '@hooks/useGeneralCarousel';
 
 import Box from '@components/Box/Box';
 import Dots from '@components/GeneralCarousel/Dots';
@@ -30,7 +30,7 @@ const GeneralCarousel = ({
   showDots = true,
 }: useGeneralCarouselProps) => {
   const { viewIndex, itemRef, carouselBoxRef, handleMoveImage, handleClickLeft, handleClickRight } =
-    useuseGeneralCarousel(items);
+    useGeneralCarousel(items);
 
   return (
     <div css={getContainerStyling(width, height)} ref={carouselBoxRef}>

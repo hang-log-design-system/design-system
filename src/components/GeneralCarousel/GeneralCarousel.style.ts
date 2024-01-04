@@ -5,7 +5,6 @@ import { Theme } from '@styles/Theme';
 export const getContainerStyling = (width: number, height: number) => {
   return css({
     position: 'relative',
-
     width,
     height,
     minWidth: width,

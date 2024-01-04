@@ -10,6 +10,7 @@ interface DotsProps {
 
 const Dots = ({ imageLength, activeNumber, moveImage }: DotsProps) => {
   const images = Array.from({ length: imageLength }, () => '');
+
   return (
     <div css={dotContainerStyling}>
       {images.map((_, index) => {
