@@ -42,6 +42,7 @@ import Textarea from '@components/Textarea/Textarea';
 import Toast from '@components/Toast/Toast';
 import Toggle from '@components/Toggle/Toggle';
 import ToggleGroup from '@components/ToggleGroup/ToggleGroup';
+import UniversalCarousel from '@components/UniversalCarousel/UniversalCarousel';
 
 import { Theme } from '@styles/Theme';
 
@@ -88,5 +89,6 @@ export {
   ToggleGroup,
   SVGCarousel,
   SVGCarouselModal,
+  UniversalCarousel,
   Theme,
 };
