@@ -3,11 +3,11 @@ import icon2 from '@assets/svg/checked-icon.svg';
 import icon3 from '@assets/svg/empty-star.svg';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import UniversalCarousel from '@components/UniversalCarousel/UniversalCarousel';
+import GeneralCarousel from '@components/GeneralCarousel/GeneralCarousel';
 
 const meta = {
-  title: 'UniversalCarousel',
-  component: UniversalCarousel,
+  title: 'GeneralCarousel',
+  component: GeneralCarousel,
   argTypes: {
     width: { control: 'number' },
     height: { control: 'number' },
@@ -17,10 +17,10 @@ const meta = {
     width: 300,
     height: 200,
   },
-} satisfies Meta<typeof UniversalCarousel>;
+} satisfies Meta<typeof GeneralCarousel>;
 
 export default meta;
-type Story = StoryObj<typeof UniversalCarousel>;
+type Story = StoryObj<typeof GeneralCarousel>;
 
 const items = [icon2, icon1, icon3];
 const items2 = [
@@ -31,27 +31,27 @@ const items2 = [
 
 export const Default: Story = {
   render: ({ ...args }) => {
-    return <UniversalCarousel {...args} items={items2} />;
+    return <GeneralCarousel {...args} items={items2} />;
   },
 };
 
 export const WithArrowButtons: Story = {
   render: ({ ...args }) => {
-    return <UniversalCarousel {...args} items={items} />;
+    return <GeneralCarousel {...args} items={items} />;
   },
   args: {},
 };
 
 export const WithDots: Story = {
   render: ({ ...args }) => {
-    return <UniversalCarousel {...args} items={items} />;
+    return <GeneralCarousel {...args} items={items} />;
   },
   args: {},
 };
 
 export const ShowNavigationOnHover: Story = {
   render: ({ ...args }) => {
-    return <UniversalCarousel {...args} items={items} />;
+    return <GeneralCarousel {...args} items={items} />;
   },
   args: {},
 };

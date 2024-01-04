@@ -17,6 +17,7 @@ import DateRangePicker from '@components/DateRangePicker/DateRangePicker';
 import Divider from '@components/Divider/Divider';
 import Flex from '@components/Flex/Flex';
 import FloatingButton from '@components/FloatingButton/FloatingButton';
+import GeneralCarousel from '@components/GeneralCarousel/GeneralCarousel';
 import Heading from '@components/Heading/Heading';
 import ImageCarousel from '@components/ImageCarousel/ImageCarousel';
 import ImageUploadInput from '@components/ImageUploadInput/ImageUploadInput';
@@ -42,7 +43,6 @@ import Textarea from '@components/Textarea/Textarea';
 import Toast from '@components/Toast/Toast';
 import Toggle from '@components/Toggle/Toggle';
 import ToggleGroup from '@components/ToggleGroup/ToggleGroup';
-import UniversalCarousel from '@components/UniversalCarousel/UniversalCarousel';
 
 import { Theme } from '@styles/Theme';
 
@@ -89,6 +89,6 @@ export {
   ToggleGroup,
   SVGCarousel,
   SVGCarouselModal,
-  UniversalCarousel,
+  GeneralCarousel,
   Theme,
 };

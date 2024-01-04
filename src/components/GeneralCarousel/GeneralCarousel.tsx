@@ -1,10 +1,10 @@
 import LeftIcon from '@assets/svg/left-icon.svg';
 import RightIcon from '@assets/svg/right-icon.svg';
 
-import useUniversalCarousel from '@hooks/useUniversalCarousel';
+import useuseGeneralCarousel from '@hooks/useGeneralCarousel';
 
 import Box from '@components/Box/Box';
-import Dots from '@components/UniversalCarousel/Dots';
+import Dots from '@components/GeneralCarousel/Dots';
 import {
   getButtonContainerStyling,
   getContainerStyling,
@@ -12,9 +12,9 @@ import {
   leftButtonStyling,
   rightButtonStyling,
   sliderWrapperStyling,
-} from '@components/UniversalCarousel/UniversalCarousel.style';
+} from '@components/GeneralCarousel/GeneralCarousel.style';
 
-export interface UniversalCarouselProps {
+export interface useGeneralCarouselProps {
   width: number;
   height: number;
   items: React.FC<React.SVGProps<SVGSVGElement>>[] | string[];
@@ -22,15 +22,15 @@ export interface UniversalCarouselProps {
   showDots?: boolean;
 }
 
-const UniversalCarousel = ({
+const GeneralCarousel = ({
   width,
   height,
   items,
   showArrows = true,
   showDots = true,
-}: UniversalCarouselProps) => {
+}: useGeneralCarouselProps) => {
   const { viewIndex, itemRef, carouselBoxRef, handleMoveImage, handleClickLeft, handleClickRight } =
-    useUniversalCarousel(items);
+    useuseGeneralCarousel(items);
 
   return (
     <div css={getContainerStyling(width, height)} ref={carouselBoxRef}>
@@ -75,4 +75,4 @@ const UniversalCarousel = ({
   );
 };
 
-export default UniversalCarousel;
+export default GeneralCarousel;

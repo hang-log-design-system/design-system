@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-const useUniversalCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] | string[]) => {
+const useGeneralCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] | string[]) => {
   const [viewIndex, setViewIndex] = useState(0);
   const carouselBoxRef = useRef<HTMLDivElement | null>(null);
   const itemRef = useRef<HTMLDivElement | null>(null);
@@ -52,4 +52,4 @@ const useUniversalCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] |
   return { viewIndex, itemRef, carouselBoxRef, handleMoveImage, handleClickLeft, handleClickRight };
 };
 
-export default useUniversalCarousel;
+export default useGeneralCarousel;
