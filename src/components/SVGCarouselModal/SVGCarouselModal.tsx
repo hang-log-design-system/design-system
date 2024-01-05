@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { useImageCarousel } from '@/hooks/useImageCarousel';
 import LeftIcon from '@assets/svg/left-icon.svg';
 import RightIcon from '@assets/svg/right-icon.svg';
+
+import { useImageCarousel } from '@hooks/useImageCarousel';
 
 import Box from '@components/Box/Box';
 import Button from '@components/Button/Button';
