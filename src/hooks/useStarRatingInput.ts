@@ -1,12 +1,20 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
+
+import { useDebounce } from '@hooks/useDebounce';
 
 type InitialRateType = 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 4.5 | 5;
 
 export const useStarRatingInput = (initialRate: InitialRateType, onClick?: CallableFunction) => {
-  const [starRate, setStarRate] = useState(initialRate);
-  const [hookStarRate, setHookStarRate] = useState(initialRate);
-  const [prevStarRate, setPrevStarRate] = useState(initialRate);
-  const [isHoveredBefore, setIsHoveredBefore] = useState(false);
+  const [tempStarRate, setStarRate] = useState(initialRate);
+  const starRate = useDebounce(tempStarRate, 50);
+
+  const [tempHookStarRate, setHookStarRate] = useState(initialRate);
+  const hookStarRate = useDebounce(tempHookStarRate, 50);
+
+  const [tempPrevStarRate, setPrevStarRate] = useState(initialRate);
+  const prevStarRate = useDebounce(tempPrevStarRate, 50);
+
+  const hoverState = useRef(false);
 
   const handleStarClick = useCallback(
     (index: number) => {
@@ -24,23 +32,23 @@ export const useStarRatingInput = (initialRate: InitialRateType, onClick?: Calla
         onClick?.(newRate);
       }
     },
-    [hookStarRate, setHookStarRate, onClick]
+    [hookStarRate, onClick]
   );
 
   const handleStarHover = useCallback((index: number) => {
     const newRate = ((index + 1) / 2) as InitialRateType;
 
     setStarRate(newRate);
-    setIsHoveredBefore(true);
+    hoverState.current = true;
   }, []);
 
   const handleStarHoverOut = useCallback(() => {
-    if (isHoveredBefore) {
+    if (hoverState.current) {
       setStarRate(prevStarRate as InitialRateType);
     }
 
-    setIsHoveredBefore(false);
-  }, [prevStarRate, isHoveredBefore]);
+    hoverState.current = false;
+  }, [prevStarRate]);
 
   return {
     starRate,

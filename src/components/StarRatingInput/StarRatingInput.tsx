@@ -6,7 +6,10 @@ import { forwardRef } from 'react';
 import type { ForwardedRef } from 'react';
 
 import Label from '@components/Label/Label';
-import { inputContainerStyling } from '@components/StarRatingInput/StarRatingInput.style';
+import {
+  inputContainerStyling,
+  starItemStyling,
+} from '@components/StarRatingInput/StarRatingInput.style';
 import SupportingText from '@components/SupportingText/SupportingText';
 
 const STAR_RATING_EMPTY_LENGTH = 10;
@@ -61,9 +64,9 @@ const StarRatingInput = (
                   onMouseOut={() => {
                     if (!isMobile) onStarHoverOut(index);
                   }}
-                  key={Math.random()}
+                  key={crypto.randomUUID()}
                 >
-                  <HalfFilledLeftStar />
+                  <HalfFilledLeftStar css={starItemStyling} />
                 </div>
               );
             return (
@@ -78,9 +81,9 @@ const StarRatingInput = (
                 onMouseOut={() => {
                   if (!isMobile) onStarHoverOut(index);
                 }}
-                key={Math.random()}
+                key={crypto.randomUUID()}
               >
-                <HalfEmptyLeftStar width={size / 2} height={size} />
+                <HalfEmptyLeftStar width={size / 2} height={size} css={starItemStyling} />
               </div>
             );
           }
@@ -97,9 +100,9 @@ const StarRatingInput = (
                 onMouseOut={() => {
                   if (!isMobile) onStarHoverOut(index);
                 }}
-                key={Math.random()}
+                key={crypto.randomUUID()}
               >
-                <HalfFilledRightStar width={size / 2} height={size} />
+                <HalfFilledRightStar width={size / 2} height={size} css={starItemStyling} />
               </div>
             );
           return (
@@ -114,9 +117,9 @@ const StarRatingInput = (
               onMouseOut={() => {
                 if (!isMobile) onStarHoverOut(index);
               }}
-              key={Math.random()}
+              key={crypto.randomUUID()}
             >
-              <HalfEmptyRightStar width={size / 2} height={size} />
+              <HalfEmptyRightStar width={size / 2} height={size} css={starItemStyling} />
             </div>
           );
         })}

@@ -13,3 +13,7 @@ export const inputContainerStyling = (size: number, gap: number) => {
     },
   });
 };
+
+export const starItemStyling = css({
+  cursor: 'pointer',
+});
