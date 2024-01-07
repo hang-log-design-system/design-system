@@ -18,6 +18,7 @@ export interface useGeneralCarouselProps {
   width: number;
   height: number;
   items: React.FC<React.SVGProps<SVGSVGElement>>[] | string[];
+  showNavigationOnHover?: boolean;
   showArrows?: boolean;
   showDots?: boolean;
 }
@@ -26,6 +27,7 @@ const GeneralCarousel = ({
   width,
   height,
   items,
+  showNavigationOnHover = true,
   showArrows = true,
   showDots = true,
 }: useGeneralCarouselProps) => {
@@ -38,7 +40,7 @@ const GeneralCarousel = ({
         <Dots imageLength={items.length} activeNumber={viewIndex} moveImage={handleMoveImage} />
       )}
       {showArrows && items.length !== 1 && (
-        <div css={getButtonContainerStyling(true)}>
+        <div css={getButtonContainerStyling(showNavigationOnHover)}>
           <button type="button" css={leftButtonStyling} onClick={handleClickLeft}>
             <LeftIcon />
           </button>
