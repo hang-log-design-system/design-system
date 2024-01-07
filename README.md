@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://ant.design">
+  <a href="https://www.npmjs.com/package/hang-log-design-system">
     <img width="200" src="https://github.com/hang-log-design-system/design-system/assets/51967731/f0dcb43d-2f7b-4d29-b314-69f24b15184f">
   </a>
 </p>
@@ -46,7 +46,7 @@ function App() {
 
 ## Links
 
-- [Storybook](https://64ae1170f3ddc89ef85a4950-zbdjfljkdm.chromatic.com/)
+- [Storybook](https://64ae1170f3ddc89ef85a4950-cyrubnthdo.chromatic.com/)
 - [Figma](https://www.figma.com/file/rJUqeL7LUnJjCPQNmQ3BZc/design-system?type=design&node-id=1%3A2854&mode=design&t=nVD5D8xFhO9Dkg6g-1)
 
 ## Contributors
