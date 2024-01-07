@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import type { MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
 
 const useGeneralCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] | string[]) => {
@@ -20,7 +21,8 @@ const useGeneralCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] | s
     }
   };
 
-  const handleClickLeft = () => {
+  const handleClickLeft = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     if (itemRef.current) {
       flushSync(() => {
         if (viewIndex === 0) setViewIndex(0);
@@ -35,7 +37,8 @@ const useGeneralCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] | s
     }
   };
 
-  const handleClickRight = () => {
+  const handleClickRight = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     if (itemRef.current) {
       flushSync(() => {
         if (viewIndex === items.length - 1) setViewIndex(viewIndex);

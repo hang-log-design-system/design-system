@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import type { MouseEvent } from 'react';
 
 import { Theme } from '@styles/Theme';
 
@@ -20,7 +21,10 @@ const Dots = ({ imageLength, activeNumber, moveImage }: DotsProps) => {
               type="button"
               key={crypto.randomUUID()}
               css={dotStyle(true)}
-              onClick={() => moveImage(index)}
+              onClick={(e: MouseEvent<HTMLButtonElement>) => {
+                e.stopPropagation();
+                moveImage(index);
+              }}
             />
           );
         return (
@@ -28,7 +32,10 @@ const Dots = ({ imageLength, activeNumber, moveImage }: DotsProps) => {
             type="button"
             key={crypto.randomUUID()}
             css={dotStyle(false)}
-            onClick={() => moveImage(index)}
+            onClick={(e: MouseEvent<HTMLButtonElement>) => {
+              e.stopPropagation();
+              moveImage(index);
+            }}
           />
         );
       })}
