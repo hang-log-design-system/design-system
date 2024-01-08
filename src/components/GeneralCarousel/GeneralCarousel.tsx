@@ -21,6 +21,7 @@ export interface useGeneralCarouselProps {
   showNavigationOnHover?: boolean;
   showArrows?: boolean;
   showDots?: boolean;
+  children?: JSX.Element | JSX.Element[] | null;
 }
 
 const GeneralCarousel = ({
@@ -30,6 +31,7 @@ const GeneralCarousel = ({
   showNavigationOnHover = true,
   showArrows = true,
   showDots = true,
+  children = null,
 }: useGeneralCarouselProps) => {
   const { viewIndex, itemRef, carouselBoxRef, handleMoveImage, handleClickLeft, handleClickRight } =
     useGeneralCarousel(items);
@@ -50,28 +52,30 @@ const GeneralCarousel = ({
         </div>
       )}
       <Box css={sliderWrapperStyling}>
-        {items.map((Item, index) => {
-          if (typeof Item === 'string') {
-            return (
-              <div
-                ref={index === viewIndex ? itemRef : null}
-                key={crypto.randomUUID()}
-                css={getItemWrapperStyling(width, height)}
-              >
-                <img draggable={false} src={Item} alt="이미지" />
-              </div>
-            );
-          }
-          return (
-            <div
-              ref={index === viewIndex ? itemRef : null}
-              key={crypto.randomUUID()}
-              css={getItemWrapperStyling(width, height)}
-            >
-              <Item />
-            </div>
-          );
-        })}
+        {children === null
+          ? items.map((Item, index) => {
+              if (typeof Item === 'string') {
+                return (
+                  <div
+                    ref={index === viewIndex ? itemRef : null}
+                    key={crypto.randomUUID()}
+                    css={getItemWrapperStyling(width, height)}
+                  >
+                    <img draggable={false} src={Item} alt="이미지" />
+                  </div>
+                );
+              }
+              return (
+                <div
+                  ref={index === viewIndex ? itemRef : null}
+                  key={crypto.randomUUID()}
+                  css={getItemWrapperStyling(width, height)}
+                >
+                  <Item />
+                </div>
+              );
+            })
+          : children}
       </Box>
     </div>
   );
