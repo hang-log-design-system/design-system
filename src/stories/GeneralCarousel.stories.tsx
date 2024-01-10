@@ -1,57 +1,43 @@
-import icon1 from '@assets/svg/add-icon.svg';
-import icon2 from '@assets/svg/checked-icon.svg';
-import icon3 from '@assets/svg/empty-star.svg';
+/* eslint-disable react/no-array-index-key */
+
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import type { Meta, StoryObj } from '@storybook/react';
 
-import GeneralCarousel from '@components/GeneralCarousel/GeneralCarousel';
+import Carousel from '@components/GeneralCarousel/Carousel';
 
 const meta = {
-  title: 'GeneralCarousel',
-  component: GeneralCarousel,
+  title: 'Carousel',
+  component: Carousel,
   argTypes: {
     width: { control: 'number' },
     height: { control: 'number' },
-    items: { control: false },
   },
   args: {
     width: 300,
     height: 200,
+    length: 3,
   },
-} satisfies Meta<typeof GeneralCarousel>;
+} satisfies Meta<typeof Carousel>;
+
+const images = [
+  'https://i.pinimg.com/236x/18/0e/c6/180ec6aaf4b5aab89d91f36752219569.jpg',
+  'https://img.freepik.com/free-photo/many-ripe-juicy-red-apples-covered-with-water-drops-closeup-selective-focus-ripe-fruits-as-a-background_166373-2611.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703808000&semt=sph',
+  'https://img.freepik.com/premium-photo/a-red-apple-with-a-white-background-and-a-white-background_933356-5.jpg',
+];
 
 export default meta;
-type Story = StoryObj<typeof GeneralCarousel>;
-
-const items = [icon2, icon1, icon3];
-const items2 = [
-  'https://www.shutterstock.com/image-photo/red-apple-isolated-on-white-260nw-1727544364.jpg',
-  'https://www.shutterstock.com/image-photo/red-apple-isolated-on-white-260nw-1727544364.jpg',
-  'https://www.shutterstock.com/image-photo/red-apple-isolated-on-white-260nw-1727544364.jpg',
-];
+type Story = StoryObj<typeof Carousel>;
 
 export const Default: Story = {
   render: ({ ...args }) => {
-    return <GeneralCarousel {...args} items={items2} />;
+    return (
+      <Carousel {...args}>
+        {images.map((url, index) => (
+          <Carousel.Item index={index} key={index}>
+            <img src={url} alt="image" />
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    );
   },
-};
-
-export const WithArrowButtons: Story = {
-  render: ({ ...args }) => {
-    return <GeneralCarousel {...args} items={items} />;
-  },
-  args: {},
-};
-
-export const WithDots: Story = {
-  render: ({ ...args }) => {
-    return <GeneralCarousel {...args} items={items} />;
-  },
-  args: {},
-};
-
-export const ShowNavigationOnHover: Story = {
-  render: ({ ...args }) => {
-    return <GeneralCarousel {...args} items={items} />;
-  },
-  args: {},
 };

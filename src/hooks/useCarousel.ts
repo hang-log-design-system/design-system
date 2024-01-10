@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import type { MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
 
-const useGeneralCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] | string[]) => {
+const useCarousel = (itemLength: number) => {
   const [viewIndex, setViewIndex] = useState(0);
   const carouselBoxRef = useRef<HTMLDivElement | null>(null);
   const itemRef = useRef<HTMLDivElement | null>(null);
@@ -41,7 +41,7 @@ const useGeneralCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] | s
     e.stopPropagation();
     if (itemRef.current) {
       flushSync(() => {
-        if (viewIndex === items.length - 1) setViewIndex(viewIndex);
+        if (viewIndex === itemLength - 1) setViewIndex(viewIndex);
         else setViewIndex(viewIndex + 1);
       });
 
@@ -53,7 +53,14 @@ const useGeneralCarousel = (items: React.FC<React.SVGProps<SVGSVGElement>>[] | s
     }
   };
 
-  return { viewIndex, itemRef, carouselBoxRef, handleMoveImage, handleClickLeft, handleClickRight };
+  return {
+    viewIndex,
+    itemRef,
+    carouselBoxRef,
+    handleMoveImage,
+    handleClickLeft,
+    handleClickRight,
+  };
 };
 
-export default useGeneralCarousel;
+export default useCarousel;

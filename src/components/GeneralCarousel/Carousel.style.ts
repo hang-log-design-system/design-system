@@ -2,9 +2,10 @@ import { css } from '@emotion/react';
 
 import { Theme } from '@styles/Theme';
 
-export const getContainerStyling = (width: number, height: number) => {
+export const containerStyling = (width: number, height: number) => {
   return css({
     position: 'relative',
+
     width,
     height,
     minWidth: width,
@@ -20,16 +21,29 @@ export const getContainerStyling = (width: number, height: number) => {
   });
 };
 
-export const sliderWrapperStyling = css({
-  display: 'flex',
-  width: '100%',
-  margin: 0,
-  padding: 0,
+export const sliderWrapperStyling = (width: number, height: number) =>
+  css({
+    display: 'flex',
+    width: '100%',
+    margin: 0,
+    padding: 0,
+    height,
 
-  overflow: 'hidden',
-});
+    overflow: 'hidden',
+  });
 
-export const getItemWrapperStyling = (width: number, height: number) => {
+export const carouselItemStyling = (width: number, height: number) =>
+  css({
+    display: 'flex',
+
+    '& > *': {
+      objectFit: 'cover',
+      width,
+      height,
+    },
+  });
+
+export const itemWrapperStyling = (width: number, height: number) => {
   return css({
     minWidth: width,
     width,
@@ -47,7 +61,7 @@ export const getItemWrapperStyling = (width: number, height: number) => {
   });
 };
 
-export const getButtonContainerStyling = (showOnHover: boolean) =>
+export const buttonContainerStyling = (showOnHover: boolean) =>
   css({
     transition: 'opacity .1s ease-in',
 
